@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>556</width>
+    <height>290</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>556</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_n_h_ng">
+    <property name="title">
+     <string>Đơn hàng</string>
+    </property>
+    <addaction name="actionT_o_n"/>
+    <addaction name="actionTr_ng_th_i_n"/>
+   </widget>
+   <widget class="QMenu" name="menuS_n_ph_m">
+    <property name="title">
+     <string>Sản phẩm</string>
+    </property>
+    <addaction name="actionNh_p_kho"/>
+    <addaction name="actionXu_t_kho"/>
+    <addaction name="separator"/>
+    <addaction name="actionKho_h_ng"/>
+    <addaction name="actionT_n_kho"/>
+   </widget>
+   <widget class="QMenu" name="menuVoucher">
+    <property name="title">
+     <string>Voucher</string>
+    </property>
+    <addaction name="actionT_o_Voucher"/>
+    <addaction name="actionQu_n_l_Voucher"/>
+   </widget>
+   <widget class="QMenu" name="menuB_o_c_o">
+    <property name="title">
+     <string>Báo cáo</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuQu_n_l_User">
+    <property name="title">
+     <string>User</string>
+    </property>
+    <addaction name="actionT_o_User"/>
+    <addaction name="actionQu_n_l_User"/>
+   </widget>
+   <addaction name="menu_n_h_ng"/>
+   <addaction name="menuS_n_ph_m"/>
+   <addaction name="menuVoucher"/>
+   <addaction name="menuB_o_c_o"/>
+   <addaction name="menuQu_n_l_User"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionT_o_n">
+   <property name="text">
+    <string>Tạo đơn</string>
+   </property>
+  </action>
+  <action name="actionTr_ng_th_i_n">
+   <property name="text">
+    <string>Trạng thái đơn</string>
+   </property>
+  </action>
+  <action name="actionNh_p_kho">
+   <property name="text">
+    <string>Nhập kho</string>
+   </property>
+  </action>
+  <action name="actionXu_t_kho">
+   <property name="text">
+    <string>Xuất kho</string>
+   </property>
+  </action>
+  <action name="actionKho_h_ng">
+   <property name="text">
+    <string>Kho hàng</string>
+   </property>
+  </action>
+  <action name="actionT_n_kho">
+   <property name="text">
+    <string>Tồn kho</string>
+   </property>
+  </action>
+  <action name="actionT_o_Voucher">
+   <property name="text">
+    <string>Tạo Voucher</string>
+   </property>
+  </action>
+  <action name="actionQu_n_l_Voucher">
+   <property name="text">
+    <string>Quản lí Voucher</string>
+   </property>
+  </action>
+  <action name="actionT_o_User">
+   <property name="text">
+    <string>Tạo User</string>
+   </property>
+  </action>
+  <action name="actionQu_n_l_User">
+   <property name="text">
+    <string>Quản lí User</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
