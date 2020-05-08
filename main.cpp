@@ -1,13 +1,22 @@
 #include "mainwindow.h"
 #include "login.h"
-
+#include "adduser.h"
+#include "changepw.h"
+#include "quanlyuser.h"
+#include "thaydoiquyen.h"
+#include "taodonhang.h"
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    login l;
-    l.show();
     MainWindow w;
+    login l;
+    quanlyuser q;
+    adduser ad;
+    taodonhang tdh;
+    //tdh.show();
+    //ad.show();
+    l.show();
     return a.exec();
 }

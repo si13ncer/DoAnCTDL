@@ -1,13 +1,13 @@
 #ifndef ADDUSER_H
 #define ADDUSER_H
 
-#include <QDialog>
+#include <QMainWindow>
 
 namespace Ui {
 class adduser;
 }
 
-class adduser : public QDialog
+class adduser : public QMainWindow
 {
     Q_OBJECT
 

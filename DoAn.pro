@@ -17,22 +17,31 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     adduser.cpp \
+    changepw.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
-    quanlyuser.cpp
+    quanlyuser.cpp \
+    taodonhang.cpp \
+    thaydoiquyen.cpp
 
 HEADERS += \
     adduser.h \
+    changepw.h \
     login.h \
     mainwindow.h \
-    quanlyuser.h
+    quanlyuser.h \
+    taodonhang.h \
+    thaydoiquyen.h
 
 FORMS += \
     adduser.ui \
+    changepw.ui \
     login.ui \
     mainwindow.ui \
-    quanlyuser.ui
+    quanlyuser.ui \
+    taodonhang.ui \
+    thaydoiquyen.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

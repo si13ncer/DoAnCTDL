@@ -1,0 +1,86 @@
+Nhóm 17, đề tài 24 : quản lí bán hàng Lazada:
+Phân tích tính năng:
+
+{-Quản lí đơn hàng: 
+	#Tạo đơn:
+		+Thông tin khách hàng:
+			*Id
+			*Tên
+			*Địa chỉ
+			*SĐT
+		+Tên hàng
+		+Loại hàng
+		+Mã hàng
+		+Số lượng
+		+Khuyến mãi
+		+Thành tiền (Giá*SL-KM+Ship)
+		+Hình thức thanh toán:
+			*Thanh toán thẻ
+			*Ví điện tử
+			*Ship COD
+		+Giao hàng: Lựa chọn đơn vị giao hàng có chi phí tối ưu nhất
+		+Ngày tạo đơn
+		+Dự kiến ngày giao hàng
+	#Xem trạng thái đơn + huỷ đơn hàng:
+		+Thông tin khách hàng:
+			*Tên
+			*Địa chỉ
+			*SĐT
+		+Tên hàng
+		+Loại hàng
+		+Mã hàng
+		+Số lượng
+		+Thành tiền 
+		+Vận chuyển:(Dữ liệu lấy từ công ty giao)
+			*Kiểm tra trạng thái vận chuyển: Đóng gói, đang chuyển hàng, đã nhận, lỗi-gửi trả
+				(Doanh thu dựa vào đơn đã nhận)  
+			*Huỷ đơn hàng
+}=======================  Hồ Đức Hoàng và Dương Hữu Phúc Khang ============================	
+
+{-Quản lý thông tin sản phẩm, nhập kho, xuất kho
+	#Nhập kho:
+		+Phân loại hàng
+		+Tên hàng
+		+Mã hàng
+		+Giá nhập kho
+		+Số lượng nhập, đơn vị tính (cái, chai, .....)
+		+Ngày nhập
+	#Xuất kho
+		+Phân loại hàng
+		+Tên hàng
+		+Mã hàng
+		+Giá nhập kho
+		+Số lượng
+		+Ngày xuất (Ngày tạo đơn)
+	#Số lượng còn lại
+		+Thông báo khi sắp hết hàng
+	#Hàng tồn kho
+		+Thông báo khi sắp hết hạn
+
+}================== Huỳnh Tiến Vĩ =======================
+{-Quản lý voucher khuyến mãi
+	#Tạo voucher
+		+Mã voucher
+		+Giá trị khuyến mãi 
+		+Số lượng (Nếu hết sẽ thông báo)
+		+Ngày bắt đầu sử dụng
+		+Ngày kết thúc (Nếu bỏ trống thì sẽ xoá thủ công)
+	#Xoá voucher
+-Báo cáo doanh thu:
+	+Số lượng đơn giao thành công
+	+Doanh thu (Tổng kết từng đơn trong trạng thái vận chuyển)
+	+Xuất file (Báo cáo doanh thu, hoá đơn, đơn hàng)
+} ================= Hồ Minh Phong ==========================
+{-Quản lí user (Chỉ dành cho admin): 
+	#Tạo user:
+		+ID, Password
+		+Set quyền: Admin, Xem và sửa, Chỉ xem
+	#Sửa:
+		+Password, quyền
+		+Xoá user
+}================== Hồ Đức Hoàng ===========================
+Lưu dữ liệu trên file txt.
+
+
+
+

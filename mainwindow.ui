@@ -6,20 +6,40 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>556</width>
-    <height>290</height>
+    <width>660</width>
+    <height>372</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>60</y>
+      <width>411</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>D:/Download/Lazada.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>556</width>
+     <width>660</width>
      <height>21</height>
     </rect>
    </property>
@@ -27,25 +47,25 @@
     <property name="title">
      <string>Đơn hàng</string>
     </property>
-    <addaction name="actionT_o_n"/>
-    <addaction name="actionTr_ng_th_i_n"/>
+    <addaction name="actTaodon"/>
+    <addaction name="actTrangthai"/>
    </widget>
    <widget class="QMenu" name="menuS_n_ph_m">
     <property name="title">
      <string>Sản phẩm</string>
     </property>
-    <addaction name="actionNh_p_kho"/>
-    <addaction name="actionXu_t_kho"/>
+    <addaction name="actNhapkho"/>
+    <addaction name="actXuatkho"/>
     <addaction name="separator"/>
-    <addaction name="actionKho_h_ng"/>
-    <addaction name="actionT_n_kho"/>
+    <addaction name="actKhohang"/>
+    <addaction name="actTonkho"/>
    </widget>
    <widget class="QMenu" name="menuVoucher">
     <property name="title">
      <string>Voucher</string>
     </property>
-    <addaction name="actionT_o_Voucher"/>
-    <addaction name="actionQu_n_l_Voucher"/>
+    <addaction name="actTaoVc"/>
+    <addaction name="actQliVc"/>
    </widget>
    <widget class="QMenu" name="menuB_o_c_o">
     <property name="title">
@@ -56,8 +76,8 @@
     <property name="title">
      <string>User</string>
     </property>
-    <addaction name="actionT_o_User"/>
-    <addaction name="actionQu_n_l_User"/>
+    <addaction name="actTaouser"/>
+    <addaction name="actQliUser"/>
    </widget>
    <addaction name="menu_n_h_ng"/>
    <addaction name="menuS_n_ph_m"/>
@@ -65,53 +85,52 @@
    <addaction name="menuB_o_c_o"/>
    <addaction name="menuQu_n_l_User"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionT_o_n">
+  <action name="actTaodon">
    <property name="text">
     <string>Tạo đơn</string>
    </property>
   </action>
-  <action name="actionTr_ng_th_i_n">
+  <action name="actTrangthai">
    <property name="text">
     <string>Trạng thái đơn</string>
    </property>
   </action>
-  <action name="actionNh_p_kho">
+  <action name="actNhapkho">
    <property name="text">
     <string>Nhập kho</string>
    </property>
   </action>
-  <action name="actionXu_t_kho">
+  <action name="actXuatkho">
    <property name="text">
     <string>Xuất kho</string>
    </property>
   </action>
-  <action name="actionKho_h_ng">
+  <action name="actKhohang">
    <property name="text">
     <string>Kho hàng</string>
    </property>
   </action>
-  <action name="actionT_n_kho">
+  <action name="actTonkho">
    <property name="text">
     <string>Tồn kho</string>
    </property>
   </action>
-  <action name="actionT_o_Voucher">
+  <action name="actTaoVc">
    <property name="text">
     <string>Tạo Voucher</string>
    </property>
   </action>
-  <action name="actionQu_n_l_Voucher">
+  <action name="actQliVc">
    <property name="text">
     <string>Quản lí Voucher</string>
    </property>
   </action>
-  <action name="actionT_o_User">
+  <action name="actTaouser">
    <property name="text">
     <string>Tạo User</string>
    </property>
   </action>
-  <action name="actionQu_n_l_User">
+  <action name="actQliUser">
    <property name="text">
     <string>Quản lí User</string>
    </property>
