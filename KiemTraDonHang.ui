@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="LAThongTinKhachHang">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -26,7 +26,7 @@
     <string>THÔNG TIN KHÁCH HÀNG</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="LATenKhachHang">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -39,7 +39,7 @@
     <string>TÊN KHÁCH HÀNG :</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="LASDT">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -52,7 +52,7 @@
     <string>SĐT                       :            </string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_5">
+  <widget class="QLabel" name="LAMaDonHang_2">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -65,7 +65,7 @@
     <string>MÃ ĐƠN HÀNG      :</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="PBKiemTra">
    <property name="geometry">
     <rect>
      <x>90</x>
@@ -78,7 +78,7 @@
     <string>KIỂM TRA</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="LEKhungSDT">
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -88,7 +88,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="PBHuy">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -101,7 +101,7 @@
     <string>HỦY</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="LEKhungTenKhachHang">
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -111,7 +111,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="LEKhungMaDonHang">
    <property name="geometry">
     <rect>
      <x>170</x>
@@ -121,7 +121,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label_25">
+  <widget class="QLabel" name="LAMaDonHang">
    <property name="geometry">
     <rect>
      <x>480</x>
@@ -134,7 +134,7 @@
     <string>MÃ ĐƠN HÀNG   </string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_26">
+  <widget class="QLabel" name="LANgayDat">
    <property name="geometry">
     <rect>
      <x>630</x>
@@ -147,7 +147,7 @@
     <string>NGÀY ĐẶT      </string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_28">
+  <widget class="QLabel" name="LANgayNhan">
    <property name="geometry">
     <rect>
      <x>760</x>
@@ -160,7 +160,7 @@
     <string>NGÀY NHẬN        </string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_29">
+  <widget class="QLabel" name="LATinhTrang">
    <property name="geometry">
     <rect>
      <x>890</x>
@@ -173,7 +173,7 @@
     <string>TÌNH TRẠNG          </string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_30">
+  <widget class="QLabel" name="LAGhiChu">
    <property name="geometry">
     <rect>
      <x>1030</x>
@@ -186,7 +186,7 @@
     <string>GHI CHÚ          </string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_27">
+  <widget class="QLabel" name="LASTT">
    <property name="geometry">
     <rect>
      <x>390</x>
@@ -234,7 +234,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;   7                         TBĐTA100M-107                        03/05/2020                         27/09/2020                           ĐÃ GIAO                                                &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_6">
+  <widget class="QPushButton" name="PBThongTin_1">
    <property name="geometry">
     <rect>
      <x>1100</x>
@@ -247,7 +247,7 @@ p, li { white-space: pre-wrap; }
     <string>THÔNG TIN</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_7">
+  <widget class="QPushButton" name="PBThongTin_3">
    <property name="geometry">
     <rect>
      <x>1100</x>
@@ -260,7 +260,7 @@ p, li { white-space: pre-wrap; }
     <string>THÔNG TIN</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_8">
+  <widget class="QPushButton" name="PBThongTin_4">
    <property name="geometry">
     <rect>
      <x>1100</x>
@@ -273,7 +273,7 @@ p, li { white-space: pre-wrap; }
     <string>THÔNG TIN</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_9">
+  <widget class="QPushButton" name="PBThongTin_5">
    <property name="geometry">
     <rect>
      <x>1100</x>
@@ -286,7 +286,7 @@ p, li { white-space: pre-wrap; }
     <string>THÔNG TIN</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_10">
+  <widget class="QPushButton" name="PBThongTin_2">
    <property name="geometry">
     <rect>
      <x>1100</x>
@@ -299,7 +299,7 @@ p, li { white-space: pre-wrap; }
     <string>THÔNG TIN</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_11">
+  <widget class="QPushButton" name="PBThongTin_7">
    <property name="geometry">
     <rect>
      <x>1100</x>
@@ -312,7 +312,7 @@ p, li { white-space: pre-wrap; }
     <string>THÔNG TIN</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_12">
+  <widget class="QPushButton" name="PBThongTin_6">
    <property name="geometry">
     <rect>
      <x>1100</x>
