@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     adduser.cpp \
     changepw.cpp \
+    kiemtradonhang.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -28,6 +29,7 @@ SOURCES += \
 HEADERS += \
     adduser.h \
     changepw.h \
+    kiemtradonhang.h \
     login.h \
     mainwindow.h \
     quanlyuser.h \
@@ -35,6 +37,7 @@ HEADERS += \
     thaydoiquyen.h
 
 FORMS += \
+    KiemTraDonHang.ui \
     adduser.ui \
     changepw.ui \
     login.ui \
