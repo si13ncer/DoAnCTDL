@@ -38,6 +38,7 @@ HEADERS += \
 
 FORMS += \
     KiemTraDonHang.ui \
+    ThongTinKiemTraSanPhamDonHang.ui \
     adduser.ui \
     changepw.ui \
     login.ui \
