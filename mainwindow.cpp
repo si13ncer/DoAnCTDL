@@ -4,7 +4,6 @@
 #include "taodonhang.h"
 #include "adduser.h"
 #include "quanlyuser.h"
-#include<nhapkho.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -37,17 +36,4 @@ void MainWindow::on_actQliUser_triggered()
 {
     qlusr = new quanlyuser(this);
     qlusr->show();
-}
-
-
-void MainWindow::on_actNhapkho_triggered()
-{
-    nk= new nhapkho(this);
-    nk->show();
-}
-
-void MainWindow::on_actXuatkho_triggered()
-{
- xk= new xuatkho(this);
- xk->show();
 }

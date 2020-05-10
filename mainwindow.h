@@ -3,7 +3,6 @@
 #include "taodonhang.h"
 #include "adduser.h"
 #include "quanlyuser.h"
-#include "nhapkho.h"
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -25,16 +24,10 @@ private slots:
 
     void on_actQliUser_triggered();
 
-    void on_actNhapkho_triggered();
-
-    void on_actXuatkho_triggered();
-
 private:
     Ui::MainWindow *ui;
     taodonhang *tdh;
     adduser *ausr;
     quanlyuser *qlusr;
-    nhapkho *nk;
-    xuatkho *xk;
 };
 #endif // MAINWINDOW_H

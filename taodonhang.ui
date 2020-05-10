@@ -145,6 +145,13 @@
       </property>
      </widget>
     </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>ID                    </string>
+      </property>
+     </widget>
+    </item>
     <item row="7" column="0">
      <widget class="QLabel" name="lblKM">
       <property name="text">

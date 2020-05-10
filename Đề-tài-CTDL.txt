@@ -38,28 +38,24 @@ Phân tích tính năng:
 }=======================  Hồ Đức Hoàng và Dương Hữu Phúc Khang ============================	
 
 {-Quản lý thông tin sản phẩm, nhập kho, xuất kho
-	#Nhập kho: 1 table cho phép nhập và điển rõ
-		+Phân loại hàng VD: Tivi,Tủ lạnh, Laptop ,v.v
-		+Tên hàng VD: Tivi LG 55inch
-		+Mã hàng VD: LG4K55I092020
-		+Giá nhập kho VD: 55.000.000 VND.
-		+Số lượng nhập, đơn vị tính (cái, chai, .....) 1 cái
-		+Ngày nhập        thời gian nhập: chắc là dùng ctime??
-	#Xuất kho   1 table xuất giá trị danh sách dữ liệu dựa vào đơn mua cuảt khách hàng
-		+Phân loại hàng VD: Tivi,Tủ lạnh, Laptop ,v.v
-		+Tên hàng VD: Tivi LG 55inch
-		+Mã hàng VD: LG4K55I092020
-		+Giá nhập kho VD: 55.000.000 VND.
-		+Số lượng nhập, đơn vị tính (cái, chai, .....) 1 cái
-		+Ngày xuất (Ngày tạo đơn)  ngày nhận đơn đặt hàng của khách, thông qua đó xuất ra các giá trị mà khách đã đặt, -1 số lượng hàng trong kho.
+	#Nhập kho:
+		+Phân loại hàng
+		+Tên hàng
+		+Mã hàng
+		+Giá nhập kho
+		+Số lượng nhập, đơn vị tính (cái, chai, .....)
+		+Ngày nhập
+	#Xuất kho
+		+Phân loại hàng
+		+Tên hàng
+		+Mã hàng
+		+Giá nhập kho
+		+Số lượng
+		+Ngày xuất (Ngày tạo đơn)
 	#Số lượng còn lại
-		
-	#Hàng tồn kho                  Kho hàng sẽ hiện ra 2 thông tin này :
-                                       + chỉnh sửa kho hàng
-                                       + thêm bớt kho hàng
-		                       +Thông báo khi sắp hết hạn pop-up nhảy ra khi hàng <5 tháng
-                                       +Thông báo khi sắp hết hàng  pop-up nhảy ra khi còn <3 sản phẩm
-                                       +Sắp xếp kho hàng theo loại hàng và tên từ a-z ( dslk đơn sắp xếp)
+		+Thông báo khi sắp hết hàng
+	#Hàng tồn kho
+		+Thông báo khi sắp hết hạn
 
 }================== Huỳnh Tiến Vĩ =======================
 {-Quản lý voucher khuyến mãi
