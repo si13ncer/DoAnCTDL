@@ -24,7 +24,9 @@ SOURCES += \
     mainwindow.cpp \
     quanlyuser.cpp \
     taodonhang.cpp \
-    thaydoiquyen.cpp
+    thaydoiquyen.cpp \
+    thongtinkiemtrasanphamdonhang.cpp \
+    thongtinkiemtrasanphamdonhang_1.cpp
 
 HEADERS += \
     adduser.h \
@@ -34,7 +36,9 @@ HEADERS += \
     mainwindow.h \
     quanlyuser.h \
     taodonhang.h \
-    thaydoiquyen.h
+    thaydoiquyen.h \
+    thongtinkiemtrasanphamdonhang.h \
+    thongtinkiemtrasanphamdonhang_1.h
 
 FORMS += \
     KiemTraDonHang.ui \
@@ -45,7 +49,9 @@ FORMS += \
     mainwindow.ui \
     quanlyuser.ui \
     taodonhang.ui \
-    thaydoiquyen.ui
+    thaydoiquyen.ui \
+    thongtinkiemtrasanphamdonhang.ui \
+    thongtinkiemtrasanphamdonhang_1.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
