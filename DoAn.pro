@@ -18,9 +18,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     adduser.cpp \
     changepw.cpp \
+    khohang.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
+    nhapkho.cpp \
     quanlyuser.cpp \
     taodonhang.cpp \
     thaydoiquyen.cpp
@@ -28,8 +30,10 @@ SOURCES += \
 HEADERS += \
     adduser.h \
     changepw.h \
+    khohang.h \
     login.h \
     mainwindow.h \
+    nhapkho.h \
     quanlyuser.h \
     taodonhang.h \
     thaydoiquyen.h
@@ -37,8 +41,10 @@ HEADERS += \
 FORMS += \
     adduser.ui \
     changepw.ui \
+    khohang.ui \
     login.ui \
     mainwindow.ui \
+    nhapkho.ui \
     quanlyuser.ui \
     taodonhang.ui \
     thaydoiquyen.ui
