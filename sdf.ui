@@ -1,49 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>thongtinkiemtrasanphamdonhang</class>
- <widget class="QDialog" name="thongtinkiemtrasanphamdonhang">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>560</height>
+    <width>679</width>
+    <height>545</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Form</string>
   </property>
-  <widget class="QLineEdit" name="LE_KhungDiaChi">
+  <widget class="QLabel" name="LA_GiaTien">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>130</y>
-     <width>151</width>
-     <height>20</height>
+     <x>30</x>
+     <y>330</y>
+     <width>101</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>97 Đường Man Thiện, Hiệp Phú, Quận 9, Hồ Chí Minh</string>
+    <string>GIÁ TIỀN           :</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="LE_KhungGiaTien">
+  <widget class="QLineEdit" name="LE_KhungTenKhachHang">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>320</y>
+     <x>130</x>
+     <y>60</y>
      <width>151</width>
      <height>20</height>
     </rect>
    </property>
    <property name="text">
-    <string>65.000</string>
+    <string>NGUYỄN THỊ VĂN</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="LE_KhungKhuyenMai">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>370</y>
+     <width>151</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>5%</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LA_Tong">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>450</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TỔNG                    :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LADiaChi">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>140</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ĐỊA CHỈ                :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LA_SoLuong">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>330</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>SỐ LƯỢNG            : </string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="PB_Dong">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>500</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>ĐÓNG</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LA_ThanhToan">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>450</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>THANH TOÁN     :</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="PBHuyDon">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>500</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>HỦY ĐƠN</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="LE_KhungNgayNhan">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>410</y>
+     <width>151</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>21/09/2020</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LA_NgayNhan">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>410</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>NGÀY NHẬN          :</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LA_VND">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>370</y>
+     <width>31</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>(VNĐ)</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="LE_KhungPhiVanChuyen">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>370</y>
+     <width>151</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>15.000</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LA_PhiVanChuyen">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>370</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PHÍ VẬN CHUYỂN  :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="LE_KhungTenSanPham">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>290</y>
+     <width>151</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>BÀN PHÍM</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="LE_KhungSoLuong">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>330</y>
+     <width>151</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>2</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LA_TenKhachHang">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>50</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TÊN KHÁCH HÀNG :</string>
    </property>
   </widget>
   <widget class="QLabel" name="LA_NgayDat">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>400</y>
+     <x>30</x>
+     <y>410</y>
      <width>101</width>
      <height>16</height>
     </rect>
@@ -52,24 +247,50 @@
     <string>NGÀY ĐẶT         :</string>
    </property>
   </widget>
-  <widget class="QLabel" name="LA_ThongTinKhachHang">
+  <widget class="QLabel" name="LA_SDT">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>131</width>
-     <height>41</height>
+     <x>30</x>
+     <y>180</y>
+     <width>101</width>
+     <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>THÔNG TIN KHÁCH HÀNG</string>
+    <string>SĐT                       :</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="LE_KhungMaSanPham">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>290</y>
+     <width>151</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TBĐTA100M</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LA_TenSanPham">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>290</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TÊN SẢN PHẨM  :</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="LE_KhungSDT">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>170</y>
+     <x>130</x>
+     <y>180</y>
      <width>151</width>
      <height>20</height>
     </rect>
@@ -78,11 +299,102 @@
     <string>091 345 44 46</string>
    </property>
   </widget>
+  <widget class="QLineEdit" name="LE_KhungNgayDat">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>410</y>
+     <width>151</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>27/04/2020</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LA_ThongTinKhachHang">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>10</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>THÔNG TIN KHÁCH HÀNG</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="LE_KhungDiaChi">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>140</y>
+     <width>151</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>97 Đường Man Thiện, Hiệp Phú, Quận 9, Hồ Chí Minh</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="LE_KhungMaDonHang">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>100</y>
+     <width>151</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TBĐTA100M-101</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="PB_ChinhSua">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>500</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>CHỈNH SỬA</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="LE_KhungGiaTien">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>330</y>
+     <width>151</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>65.000</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="LA_ThongTinSanPham">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>250</y>
+     <width>131</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>THÔNG TIN SẢN PHẨM</string>
+   </property>
+  </widget>
   <widget class="QLabel" name="LA_KhuyenMai">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>360</y>
+     <x>30</x>
+     <y>370</y>
      <width>101</width>
      <height>16</height>
     </rect>
@@ -94,8 +406,8 @@
   <widget class="QLineEdit" name="LE_KhungTong">
    <property name="geometry">
     <rect>
-     <x>400</x>
-     <y>440</y>
+     <x>430</x>
+     <y>450</y>
      <width>151</width>
      <height>20</height>
     </rect>
@@ -104,128 +416,24 @@
     <string>123.500</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="LE_KhungTenSanPham">
+  <widget class="QLabel" name="LA_VND_2">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>280</y>
-     <width>151</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>BÀN PHÍM</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="LA_TenSanPham">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>280</y>
-     <width>101</width>
+     <x>590</x>
+     <y>450</y>
+     <width>31</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>TÊN SẢN PHẨM  :</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="LA_MaDonHang">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>90</y>
-     <width>101</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>MÃ ĐƠN HÀNG      :</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="LA_Tong">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>440</y>
-     <width>101</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>TỔNG                    :</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="LA_GiaTien">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>320</y>
-     <width>101</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>GIÁ TIỀN           :</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="LA_MaSanPham">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>280</y>
-     <width>101</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>MÃ SẢN PHẨM       :</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="LE_KhungMaSanPham">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>280</y>
-     <width>151</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>TBĐTA100M</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="LA_SoLuong">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>320</y>
-     <width>91</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>SỐ LƯỢNG            : </string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="PB_ChinhSua">
-   <property name="geometry">
-    <rect>
-     <x>480</x>
-     <y>490</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>CHỈNH SỬA</string>
+    <string>(VNĐ)</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="LE_KhungThanhToan">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>440</y>
+     <x>120</x>
+     <y>450</y>
      <width>151</width>
      <height>20</height>
     </rect>
@@ -234,238 +442,30 @@
     <string>THẺ</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="LE_KhungKhuyenMai">
+  <widget class="QLabel" name="LA_MaSanPham">
    <property name="geometry">
     <rect>
-     <x>90</x>
-     <y>360</y>
-     <width>151</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>5%</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="LA_PhiVanChuyen">
-   <property name="geometry">
-    <rect>
-     <x>300</x>
-     <y>360</y>
+     <x>330</x>
+     <y>290</y>
      <width>101</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>PHÍ VẬN CHUYỂN  :</string>
+    <string>MÃ SẢN PHẨM       :</string>
    </property>
   </widget>
-  <widget class="QLabel" name="LA_NgayNhan">
+  <widget class="QLabel" name="LA_MaDonHang">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>400</y>
+     <x>30</x>
+     <y>100</y>
      <width>101</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>NGÀY NHẬN          :</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="LE_KhungPhiVanChuyen">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>360</y>
-     <width>151</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>15.000</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="LA_VND">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>360</y>
-     <width>31</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>(VNĐ)</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="PBHuyDon">
-   <property name="geometry">
-    <rect>
-     <x>370</x>
-     <y>490</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>HỦY ĐƠN</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="LE_KhungMaDonHang">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>90</y>
-     <width>151</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>TBĐTA100M-101</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="PB_Dong">
-   <property name="geometry">
-    <rect>
-     <x>260</x>
-     <y>490</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>ĐÓNG</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="LE_KhungSoLuong">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>320</y>
-     <width>151</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>2</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="LADiaChi">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>130</y>
-     <width>101</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>ĐỊA CHỈ                :</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="LA_ThanhToan">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>440</y>
-     <width>101</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>THANH TOÁN     :</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="LA_SDT">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>170</y>
-     <width>101</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>SĐT                       :</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="LE_KhungNgayDat">
-   <property name="geometry">
-    <rect>
-     <x>90</x>
-     <y>400</y>
-     <width>151</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>27/04/2020</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="LE_KhungTenKhachHang">
-   <property name="geometry">
-    <rect>
-     <x>100</x>
-     <y>50</y>
-     <width>151</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>NGUYỄN THỊ VĂN</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="LE_KhungNgayNhan">
-   <property name="geometry">
-    <rect>
-     <x>400</x>
-     <y>400</y>
-     <width>151</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>21/09/2020</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="LA_VND_2">
-   <property name="geometry">
-    <rect>
-     <x>560</x>
-     <y>440</y>
-     <width>31</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>(VNĐ)</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="LA_ThongTinSanPham">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>240</y>
-     <width>131</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>THÔNG TIN SẢN PHẨM</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="LA_TenKhachHang">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>40</y>
-     <width>101</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>TÊN KHÁCH HÀNG :</string>
+    <string>MÃ ĐƠN HÀNG      :</string>
    </property>
   </widget>
  </widget>

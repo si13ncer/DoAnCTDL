@@ -4,19 +4,19 @@
 #include <QDialog>
 
 namespace Ui {
-class ThongTinKiemTraSanPhamDonHang_1;
+class thongtinkiemtrasanphamdonhang_1;
 }
 
-class ThongTinKiemTraSanPhamDonHang_1 : public QDialog
+class thongtinkiemtrasanphamdonhang_1 : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit ThongTinKiemTraSanPhamDonHang_1(QWidget *parent = nullptr);
-    ~ThongTinKiemTraSanPhamDonHang_1();
+    explicit thongtinkiemtrasanphamdonhang_1(QWidget *parent = nullptr);
+    ~thongtinkiemtrasanphamdonhang_1();
 
 private:
-    Ui::ThongTinKiemTraSanPhamDonHang_1 *ui;
+    Ui::thongtinkiemtrasanphamdonhang_1 *ui;
 };
 
 #endif // THONGTINKIEMTRASANPHAMDONHANG_1_H
