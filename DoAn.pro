@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ThongTinKiemTraSanPhamDonHang_2.cpp \
     adduser.cpp \
     changepw.cpp \
     kiemtradonhang.cpp \
@@ -24,11 +25,10 @@ SOURCES += \
     mainwindow.cpp \
     quanlyuser.cpp \
     taodonhang.cpp \
-    thaydoiquyen.cpp \
-    thongtinkiemtrasanphamdonhang.cpp \
-    thongtinkiemtrasanphamdonhang_1.cpp
+    thaydoiquyen.cpp
 
 HEADERS += \
+    ThongTinKiemTraSanPhamDonHang_2.h \
     adduser.h \
     changepw.h \
     kiemtradonhang.h \
@@ -36,22 +36,19 @@ HEADERS += \
     mainwindow.h \
     quanlyuser.h \
     taodonhang.h \
-    thaydoiquyen.h \
-    thongtinkiemtrasanphamdonhang.h \
-    thongtinkiemtrasanphamdonhang_1.h
+    thaydoiquyen.h
 
 FORMS += \
     KiemTraDonHang.ui \
     ThongTinKiemTraSanPhamDonHang.ui \
+    ThongTinKiemTraSanPhamDonHang_2.ui \
     adduser.ui \
     changepw.ui \
     login.ui \
     mainwindow.ui \
     quanlyuser.ui \
     taodonhang.ui \
-    thaydoiquyen.ui \
-    thongtinkiemtrasanphamdonhang.ui \
-    thongtinkiemtrasanphamdonhang_1.ui
+    thaydoiquyen.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
