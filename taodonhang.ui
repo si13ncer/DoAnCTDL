@@ -87,9 +87,6 @@
     <item row="5" column="6" colspan="2">
      <widget class="QLineEdit" name="LEditTenhang"/>
     </item>
-    <item row="7" column="1">
-     <widget class="QSpinBox" name="spBKM"/>
-    </item>
     <item row="6" column="5">
      <widget class="QLabel" name="lblSL">
       <property name="text">
@@ -186,13 +183,6 @@
         <string>Viettel Post</string>
        </property>
       </item>
-     </widget>
-    </item>
-    <item row="7" column="2">
-     <widget class="QLabel" name="label_12">
-      <property name="text">
-       <string>%</string>
-      </property>
      </widget>
     </item>
     <item row="9" column="4">
@@ -448,6 +438,9 @@
        <enum>QFrame::Raised</enum>
       </property>
      </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QComboBox" name="comboBox"/>
     </item>
    </layout>
   </widget>
