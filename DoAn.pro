@@ -19,9 +19,12 @@ SOURCES += \
     adduser.cpp \
     changepw.cpp \
     dsdon.cpp \
+    khohang.cpp \
+    kiemtrathongtin.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
+    nhapkho.cpp \
     quanlyuser.cpp \
     taodonhang.cpp \
     thaydoiquyen.cpp \
@@ -31,8 +34,11 @@ HEADERS += \
     adduser.h \
     changepw.h \
     dsdon.h \
+    khohang.h \
+    kiemtrathongtin.h \
     login.h \
     mainwindow.h \
+    nhapkho.h \
     quanlyuser.h \
     taodonhang.h \
     thaydoiquyen.h \
@@ -42,8 +48,11 @@ FORMS += \
     adduser.ui \
     changepw.ui \
     dsdon.ui \
+    khohang.ui \
+    kiemtrathongtin.ui \
     login.ui \
     mainwindow.ui \
+    nhapkho.ui \
     quanlyuser.ui \
     taodonhang.ui \
     thaydoiquyen.ui \
@@ -53,3 +62,9 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    Data/background/background.png
+
+RESOURCES += \
+    res.qrc

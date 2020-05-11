@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>776</width>
+    <width>1192</width>
     <height>365</height>
    </rect>
   </property>
@@ -24,19 +24,6 @@
    </property>
    <property name="text">
     <string>HỦY</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="LA_GhiChu">
-   <property name="geometry">
-    <rect>
-     <x>980</x>
-     <y>20</y>
-     <width>101</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>GHI CHÚ          </string>
    </property>
   </widget>
   <widget class="QLabel" name="LA_STT">

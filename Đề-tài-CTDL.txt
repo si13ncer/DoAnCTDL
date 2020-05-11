@@ -8,9 +8,9 @@ Phân tích tính năng:
 			*Tên
 			*Địa chỉ
 			*SĐT
+		+Mã hàng
 		+Tên hàng
 		+Loại hàng
-		+Mã hàng
 		+Số lượng
 		+Khuyến mãi
 		+Thành tiền (Giá*SL-KM+Ship)
@@ -43,21 +43,15 @@ Phân tích tính năng:
 		+Tên hàng
 		+Mã hàng
 		+Giá nhập kho
-		+Số lượng nhập, đơn vị tính (cái, chai, .....)
 		+Ngày nhập
-	#Xuất kho
-		+Phân loại hàng
+	#Quản lí kho hàng
 		+Tên hàng
 		+Mã hàng
+		+Phân loại hàng
 		+Giá nhập kho
 		+Số lượng
-		+Ngày xuất (Ngày tạo đơn)
-	#Số lượng còn lại
-		+Thông báo khi sắp hết hàng
-	#Hàng tồn kho
-		+Thông báo khi sắp hết hạn
-
-}================== Huỳnh Tiến Vĩ =======================
+		
+	}================== Huỳnh Tiến Vĩ =======================
 {-Quản lý voucher khuyến mãi
 	#Tạo voucher
 		+Mã voucher

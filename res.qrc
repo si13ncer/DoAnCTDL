@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/res">
+        <file>res/background.png</file>
+        <file>res/icon/adduser.png</file>
+        <file>res/icon/baocao.png</file>
+        <file>res/icon/quanlyuser.png</file>
+        <file>res/icon/taodonhang.ico</file>
+    </qresource>
+</RCC>

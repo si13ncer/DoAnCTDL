@@ -6,6 +6,12 @@
 #include "thaydoiquyen.h"
 #include "taodonhang.h"
 #include <QApplication>
+#include "dsdon.h"
+#include "thongtindon.h"
+#include "kiemtrathongtin.h"
+#include "khohang.h"
+#include "nhapkho.h"
+
 
 int main(int argc, char *argv[])
 {
@@ -15,6 +21,17 @@ int main(int argc, char *argv[])
     quanlyuser q;
     adduser ad;
     taodonhang tdh;
+
+    dsdon ds;
+    thongtindon tt;
+    kiemtrathongtin kt;
+    khohang kho;
+    nhapkho nhap;
+    //kho.show();
+    //nhap.show();
+    //ds.show();
+    //tt.show();
+    //kt.show();
     //tdh.show();
     //ad.show();
     l.show();
