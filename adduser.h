@@ -2,6 +2,8 @@
 #define ADDUSER_H
 
 #include <QMainWindow>
+#include "QCloseEvent"
+
 
 namespace Ui {
 class adduser;
@@ -15,6 +17,10 @@ public:
     explicit adduser(QWidget *parent = nullptr);
     ~adduser();
 
+private slots:
+    void on_btnHuy_pressed();
+//protected:
+//    void closeEvent(QCloseEvent *event);
 private:
     Ui::adduser *ui;
 };

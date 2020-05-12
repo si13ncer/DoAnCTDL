@@ -52,7 +52,7 @@
     <string>Chỉ xem</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnSav">
+  <widget class="QPushButton" name="btnLuu">
    <property name="geometry">
     <rect>
      <x>190</x>
@@ -65,7 +65,7 @@
     <string>Lưu</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="btnCan">
+  <widget class="QPushButton" name="btnHuy">
    <property name="geometry">
     <rect>
      <x>280</x>

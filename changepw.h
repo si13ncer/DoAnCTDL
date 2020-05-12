@@ -2,6 +2,7 @@
 #define CHANGEPW_H
 
 #include <QMainWindow>
+#include "QCloseEvent"
 
 namespace Ui {
 class changepw;
@@ -15,6 +16,10 @@ public:
     explicit changepw(QWidget *parent = nullptr);
     ~changepw();
 
+private slots:
+    void on_btnHuy_pressed();
+//protected:
+//    void closeEvent(QCloseEvent *event);
 private:
     Ui::changepw *ui;
 };

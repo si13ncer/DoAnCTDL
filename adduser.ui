@@ -105,7 +105,7 @@
      <string>Xem và sửa</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnCan">
+   <widget class="QPushButton" name="btnHuy">
     <property name="geometry">
      <rect>
       <x>271</x>
@@ -144,7 +144,7 @@
      <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnSav">
+   <widget class="QPushButton" name="btnLuu">
     <property name="geometry">
      <rect>
       <x>190</x>

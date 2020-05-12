@@ -2,6 +2,7 @@
 #define TAODONHANG_H
 
 #include <QMainWindow>
+#include "QCloseEvent"
 
 namespace Ui {
 class taodonhang;
@@ -16,6 +17,11 @@ public:
     ~taodonhang();
 
 
+private slots:
+    void on_btnHuy_pressed();
+
+//protected:
+//   void closeEvent(QCloseEvent *event);
 private:
     Ui::taodonhang *ui;
 };

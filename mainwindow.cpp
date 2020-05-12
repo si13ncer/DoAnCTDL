@@ -37,7 +37,7 @@ void MainWindow::on_actTaouser_triggered()
 void MainWindow::on_actQliUser_triggered()
 {
     qlusr = new quanlyuser(this);
-    qlusr->show();
+    qlusr->exec();
 }
 
 void MainWindow::on_actNhapkho_triggered()

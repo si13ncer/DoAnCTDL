@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="btnSav">
+   <widget class="QPushButton" name="btnLuu">
     <property name="geometry">
      <rect>
       <x>160</x>
@@ -27,7 +27,7 @@
      <string>Lưu</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="btnCan">
+   <widget class="QPushButton" name="btnHuy">
     <property name="geometry">
      <rect>
       <x>250</x>

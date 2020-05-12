@@ -2,6 +2,7 @@
 #define THAYDOIQUYEN_H
 
 #include <QDialog>
+#include "QCloseEvent"
 
 namespace Ui {
 class thaydoiquyen;
@@ -15,6 +16,10 @@ public:
     explicit thaydoiquyen(QWidget *parent = nullptr);
     ~thaydoiquyen();
 
+private slots:
+    void on_btnHuy_pressed();
+//protected:
+//    void closeEvent(QCloseEvent *event);
 private:
     Ui::thaydoiquyen *ui;
 };

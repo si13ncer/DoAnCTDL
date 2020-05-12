@@ -19,9 +19,11 @@ public:
 
 private slots:
 
-    void on_btnCPW_clicked();
+    void on_btnCPW_pressed();
 
-    void on_btnCapquyen_clicked();
+    void on_btnCapquyen_pressed();
+
+    void on_btnDeluser_pressed();
 
 private:
     Ui::quanlyuser *ui;
