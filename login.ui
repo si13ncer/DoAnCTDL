@@ -52,6 +52,9 @@
     <property name="text">
      <string/>
     </property>
+    <property name="maxLength">
+     <number>15</number>
+    </property>
     <property name="echoMode">
      <enum>QLineEdit::Password</enum>
     </property>
@@ -80,6 +83,9 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="maxLength">
+     <number>15</number>
     </property>
    </widget>
    <widget class="QLabel" name="label">

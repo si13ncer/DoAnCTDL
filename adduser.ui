@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QRadioButton" name="btnAdm">
+   <widget class="QRadioButton" name="btnAD">
     <property name="geometry">
      <rect>
       <x>68</x>
@@ -38,6 +38,9 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="maxLength">
+     <number>15</number>
     </property>
    </widget>
    <widget class="QLabel" name="lblNUser">
@@ -142,6 +145,9 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="maxLength">
+     <number>15</number>
     </property>
    </widget>
    <widget class="QPushButton" name="btnLuu">

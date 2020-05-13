@@ -1,29 +1,18 @@
-#include "login.h"
-#include "ui_login.h"
-#include "QString"
 #include "mainwindow.h"
+#include "login.h"
+#include "adduser.h"
+#include "changepw.h"
+#include "quanlyuser.h"
+#include "thaydoiquyen.h"
+#include "taodonhang.h"
+#include <QApplication>
+#include "dsdon.h"
+#include "thongtindon.h"
+#include "kiemtrathongtin.h"
+#include "khohang.h"
+#include "nhapkho.h"
 
-#include<iostream>
-using namespace std;
-#include<string>
-#include<fstream>
-
-login::login(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::login)
-{
-    ui->setupUi(this);
-    QString title="Đăng nhập";
-    this->setWindowTitle(title);
-}
-
-login::~login()
-{
-    delete ui;
-}
-bool accept= false; // quyền truy cập
-
-/*struct user
+struct user
 {
     string id;
     string pw;
@@ -95,32 +84,23 @@ struct list
          filein.open("E:/Source Code/DoAn/DoAnCTDL/data/user.txt", ios::in);
      accdata(filein, l);//tạo dslk từ file
  }
-*/
 
-
-void login::on_btnLog_clicked()
+int main(int argc, char *argv[])
 {
-    QString id = ui->leditID->text();
-    QString pw = ui->leditPW->text();
-    //kiểm tra đầu vào id pw
-    for (int i =0;i<id.size();i++)
-    {
-        if (!id[i].isDigit() && !id[i].isLetter())
-       {
-            ui->statusbar->showMessage("Username không hợp lệ! Chỉ được dùng chữ và số.");
-        }
-    }
-    for (int i =0;i<pw.size();i++)
-    {
-        if (!pw[i].isDigit() && !pw[i].isLetter())
-       {
-            ui->statusbar->showMessage("Password không hợp lệ! Chỉ được dùng chữ và số.");
-        }
-    }
-    if (accept==true)
-    {
-        hide();
-        mainwindow = new MainWindow(this);
-        mainwindow->show();
-    }
+    QApplication a(argc, argv);
+    MainWindow w;
+    login l;
+    /*quanlyuser q;
+    adduser ad;
+    taodonhang tdh;
+
+    dsdon ds;
+    thongtindon tt;
+    kiemtrathongtin kt;
+    khohang kho;
+    nhapkho nhap;
+    */
+    l.show();
+    return a.exec();
+
 }
