@@ -18,10 +18,16 @@ public:
     ~adduser();
 
 private slots:
-    void on_btnHuy_pressed();
+    void on_btnShow_pressed();
+
+    void on_btnShow_released();
+
+    void on_btnHuy_clicked();
 //protected:
 //    void closeEvent(QCloseEvent *event);
     void on_btnLuu_clicked();
+
+
 
 private:
     Ui::adduser *ui;

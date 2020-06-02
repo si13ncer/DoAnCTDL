@@ -6,7 +6,9 @@
 #include "quanlyuser.h"
 #include "nhapkho.h"
 #include "khohang.h"
-
+#include "QMessageBox"
+#include "dslkUser.h"
+#include "QToolBar"
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -14,13 +16,18 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     QString title="Phần mềm quản lí bán hàng Lazada";
     this->setWindowTitle(title);
+    if (per!="ad")
+    {
+        ui->actQliUser->setDisabled(true);
+        ui->actTaouser->setDisabled(true);
+    }
+    ui->statusBar->showMessage("Xin chào " + QString::fromStdString(usingid)+"!",5000);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
 
 void MainWindow::on_actTaodon_triggered()
 {
@@ -30,14 +37,14 @@ void MainWindow::on_actTaodon_triggered()
 
 void MainWindow::on_actTaouser_triggered()
 {
-    ausr = new adduser(this);
-    ausr->show();
+        ausr = new adduser(this);
+        ausr->show();
 }
 
 void MainWindow::on_actQliUser_triggered()
 {
     qlusr = new quanlyuser(this);
-    qlusr->exec();
+    qlusr->show();
 }
 
 void MainWindow::on_actNhapkho_triggered()

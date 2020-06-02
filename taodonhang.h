@@ -18,10 +18,14 @@ public:
 
 
 private slots:
-    void on_btnHuy_pressed();
-
 //protected:
 //   void closeEvent(QCloseEvent *event);
+    void on_btnHuy_clicked();
+
+    void on_btnLuu_clicked();
+
+    void on_cbxLoai_currentIndexChanged(const QString &arg1);
+
 private:
     Ui::taodonhang *ui;
 };

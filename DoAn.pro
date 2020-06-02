@@ -19,6 +19,7 @@ SOURCES += \
     adduser.cpp \
     changepw.cpp \
     dsdon.cpp \
+    dslkUser.cpp \
     khohang.cpp \
     kiemtrathongtin.cpp \
     login.cpp \
@@ -28,12 +29,14 @@ SOURCES += \
     quanlyuser.cpp \
     taodonhang.cpp \
     thaydoiquyen.cpp \
-    thongtindon.cpp
+    thongtindon.cpp \
+    thongtinkhach.cpp
 
 HEADERS += \
     adduser.h \
     changepw.h \
     dsdon.h \
+    dslkUser.h \
     khohang.h \
     kiemtrathongtin.h \
     login.h \
@@ -42,7 +45,8 @@ HEADERS += \
     quanlyuser.h \
     taodonhang.h \
     thaydoiquyen.h \
-    thongtindon.h
+    thongtindon.h \
+    thongtinkhach.h
 
 FORMS += \
     adduser.ui \

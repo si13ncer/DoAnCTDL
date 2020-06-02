@@ -8,33 +8,29 @@
 #include <QApplication>
 #include "dsdon.h"
 #include "thongtindon.h"
-#include "kiemtrathongtin.h"
-#include "khohang.h"
-#include "nhapkho.h"
+#include "fstream"
+#include "dslkUser.h"
+#include "thongtinkhach.h"
 
 
+    ::list lur;
+    ::listk lkh;
+    std::string per;
+    std::string chosenone;
+    std::string usingid;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    login l;
-    quanlyuser q;
-    adduser ad;
-    taodonhang tdh;
-
-    dsdon ds;
-    thongtindon tt;
-    kiemtrathongtin kt;
-    khohang kho;
-    nhapkho nhap;
-    //kho.show();
-    //nhap.show();
-    //ds.show();
-    //tt.show();
-    //kt.show();
-    //tdh.show();
-    //ad.show();
-    l.show();
+    login log;
+    init(lur);//khởi tạo dslk
+    std::ifstream ufilein;
+    ufilein.open("E:/Source Code/DoAn/DoAnCTDL/data/user.txt", std::ios::in);
+    readlist(ufilein, lur);//đọc file và thêm vào lur
+    lkinit(lkh);
+    ifstream kfilein;
+    kfilein.open("E:/Source Code/DoAn/DoAnCTDL/data/thongtinkhach.txt", ios::in);
+    readlk(kfilein, lkh);// đọc và thêm vào dslk
+    log.show();
     return a.exec();
-
 }

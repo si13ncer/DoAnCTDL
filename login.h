@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "mainwindow.h"
+
 namespace Ui {
 class login;
 }
@@ -22,5 +23,6 @@ private:
     Ui::login *ui;
     MainWindow *mainwindow;
 };
+
 
 #endif // LOGIN_H

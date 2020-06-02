@@ -17,9 +17,18 @@ public:
     ~changepw();
 
 private slots:
+
+    void on_btnShow_pressed();
+
+    void on_btnShow_released();
+
     void on_btnHuy_pressed();
-//protected:
-//    void closeEvent(QCloseEvent *event);
+
+    void on_btnLuu_clicked();
+
+    //protected:
+    //    void closeEvent(QCloseEvent *event);
+
 private:
     Ui::changepw *ui;
 };

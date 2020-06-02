@@ -88,6 +88,15 @@
    <property name="windowTitle">
     <string>toolBar</string>
    </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
+   </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
@@ -99,6 +108,7 @@
    <addaction name="actTaouser"/>
    <addaction name="actQliUser"/>
   </widget>
+  <widget class="QStatusBar" name="statusBar"/>
   <action name="actTaodon">
    <property name="icon">
     <iconset resource="res.qrc">
@@ -106,6 +116,12 @@
    </property>
    <property name="text">
     <string>Tạo đơn</string>
+   </property>
+   <property name="visible">
+    <bool>true</bool>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
    </property>
   </action>
   <action name="actTrangthai">
@@ -115,7 +131,7 @@
   </action>
   <action name="actNhapkho">
    <property name="text">
-    <string>Nhập kho</string>
+    <string>Nhập sản phẩm</string>
    </property>
   </action>
   <action name="actXuatkho">
@@ -125,7 +141,7 @@
   </action>
   <action name="actKhohang">
    <property name="text">
-    <string>Kho hàng</string>
+    <string>Danh mục hàng</string>
    </property>
   </action>
   <action name="actTonkho">

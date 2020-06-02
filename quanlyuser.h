@@ -1,3 +1,4 @@
+//#endif // QUANLYUSER_H
 #ifndef QUANLYUSER_H
 #define QUANLYUSER_H
 
@@ -22,6 +23,8 @@ private slots:
     void on_btnCPW_pressed();
 
     void on_btnCapquyen_pressed();
+
+    void on_cBxUser_currentIndexChanged(const QString &arg1);
 
     void on_btnDeluser_pressed();
 

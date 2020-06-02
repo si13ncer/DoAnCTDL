@@ -6,104 +6,132 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>343</width>
-    <height>195</height>
+    <width>451</width>
+    <height>235</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>451</width>
+    <height>235</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="btnLog">
-    <property name="geometry">
-     <rect>
-      <x>148</x>
-      <y>133</y>
-      <width>75</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Đăng nhập</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lblPW">
-    <property name="geometry">
-     <rect>
-      <x>37</x>
-      <y>92</y>
-      <width>74</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Mật khẩu          </string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="leditPW">
-    <property name="geometry">
-     <rect>
-      <x>117</x>
-      <y>92</y>
-      <width>171</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="maxLength">
-     <number>15</number>
-    </property>
-    <property name="echoMode">
-     <enum>QLineEdit::Password</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lblID">
-    <property name="geometry">
-     <rect>
-      <x>37</x>
-      <y>64</y>
-      <width>75</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Tên người dùng</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="leditID">
-    <property name="geometry">
-     <rect>
-      <x>118</x>
-      <y>64</y>
-      <width>171</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="maxLength">
-     <number>15</number>
-    </property>
-   </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>20</y>
-      <width>174</width>
-      <height>16</height>
+      <x>40</x>
+      <y>40</y>
+      <width>131</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="text">
-     <string> TRƯỚC TIÊN, XIN MỜI ĐĂNG NHẬP</string>
+     <string/>
     </property>
+    <property name="pixmap">
+     <pixmap resource="res.qrc">:/res/res/icon/login (2).png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>50</y>
+      <width>231</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>ĐĂNG NHẬP</string>
+    </property>
+    <widget class="QPushButton" name="btnLog">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>90</y>
+       <width>80</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Đăng nhập</string>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/res/res/icon/login.png</normaloff>:/res/res/icon/login.png</iconset>
+     </property>
+    </widget>
+    <widget class="QSplitter" name="splitter">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>208</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QLabel" name="lblID">
+      <property name="text">
+       <string>Tên người dùng</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leditID">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>15</number>
+      </property>
+      <property name="clearButtonEnabled">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QSplitter" name="splitter_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>62</y>
+       <width>207</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QLabel" name="lblPW">
+      <property name="text">
+       <string>Mật khẩu          </string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="leditPW">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="maxLength">
+       <number>15</number>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>

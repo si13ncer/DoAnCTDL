@@ -20,6 +20,8 @@ private slots:
     void on_btnHuy_pressed();
 //protected:
 //    void closeEvent(QCloseEvent *event);
+    void on_btnLuu_clicked();
+
 private:
     Ui::thaydoiquyen *ui;
 };

@@ -1,3 +1,2 @@
-admin,admin,0
-manager,manager,1
-staff,staff,0
+ad,asd,ad
+hoang,hh,kh
