@@ -20,7 +20,7 @@ Phân tích tính năng:
 			*Ship COD
 		+Giao hàng: Lựa chọn đơn vị giao hàng có chi phí tối ưu nhất
 		+Ngày tạo đơn
-		+Dự kiến ngày giao hàng
+		
 	#Xem trạng thái đơn + huỷ đơn hàng:
 		+Thông tin khách hàng:
 			*Tên
@@ -31,9 +31,7 @@ Phân tích tính năng:
 		+Mã hàng
 		+Số lượng
 		+Thành tiền 
-		+Vận chuyển:(Dữ liệu lấy từ công ty giao)
-			*Kiểm tra trạng thái vận chuyển: Đóng gói, đang chuyển hàng, đã nhận, lỗi-gửi trả
-				(Doanh thu dựa vào đơn đã nhận)  
+		+Vận chuyển:*Kiểm tra trạng thái vận chuyển: Đóng gói, đang chuyển hàng, đã nhận, lỗi-gửi trả		(Doanh thu dựa vào đơn đã nhận)  
 			*Huỷ đơn hàng
 }=======================  Hồ Đức Hoàng và Dương Hữu Phúc Khang ============================	
 

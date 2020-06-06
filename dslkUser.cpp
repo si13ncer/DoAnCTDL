@@ -12,7 +12,7 @@ node* nodeinit(user u)// khởi tạo node
     node* p = new node;// cấp phát vùng nhớ cho node p
     if (p == NULL)
     {
-        cout << "Không đủ bộ nhớ để cấp phát";
+        return 0;
     }
     p->data = u;
     p->next = NULL; // node đầu chưa có liên kết đến node nào -> null
@@ -44,21 +44,10 @@ void delTail(list &l)
 {
     if (l.head->next == NULL)
     {
-        delHead(l);
         return;
     }
-    node *k = l.head;
-    while (k)
-    {
-        if (k->next == l.tail)// tìm phần tử gần cuối
-        {
-            delete l.tail;
-            k->next = NULL; // cho con trỏ của node gần cuối trỏ đến vùng nhớ null
-            l.tail = k; // cập nhật lại l.tail
-            return;
-        }
-        k = k->next;
-    }
+    l.tail = l.tail->prev;
+    l.tail->next = NULL;
 }
 void delSlt(list &l, string s)
 {
@@ -118,7 +107,7 @@ void ghinodeuser(ofstream& fileout, user ur) //ghi node vào file
 void ghilistuser(list l) //ghi toàn bộ list
 {
     ofstream fileout;
-    fileout.open("E:/Source Code/DoAn/DoAnCTDL/data/user.txt", ios::out);
+    fileout.open("data/user.txt", ios::out);
     for (node* k = l.head; k != NULL; k = k->next)
     {
         ghinodeuser(fileout, k->data);

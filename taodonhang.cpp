@@ -25,21 +25,12 @@ taodonhang::taodonhang(QWidget *parent) :
            ui->leditPhone->setText(QString::fromStdString(n->data.phone));
            break;
         }
+
         n = n->next;
     }
-    ui->cbxDanhmuc->clear();
-    ui->cbxDanhmuc->addItem("Điện thoại di động");
-    ui->cbxDanhmuc->addItem("Máy tính bảng");
-    ui->cbxDanhmuc->addItem("Laptop");
-    ui->cbxDanhmuc->addItem("Máy tính để bàn");
-    ui->cbxDanhmuc->addItem("Âm thanh");
-    ui->cbxDanhmuc->addItem("Camera giám sát");
-    ui->cbxDanhmuc->addItem("Máy ảnh kỹ thuật số");
-    ui->cbxDanhmuc->addItem("Máy quay phim và máy quay hành động");
-    ui->cbxDanhmuc->addItem("Màn hình vi tính");
-    ui->cbxDanhmuc->addItem("Máy in");
-    ui->cbxDanhmuc->addItem("Đồng hồ thông minh");
-    ui->cbxDanhmuc->addItem("Máy chơi game");
+    ui->tblGiohang->setItemDelegateForColumn(3, new SpinBoxTable);
+    ui->lblTongtien->setStyleSheet("color: green;");
+    ui->lblTongtien->setNum(0);
 }
 
 taodonhang::~taodonhang()
@@ -56,7 +47,7 @@ taodonhang::~taodonhang()
 }*/
 void taodonhang::on_btnLuu_clicked()
 {
-    QString id=ui->lblID->text();
+//    QString id=ui->lblID->text();
     QString name=ui->leditName->text();
     if (name.length()<=0)
         {
@@ -94,14 +85,14 @@ void taodonhang::on_btnLuu_clicked()
     QString ttoan=ui->cbxThanhtoan->currentText();
     QString ship=ui->cbxGiao->currentText();
 //    QString ntaoq = ntao.toString("dd/MM/yyyy");//convert QDate to QString
-    std::string ids=id.toStdString();
+//    std::string ids=id.toStdString();
     std::string names = name.toStdString();
     std::string addrs = addr.toStdString();
     std::string phones = phone.toStdString();
     std::string ttoans = ttoan.toStdString();
     std::string ships = ship.toStdString();
 //    std::string ntaos=ntaoq.toStdString();
-    if (avaiableK(lkh,ids)==false)// nếu chưa có - thêm vào đuôi; nếu đã có - cập nhật
+    if (avaiableK(lkh,usingid)==false)// nếu chưa có - thêm vào đuôi; nếu đã có - cập nhật
     {
         nodek* n = lkh.head;
         while (n)
@@ -152,7 +143,7 @@ void taodonhang::on_cbxLoai_currentIndexChanged(const QString &arg1)
             ui->cbxDanhmuc->addItem("Âm thanh");
             ui->cbxDanhmuc->addItem("Camera giám sát");
             ui->cbxDanhmuc->addItem("Máy ảnh kỹ thuật số");
-            ui->cbxDanhmuc->addItem("Máy quay phim và máy quay hành động");
+            ui->cbxDanhmuc->addItem("Máy quay phim");
             ui->cbxDanhmuc->addItem("Màn hình vi tính");
             ui->cbxDanhmuc->addItem("Máy in");
             ui->cbxDanhmuc->addItem("Đồng hồ thông minh");
@@ -214,7 +205,7 @@ void taodonhang::on_cbxLoai_currentIndexChanged(const QString &arg1)
             ui->cbxDanhmuc->addItem("Đồ dùng phỏng ngủ");
             ui->cbxDanhmuc->addItem("Tắm gội & chăm sóc cơ thể");
             ui->cbxDanhmuc->addItem("Đồ chơi cho bé");
-            ui->cbxDanhmuc->addItem("Đồ chơi điện tử và điều khiển từ xa");
+            ui->cbxDanhmuc->addItem("Đồ chơi điện tử & điều khiển từ xa");
             ui->cbxDanhmuc->addItem("Đồ chơi thể thao & ngoài trời");
             ui->cbxDanhmuc->addItem("Đồ chơi cho bé chập chững");
             ui->cbxDanhmuc->addItem("Đồ chơi giáo dục");
@@ -234,7 +225,7 @@ void taodonhang::on_cbxLoai_currentIndexChanged(const QString &arg1)
             ui->cbxDanhmuc->addItem("Lau chùi vệ sinh nhà bếp");
             ui->cbxDanhmuc->addItem("Đồ dùng giặt giũ");
             ui->cbxDanhmuc->addItem("Phụ kiện thú cưng");
-            ui->cbxDanhmuc->addItem("Thức ăn và chăm sóc thú cưng");
+            ui->cbxDanhmuc->addItem("Thức ăn & chăm sóc thú cưng");
             break;
         }
     case 6:
@@ -249,7 +240,7 @@ void taodonhang::on_cbxLoai_currentIndexChanged(const QString &arg1)
             ui->cbxDanhmuc->addItem("Đèn & thiết bị đèn");
             ui->cbxDanhmuc->addItem("Trang trí nhà cửa");
             ui->cbxDanhmuc->addItem("Đồ nội thất");
-            ui->cbxDanhmuc->addItem("Văn phòng phẩm và thủ công");
+            ui->cbxDanhmuc->addItem("Văn phòng phẩm & thủ công");
             ui->cbxDanhmuc->addItem("Sách & nhạc cụ");
             ui->cbxDanhmuc->addItem("Thiết bị giặt & làm sạch");
             break;
@@ -259,11 +250,11 @@ void taodonhang::on_cbxLoai_currentIndexChanged(const QString &arg1)
 
             ui->cbxDanhmuc->clear();
             ui->cbxDanhmuc->addItem("Đầm nữ");
-            ui->cbxDanhmuc->addItem("Quần và chân váy");
+            ui->cbxDanhmuc->addItem("Quần & chân váy");
             ui->cbxDanhmuc->addItem("Áo nữ");
             ui->cbxDanhmuc->addItem("Jumpsuits");
-            ui->cbxDanhmuc->addItem("Đồ đôi và gia đình");
-            ui->cbxDanhmuc->addItem("Đồ ngủ và nội y");
+            ui->cbxDanhmuc->addItem("Đồ đôi & gia đình");
+            ui->cbxDanhmuc->addItem("Đồ ngủ & nội y");
             ui->cbxDanhmuc->addItem("Phụ kiện nữ");
             ui->cbxDanhmuc->addItem("Giày nữ");
             ui->cbxDanhmuc->addItem("Trang phục bé gái");
@@ -314,7 +305,7 @@ void taodonhang::on_cbxLoai_currentIndexChanged(const QString &arg1)
             ui->cbxDanhmuc->addItem("Thể thao và thể hình");
             ui->cbxDanhmuc->addItem("Thể thao dùng vợt");
             ui->cbxDanhmuc->addItem("Thể thao đồng đội");
-            ui->cbxDanhmuc->addItem("Đấm bốc và võ thuật");
+            ui->cbxDanhmuc->addItem("Đấm bốc & võ thuật");
             ui->cbxDanhmuc->addItem("Thể thao dưới nước");
             ui->cbxDanhmuc->addItem("Phụ kiện thể thao");
             break;
@@ -337,4 +328,29 @@ void taodonhang::on_cbxLoai_currentIndexChanged(const QString &arg1)
             break;
         }
     }
+}
+
+void taodonhang::on_btnThemvaogio_clicked()
+{
+    ui->tblGiohang->insertRow(ui->tblGiohang->rowCount());//thêm dòng vào cuối bảng
+}
+
+void taodonhang::on_tblGiohang_itemChanged(QTableWidgetItem *item)
+{
+    Q_UNUSED(item)
+    int Tongtien=0;
+    for (int i=0;i< ui->tblGiohang->rowCount();i++)
+    {
+            QTableWidgetItem *item =  ui->tblGiohang->item(i,4);
+            if ( ! item )  continue;
+            int value = item->text().toInt(); // get value
+            Tongtien+=value;
+    }
+    ui->lblTongtien->setNum(Tongtien);
+}
+
+void taodonhang::on_btnXoakhoigio_clicked()
+{
+    int row = ui->tblGiohang->currentRow();
+        ui->tblGiohang->removeRow(row);
 }

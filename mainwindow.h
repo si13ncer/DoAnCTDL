@@ -4,8 +4,9 @@
 #include "adduser.h"
 #include "quanlyuser.h"
 #include <QMainWindow>
-#include "nhapkho.h"
-#include "khohang.h"
+#include "lichsumua.h"
+#include "danhsachdon.h"
+#include "nhaphang.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,16 +27,19 @@ private slots:
 
     void on_actQliUser_triggered();
 
-    void on_actNhapkho_triggered();
+    void on_actTrangthai_triggered();
 
-    void on_actKhohang_triggered();
+    void on_actDsdon_triggered();
+
+    void on_actNhaphang_triggered();
 
 private:
     Ui::MainWindow *ui;
     taodonhang *tdh;
     adduser *ausr;
     quanlyuser *qlusr;
-    nhapkho *nk;
-    khohang *kho;
+    lichsumua *lichsu;
+    danhsachdon *dsdon;
+    nhaphang *nhap;
 };
 #endif // MAINWINDOW_H

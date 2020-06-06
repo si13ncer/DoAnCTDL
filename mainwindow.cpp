@@ -4,11 +4,10 @@
 #include "taodonhang.h"
 #include "adduser.h"
 #include "quanlyuser.h"
-#include "nhapkho.h"
-#include "khohang.h"
 #include "QMessageBox"
 #include "dslkUser.h"
 #include "QToolBar"
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -20,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
     {
         ui->actQliUser->setDisabled(true);
         ui->actTaouser->setDisabled(true);
+        ui->actDsdon->setDisabled(true);
     }
     ui->statusBar->showMessage("Xin chào " + QString::fromStdString(usingid)+"!",5000);
 }
@@ -47,14 +47,20 @@ void MainWindow::on_actQliUser_triggered()
     qlusr->show();
 }
 
-void MainWindow::on_actNhapkho_triggered()
+void MainWindow::on_actTrangthai_triggered()
 {
-    nk = new nhapkho(this);
-    nk->show();
+    lichsu=new  lichsumua(this);
+    lichsu->show();
 }
 
-void MainWindow::on_actKhohang_triggered()
+void MainWindow::on_actDsdon_triggered()
 {
-    kho = new khohang(this);
-    kho->show();
+    dsdon = new danhsachdon(this);
+    dsdon->show();
+}
+
+void MainWindow::on_actNhaphang_triggered()
+{
+    nhap =new nhaphang(this);
+    nhap->show();
 }

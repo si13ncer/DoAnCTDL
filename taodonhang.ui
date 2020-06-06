@@ -32,6 +32,10 @@
     <property name="text">
      <string>Lưu</string>
     </property>
+    <property name="icon">
+     <iconset resource="res.qrc">
+      <normaloff>:/res/res/icon/save.png</normaloff>:/res/res/icon/save.png</iconset>
+    </property>
    </widget>
    <widget class="QPushButton" name="btnHuy">
     <property name="geometry">
@@ -44,6 +48,10 @@
     </property>
     <property name="text">
      <string>Huỷ</string>
+    </property>
+    <property name="icon">
+     <iconset resource="res.qrc">
+      <normaloff>:/res/res/icon/discard.png</normaloff>:/res/res/icon/discard.png</iconset>
     </property>
    </widget>
    <widget class="QGroupBox" name="groupBox">
@@ -113,7 +121,7 @@
       <enum>QFrame::Plain</enum>
      </property>
      <property name="text">
-      <string>User ID</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLineEdit" name="leditPhone">
@@ -229,6 +237,66 @@
        <height>22</height>
       </rect>
      </property>
+     <item>
+      <property name="text">
+       <string>Điện thoại di động</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Máy tính  bảng</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Laptop</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Máy tính để bàn</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Âm thanh</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Camera giám sát</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Máy ảnh kỹ thuật số</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Máy quay phim</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Màn hình vi tính</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Máy in</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Đồng hồ thông minh</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Máy chơi game</string>
+      </property>
+     </item>
     </widget>
     <widget class="QLabel" name="label_16">
      <property name="geometry">
@@ -243,7 +311,7 @@
       <enum>QFrame::StyledPanel</enum>
      </property>
      <property name="text">
-      <string>lbl Tổng</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="lblLoai">
@@ -391,7 +459,7 @@
       <string>VND</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="btnThemvaogio">
      <property name="geometry">
       <rect>
        <x>580</x>
@@ -409,7 +477,7 @@
      </property>
      <property name="iconSize">
       <size>
-       <width>24</width>
+       <width>25</width>
        <height>25</height>
       </size>
      </property>
@@ -453,7 +521,7 @@
       <enum>QFrame::StyledPanel</enum>
      </property>
      <property name="text">
-      <string>lbl Đơn giá</string>
+      <string/>
      </property>
     </widget>
     <widget class="QLabel" name="label_11">
@@ -482,34 +550,6 @@
     <property name="title">
      <string>GIỎ HÀNG</string>
     </property>
-    <widget class="QSplitter" name="splitter_5">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>140</y>
-       <width>201</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <widget class="QLabel" name="lblTongtien">
-      <property name="text">
-       <string>TỔNG TIỀN:</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_6">
-      <property name="text">
-       <string>lblTongtien2</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label">
-      <property name="text">
-       <string>VND</string>
-      </property>
-     </widget>
-    </widget>
     <widget class="QSplitter" name="splitter_4">
      <property name="geometry">
       <rect>
@@ -551,63 +591,38 @@
       </item>
      </widget>
     </widget>
-    <widget class="QTableWidget" name="tableWidget">
+    <widget class="QTableWidget" name="tblGiohang">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>20</y>
+       <x>40</x>
+       <y>30</y>
        <width>541</width>
        <height>111</height>
       </rect>
      </property>
-     <row>
-      <property name="text">
-       <string>1</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>2</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>3</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>4</string>
-      </property>
-     </row>
-     <row>
-      <property name="text">
-       <string>5</string>
-      </property>
-     </row>
      <column>
       <property name="text">
-       <string>Mã hàng</string>
+       <string>Mã Hàng</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Tên hàng</string>
+       <string>Tên Hàng</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Loại hàng</string>
+       <string>Loại Hàng</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Số lượng</string>
+       <string>Số Lượng</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Thành tiền</string>
+       <string>Thành Tiền</string>
       </property>
      </column>
     </widget>
@@ -659,6 +674,90 @@
        </property>
       </item>
      </widget>
+    </widget>
+    <widget class="QPushButton" name="btnXoakhoigio">
+     <property name="geometry">
+      <rect>
+       <x>580</x>
+       <y>140</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="res.qrc">
+       <normaloff>:/res/res/icon/cart (1).png</normaloff>:/res/res/icon/cart (1).png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>25</width>
+       <height>26</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblTongtien">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>150</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblTong">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>150</y>
+       <width>58</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>TỔNG TIỀN:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>150</y>
+       <width>20</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>VND</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>323</x>
+       <y>150</y>
+       <width>16</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
     </widget>
    </widget>
   </widget>

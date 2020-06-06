@@ -16,51 +16,52 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    SpbTable.cpp \
     adduser.cpp \
+    cbxitemdelegate.cpp \
     changepw.cpp \
-    dsdon.cpp \
+    danhsachdon.cpp \
+    dslkKho.cpp \
     dslkUser.cpp \
-    khohang.cpp \
-    kiemtrathongtin.cpp \
+    lichsumua.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
-    nhapkho.cpp \
+    nhaphang.cpp \
     quanlyuser.cpp \
     taodonhang.cpp \
     thaydoiquyen.cpp \
-    thongtindon.cpp \
     thongtinkhach.cpp
 
 HEADERS += \
+    SpbTable.h \
     adduser.h \
+    cbxitemdelegate.h \
     changepw.h \
-    dsdon.h \
+    danhsachdon.h \
+    dslkKho.h \
     dslkUser.h \
-    khohang.h \
-    kiemtrathongtin.h \
+    lichsumua.h \
     login.h \
     mainwindow.h \
+    nhaphang.h \
     nhapkho.h \
     quanlyuser.h \
     taodonhang.h \
     thaydoiquyen.h \
-    thongtindon.h \
     thongtinkhach.h
 
 FORMS += \
     adduser.ui \
     changepw.ui \
-    dsdon.ui \
-    khohang.ui \
-    kiemtrathongtin.ui \
+    danhsachdon.ui \
+    lichsumua.ui \
     login.ui \
     mainwindow.ui \
-    nhapkho.ui \
+    nhaphang.ui \
     quanlyuser.ui \
     taodonhang.ui \
-    thaydoiquyen.ui \
-    thongtindon.ui
+    thaydoiquyen.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

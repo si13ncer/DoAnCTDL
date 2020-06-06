@@ -9,7 +9,7 @@ nodek* nkinit(kh u)
     nodek* p = new nodek;
     if (p == NULL)
     {
-        cout << "Khong du bo nho cap phat";
+        return 0;
     }
     p->data = u;
     p->prev = NULL;
@@ -61,21 +61,10 @@ void delKTail(listk& l)
 {
     if (l.head->next == NULL)
     {
-        delKHead(l);
         return;
     }
-    nodek* k = l.head;
-    while (k)
-    {
-        if (k->next == l.tail)// tìm phần tử gần cuối
-        {
-            delete l.tail;
-            k->next = NULL; // cho con trỏ của node gần cuối trỏ đến vùng nhớ null
-            l.tail = k; // cập nhật lại l.tail
-            return;
-        }
-        k = k->next;
-    }
+    l.tail = l.tail->prev;
+    l.tail->next = NULL;
 }
 void delKSlt(listk& l, string s)
 {
@@ -114,7 +103,7 @@ void ghinodekh(::ofstream& fileout, kh k)
 void ghilistkh(::listk l)
 {
     ofstream fileout;
-    fileout.open("E:/Source Code/DoAn/DoAnCTDL/data/thongtinkhach.txt", ios::out);
+    fileout.open("data/thongtinkhach.txt", ios::out);
     nodek* k=l.head;
     while (k!=NULL)
     {

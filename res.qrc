@@ -14,5 +14,6 @@
         <file>res/icon/deluser.png</file>
         <file>res/icon/showpw.png</file>
         <file>res/icon/cart.png</file>
+        <file>res/icon/cart (1).png</file>
     </qresource>
 </RCC>

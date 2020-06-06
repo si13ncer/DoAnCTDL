@@ -49,14 +49,15 @@
     </property>
     <addaction name="actTaodon"/>
     <addaction name="actTrangthai"/>
+    <addaction name="actDsdon"/>
    </widget>
    <widget class="QMenu" name="menuS_n_ph_m">
     <property name="title">
      <string>Sản phẩm</string>
     </property>
-    <addaction name="actNhapkho"/>
+    <addaction name="actNhaphang"/>
     <addaction name="separator"/>
-    <addaction name="actKhohang"/>
+    <addaction name="actDanhmuc"/>
    </widget>
    <widget class="QMenu" name="menuVoucher">
     <property name="title">
@@ -126,22 +127,7 @@
   </action>
   <action name="actTrangthai">
    <property name="text">
-    <string>Trạng thái đơn</string>
-   </property>
-  </action>
-  <action name="actNhapkho">
-   <property name="text">
-    <string>Nhập sản phẩm</string>
-   </property>
-  </action>
-  <action name="actXuatkho">
-   <property name="text">
-    <string>Xuất kho</string>
-   </property>
-  </action>
-  <action name="actKhohang">
-   <property name="text">
-    <string>Danh mục hàng</string>
+    <string>Đơn đã tạo</string>
    </property>
   </action>
   <action name="actTonkho">
@@ -184,6 +170,21 @@
    </property>
    <property name="text">
     <string>Xuất báo cáo</string>
+   </property>
+  </action>
+  <action name="actDsdon">
+   <property name="text">
+    <string>Danh sách đơn</string>
+   </property>
+  </action>
+  <action name="actNhaphang">
+   <property name="text">
+    <string>Nhập sản phẩm</string>
+   </property>
+  </action>
+  <action name="actDanhmuc">
+   <property name="text">
+    <string>Danh mục sản phẩm</string>
    </property>
   </action>
  </widget>

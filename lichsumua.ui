@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>lichsumua</class>
+ <widget class="QDialog" name="lichsumua">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>868</width>
+    <height>493</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <weight>50</weight>
+    <bold>false</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>70</y>
+     <width>571</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>THÔNG TIN</string>
+   </property>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>329</x>
+      <y>24</y>
+      <width>80</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Tên khách hàng</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>329</x>
+      <y>50</y>
+      <width>80</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SĐT                    </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblID">
+    <property name="geometry">
+     <rect>
+      <x>91</x>
+      <y>22</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>24</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ID                    </string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="leditAdress">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>50</y>
+      <width>211</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>71</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Địa chỉ             </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblTen">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>20</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblSdt">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>50</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>30</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>ĐƠN HÀNG CỦA TÔI</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tbvLichsudon">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>170</y>
+     <width>821</width>
+     <height>181</height>
+    </rect>
+   </property>
+   <column>
+    <property name="text">
+     <string>Mã Hàng</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Tên Hàng</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Loại Hàng</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Số Lượng</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Thành Tiền</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Ngày Mua</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Trạng Thái</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Ghi Chú</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QPushButton" name="btnLuu">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>410</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Lưu</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnThoat">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>410</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Thoát</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnHuydon">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>370</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Huỷ đơn</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

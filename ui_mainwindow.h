@@ -27,15 +27,15 @@ class Ui_MainWindow
 public:
     QAction *actTaodon;
     QAction *actTrangthai;
-    QAction *actNhapkho;
-    QAction *actXuatkho;
-    QAction *actKhohang;
     QAction *actTonkho;
     QAction *actTaoVc;
     QAction *actQliVc;
     QAction *actTaouser;
     QAction *actQliUser;
     QAction *actBaocao;
+    QAction *actDsdon;
+    QAction *actNhaphang;
+    QAction *actDanhmuc;
     QWidget *centralwidget;
     QLabel *label;
     QMenuBar *menubar;
@@ -61,12 +61,6 @@ public:
         actTaodon->setIconVisibleInMenu(true);
         actTrangthai = new QAction(MainWindow);
         actTrangthai->setObjectName(QString::fromUtf8("actTrangthai"));
-        actNhapkho = new QAction(MainWindow);
-        actNhapkho->setObjectName(QString::fromUtf8("actNhapkho"));
-        actXuatkho = new QAction(MainWindow);
-        actXuatkho->setObjectName(QString::fromUtf8("actXuatkho"));
-        actKhohang = new QAction(MainWindow);
-        actKhohang->setObjectName(QString::fromUtf8("actKhohang"));
         actTonkho = new QAction(MainWindow);
         actTonkho->setObjectName(QString::fromUtf8("actTonkho"));
         actTaoVc = new QAction(MainWindow);
@@ -88,6 +82,12 @@ public:
         QIcon icon3;
         icon3.addFile(QString::fromUtf8(":/res/res/icon/baocao.png"), QSize(), QIcon::Normal, QIcon::Off);
         actBaocao->setIcon(icon3);
+        actDsdon = new QAction(MainWindow);
+        actDsdon->setObjectName(QString::fromUtf8("actDsdon"));
+        actNhaphang = new QAction(MainWindow);
+        actNhaphang->setObjectName(QString::fromUtf8("actNhaphang"));
+        actDanhmuc = new QAction(MainWindow);
+        actDanhmuc->setObjectName(QString::fromUtf8("actDanhmuc"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
@@ -126,9 +126,10 @@ public:
         menubar->addAction(menuQu_n_l_User->menuAction());
         menu_n_h_ng->addAction(actTaodon);
         menu_n_h_ng->addAction(actTrangthai);
-        menuS_n_ph_m->addAction(actNhapkho);
+        menu_n_h_ng->addAction(actDsdon);
+        menuS_n_ph_m->addAction(actNhaphang);
         menuS_n_ph_m->addSeparator();
-        menuS_n_ph_m->addAction(actKhohang);
+        menuS_n_ph_m->addAction(actDanhmuc);
         menuVoucher->addAction(actTaoVc);
         menuVoucher->addAction(actQliVc);
         menuB_o_c_o->addAction(actBaocao);
@@ -148,16 +149,16 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         actTaodon->setText(QCoreApplication::translate("MainWindow", "T\341\272\241o \304\221\306\241n", nullptr));
-        actTrangthai->setText(QCoreApplication::translate("MainWindow", "Tr\341\272\241ng th\303\241i \304\221\306\241n", nullptr));
-        actNhapkho->setText(QCoreApplication::translate("MainWindow", "Nh\341\272\255p s\341\272\243n ph\341\272\251m", nullptr));
-        actXuatkho->setText(QCoreApplication::translate("MainWindow", "Xu\341\272\245t kho", nullptr));
-        actKhohang->setText(QCoreApplication::translate("MainWindow", "Danh m\341\273\245c h\303\240ng", nullptr));
+        actTrangthai->setText(QCoreApplication::translate("MainWindow", "\304\220\306\241n \304\221\303\243 t\341\272\241o", nullptr));
         actTonkho->setText(QCoreApplication::translate("MainWindow", "T\341\273\223n kho", nullptr));
         actTaoVc->setText(QCoreApplication::translate("MainWindow", "T\341\272\241o Voucher", nullptr));
         actQliVc->setText(QCoreApplication::translate("MainWindow", "Qu\341\272\243n l\303\255 Voucher", nullptr));
         actTaouser->setText(QCoreApplication::translate("MainWindow", "T\341\272\241o User", nullptr));
         actQliUser->setText(QCoreApplication::translate("MainWindow", "Qu\341\272\243n l\303\255 User", nullptr));
         actBaocao->setText(QCoreApplication::translate("MainWindow", "Xu\341\272\245t b\303\241o c\303\241o", nullptr));
+        actDsdon->setText(QCoreApplication::translate("MainWindow", "Danh s\303\241ch \304\221\306\241n", nullptr));
+        actNhaphang->setText(QCoreApplication::translate("MainWindow", "Nh\341\272\255p s\341\272\243n ph\341\272\251m", nullptr));
+        actDanhmuc->setText(QCoreApplication::translate("MainWindow", "Danh m\341\273\245c s\341\272\243n ph\341\272\251m", nullptr));
         label->setText(QString());
         menu_n_h_ng->setTitle(QCoreApplication::translate("MainWindow", "\304\220\306\241n h\303\240ng", nullptr));
         menuS_n_ph_m->setTitle(QCoreApplication::translate("MainWindow", "S\341\272\243n ph\341\272\251m", nullptr));

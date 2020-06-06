@@ -6,8 +6,6 @@
 #include "thaydoiquyen.h"
 #include "taodonhang.h"
 #include <QApplication>
-#include "dsdon.h"
-#include "thongtindon.h"
 #include "fstream"
 #include "dslkUser.h"
 #include "thongtinkhach.h"

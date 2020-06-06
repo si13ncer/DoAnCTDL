@@ -3,6 +3,9 @@
 
 #include <QMainWindow>
 #include "QCloseEvent"
+#include "SpbTable.h"
+#include "QTableWidgetItem"
+
 
 namespace Ui {
 class taodonhang;
@@ -25,6 +28,12 @@ private slots:
     void on_btnLuu_clicked();
 
     void on_cbxLoai_currentIndexChanged(const QString &arg1);
+
+    void on_tblGiohang_itemChanged(QTableWidgetItem *item);
+
+    void on_btnThemvaogio_clicked();
+
+    void on_btnXoakhoigio_clicked();
 
 private:
     Ui::taodonhang *ui;
