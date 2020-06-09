@@ -75,6 +75,8 @@ void doc1hang(ifstream &Filein, hang &h)
     Filein.seekg(1, 1);//Dich sang phai 1 bit ki tu
     getline(Filein, h.id, ',');//Nhap sstring ma hang
     Filein.seekg(1, 1);//Dich sang phai 1 bit ki tu
+    getline(Filein, h.day, ',');//Nhap sstring ma hang
+    Filein.seekg(1, 1);//Dich sang phai 1 bit ki tu
     Filein >> h.price;//Nhap gia hang
     Filein.seekg(1, 1);//Dich sang phai 1 bit ki tu
     Filein >> h.sl;
@@ -98,6 +100,7 @@ void ghi1hang (ofstream &Fileout,hang h)
     Fileout << h.dm << ", ";
     Fileout << h.name << ", ";
     Fileout << h.id << ", ";
+    Fileout <<h.day <<", ";
     Fileout << h.price << ", ";
     Fileout << h.sl;
 }
@@ -105,9 +108,22 @@ void ghikhohang (listkho k)
 {
     ofstream Fileout;
     Fileout.open ("C:/Users/a/Desktop/DoAnCTDL/data/khohang.txt",ios::out);
-    for(nodehang *p=k.pHead;p!=NULL;p->pNext)
+    for(nodehang *p=k.pHead;p!=NULL;p=p->pNext)
     {
         ghi1hang(Fileout,p->data);
     }
+
     Fileout.close();
+}
+bool kiemtratontai(listkho k, string name, string id)
+{
+
+    for (nodehang *p=k.pHead;p!=NULL;p=p->pNext)
+    {
+        if (p->data.name ==name ||p->data.id==id)
+        {
+            return true;
+        }
+    }
+    return false;
 }

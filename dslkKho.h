@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <QDate>
 using namespace std;
 #endif // DSLKKHO_H
 struct hang
@@ -13,6 +14,8 @@ struct hang
     string id;
     string price;
     string sl;
+    string day;
+
 };
 struct nodehang
 {
@@ -35,4 +38,6 @@ void doc1hang(ifstream &Filein, hang &h);
 void dockhohang(ifstream& Filein, listkho& k);
 void ghi1hang (ofstream &Fileout,hang h);
 void ghikhohang (ofstream &Fileout, listkho k);
+bool kiemtratontai(listkho k, string name, string id);
 extern ::listkho lkho;
+
