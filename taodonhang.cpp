@@ -29,8 +29,19 @@ taodonhang::taodonhang(QWidget *parent) :
         n = n->next;
     }
     ui->tblGiohang->setItemDelegateForColumn(3, new SpinBoxTable);
-    ui->lblTongtien->setStyleSheet("color: green;");
-    ui->lblTongtien->setNum(0);
+    ui->lblGiatridon->setStyleSheet("color: green;");
+    ui->lblGiatridon->setNum(0);
+    for (int i=0;i< ui->tblGiohang->rowCount();i++) //tắt chỉnh sửa ở cột
+    {
+            QTableWidgetItem *col0 =  ui->tblGiohang->item(i,0);
+            QTableWidgetItem *col1 =  ui->tblGiohang->item(i,1);
+            QTableWidgetItem *col2 =  ui->tblGiohang->item(i,2);
+            QTableWidgetItem *col4 =  ui->tblGiohang->item(i,4);
+            col0->setFlags(col0->flags() & ~Qt::ItemIsEditable);
+            col1->setFlags(col1->flags() & ~Qt::ItemIsEditable);
+            col2->setFlags(col2->flags() & ~Qt::ItemIsEditable);
+            col4->setFlags(col4->flags() & ~Qt::ItemIsEditable);
+    }
 }
 
 taodonhang::~taodonhang()
@@ -338,19 +349,30 @@ void taodonhang::on_btnThemvaogio_clicked()
 void taodonhang::on_tblGiohang_itemChanged(QTableWidgetItem *item)
 {
     Q_UNUSED(item)
-    int Tongtien=0;
+    int Giatridon=0;
     for (int i=0;i< ui->tblGiohang->rowCount();i++)
     {
             QTableWidgetItem *item =  ui->tblGiohang->item(i,4);
             if ( ! item )  continue;
-            int value = item->text().toInt(); // get value
-            Tongtien+=value;
+            int value = item->text().toInt(); // get value to int
+            Giatridon+=value;
     }
-    ui->lblTongtien->setNum(Tongtien);
+    ui->lblGiatridon->setNum(Giatridon);
 }
 
 void taodonhang::on_btnXoakhoigio_clicked()
 {
     int row = ui->tblGiohang->currentRow();
-        ui->tblGiohang->removeRow(row);
+    ui->tblGiohang->removeRow(row);
+}
+
+void taodonhang::on_spbSoluong_valueChanged(int arg1)
+{
+    Q_UNUSED(arg1);
+    float voucher;
+    QString dg = ui->lblDongia->text();
+    int dongia=dg.toInt();
+    int Soluong=ui->spbSoluong->value();
+    int Tong = Soluong * (dongia-dongia*voucher);
+    ui->lblTong->setNum(Tong);
 }

@@ -35,6 +35,8 @@ private slots:
 
     void on_btnXoakhoigio_clicked();
 
+    void on_spbSoluong_valueChanged(int arg1);
+
 private:
     Ui::taodonhang *ui;
 };

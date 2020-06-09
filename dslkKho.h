@@ -13,13 +13,12 @@ struct hang
     string id;
     string price;
     string sl;
-
 };
 struct nodehang
 {
     hang data;
     struct nodehang* pNext;
-     struct nodehang* pPrev;
+    struct nodehang* pPrev;
 };
 struct listkho
 {
@@ -36,4 +35,4 @@ void doc1hang(ifstream &Filein, hang &h);
 void dockhohang(ifstream& Filein, listkho& k);
 void ghi1hang (ofstream &Fileout,hang h);
 void ghikhohang (ofstream &Fileout, listkho k);
-
+extern ::listkho lkho;

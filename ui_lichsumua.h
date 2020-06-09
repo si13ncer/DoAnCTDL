@@ -10,6 +10,7 @@
 #define UI_LICHSUMUA_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QGroupBox>
@@ -112,9 +113,15 @@ public:
         btnLuu = new QPushButton(lichsumua);
         btnLuu->setObjectName(QString::fromUtf8("btnLuu"));
         btnLuu->setGeometry(QRect(680, 410, 75, 23));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/res/res/icon/save.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnLuu->setIcon(icon);
         btnThoat = new QPushButton(lichsumua);
         btnThoat->setObjectName(QString::fromUtf8("btnThoat"));
         btnThoat->setGeometry(QRect(770, 410, 75, 23));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/res/res/icon/discard.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnThoat->setIcon(icon1);
         btnHuydon = new QPushButton(lichsumua);
         btnHuydon->setObjectName(QString::fromUtf8("btnHuydon"));
         btnHuydon->setGeometry(QRect(740, 370, 75, 23));

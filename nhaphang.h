@@ -2,6 +2,7 @@
 #define NHAPHANG_H
 
 #include <QMainWindow>
+#include "dslkKho.h"
 
 namespace Ui {
 class nhaphang;
@@ -20,6 +21,10 @@ private slots:
     void on_btnHuy_clicked();
 
     void on_cbxLoaihang_currentIndexChanged(const QString &arg1);
+
+    void on_btnLuu_clicked();
+
+
 
 private:
     Ui::nhaphang *ui;

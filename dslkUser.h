@@ -14,11 +14,12 @@ struct user
     string pw;
     string pm;
 };
-struct node {
+struct node //khai báo node có kiểu dữ liệu user;
+{
     user data;
     struct node* next;
     struct node* prev;
-};//khai báo node có kiểu dữ liệu user;
+};
 struct list
 {
     node* head;

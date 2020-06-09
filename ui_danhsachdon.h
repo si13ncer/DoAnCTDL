@@ -66,7 +66,7 @@ public:
     {
         if (danhsachdon->objectName().isEmpty())
             danhsachdon->setObjectName(QString::fromUtf8("danhsachdon"));
-        danhsachdon->resize(962, 495);
+        danhsachdon->resize(962, 503);
         centralwidget = new QWidget(danhsachdon);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label_2 = new QLabel(centralwidget);
@@ -186,7 +186,7 @@ public:
         lblSdt_2->setFrameShape(QFrame::StyledPanel);
         bntLuu = new QPushButton(centralwidget);
         bntLuu->setObjectName(QString::fromUtf8("bntLuu"));
-        bntLuu->setGeometry(QRect(730, 440, 75, 23));
+        bntLuu->setGeometry(QRect(380, 440, 75, 23));
         btnThoat = new QPushButton(centralwidget);
         btnThoat->setObjectName(QString::fromUtf8("btnThoat"));
         btnThoat->setGeometry(QRect(820, 440, 75, 23));
@@ -239,7 +239,7 @@ public:
         lblVanchuyen->setText(QString());
         label_7->setText(QCoreApplication::translate("danhsachdon", "M\303\243 H\303\240ng", nullptr));
         lblSdt_2->setText(QString());
-        bntLuu->setText(QCoreApplication::translate("danhsachdon", "L\306\260u", nullptr));
+        bntLuu->setText(QCoreApplication::translate("danhsachdon", "C\341\272\255p nh\341\272\255t", nullptr));
         btnThoat->setText(QCoreApplication::translate("danhsachdon", "Tho\303\241t", nullptr));
     } // retranslateUi
 

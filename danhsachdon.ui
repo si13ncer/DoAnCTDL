@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>962</width>
-    <height>495</height>
+    <height>503</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -462,14 +462,14 @@
    <widget class="QPushButton" name="bntLuu">
     <property name="geometry">
      <rect>
-      <x>730</x>
+      <x>380</x>
       <y>440</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>Lưu</string>
+     <string>Cập nhật</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btnThoat">

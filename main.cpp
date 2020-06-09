@@ -16,6 +16,7 @@
     std::string per;
     std::string chosenone;
     std::string usingid;
+    ::listkho lkho;
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -23,11 +24,11 @@ int main(int argc, char *argv[])
     login log;
     init(lur);//khởi tạo dslk
     std::ifstream ufilein;
-    ufilein.open("E:/Source Code/DoAn/DoAnCTDL/data/user.txt", std::ios::in);
+    ufilein.open("data/user.txt", std::ios::in);
     readlist(ufilein, lur);//đọc file và thêm vào lur
     lkinit(lkh);
     ifstream kfilein;
-    kfilein.open("E:/Source Code/DoAn/DoAnCTDL/data/thongtinkhach.txt", ios::in);
+    kfilein.open("data/thongtinkhach.txt", ios::in);
     readlk(kfilein, lkh);// đọc và thêm vào dslk
     log.show();
     return a.exec();

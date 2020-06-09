@@ -45,7 +45,6 @@ HEADERS += \
     login.h \
     mainwindow.h \
     nhaphang.h \
-    nhapkho.h \
     quanlyuser.h \
     taodonhang.h \
     thaydoiquyen.h \

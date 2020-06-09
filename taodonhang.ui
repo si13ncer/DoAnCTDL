@@ -298,7 +298,7 @@
       </property>
      </item>
     </widget>
-    <widget class="QLabel" name="label_16">
+    <widget class="QLabel" name="lblTong">
      <property name="geometry">
       <rect>
        <x>420</x>
@@ -397,7 +397,7 @@
       </property>
      </item>
     </widget>
-    <widget class="QComboBox" name="comboBox_5">
+    <widget class="QComboBox" name="cbxVoucher">
      <property name="geometry">
       <rect>
        <x>90</x>
@@ -407,7 +407,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QComboBox" name="comboBox_4">
+    <widget class="QComboBox" name="cbxTenhang">
      <property name="geometry">
       <rect>
        <x>90</x>
@@ -417,7 +417,7 @@
       </rect>
      </property>
     </widget>
-    <widget class="QSpinBox" name="spinBox">
+    <widget class="QSpinBox" name="spbSoluong">
      <property name="geometry">
       <rect>
        <x>420</x>
@@ -427,7 +427,7 @@
       </rect>
      </property>
      <property name="minimum">
-      <number>1</number>
+      <number>0</number>
      </property>
      <property name="maximum">
       <number>999</number>
@@ -508,7 +508,7 @@
       <string>VND</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_12">
+    <widget class="QLabel" name="lblDongia">
      <property name="geometry">
       <rect>
        <x>420</x>
@@ -698,7 +698,7 @@
       </size>
      </property>
     </widget>
-    <widget class="QLabel" name="lblTongtien">
+    <widget class="QLabel" name="lblGiatridon">
      <property name="geometry">
       <rect>
        <x>260</x>
@@ -720,7 +720,7 @@
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
-    <widget class="QLabel" name="lblTong">
+    <widget class="QLabel" name="lblT">
      <property name="geometry">
       <rect>
        <x>200</x>

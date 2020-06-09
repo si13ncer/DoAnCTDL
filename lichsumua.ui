@@ -230,6 +230,10 @@
    <property name="text">
     <string>Lưu</string>
    </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/res/res/icon/save.png</normaloff>:/res/res/icon/save.png</iconset>
+   </property>
   </widget>
   <widget class="QPushButton" name="btnThoat">
    <property name="geometry">
@@ -242,6 +246,10 @@
    </property>
    <property name="text">
     <string>Thoát</string>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/res/res/icon/discard.png</normaloff>:/res/res/icon/discard.png</iconset>
    </property>
   </widget>
   <widget class="QPushButton" name="btnHuydon">
@@ -258,6 +266,8 @@
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
  <connections/>
 </ui>

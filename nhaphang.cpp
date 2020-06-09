@@ -224,6 +224,7 @@ void nhaphang::on_cbxLoaihang_currentIndexChanged(const QString &arg1)
         }
     case 11:
         {
+
             ui->cbxDanhmuc->clear();
             ui->cbxDanhmuc->addItem("Xe máy");
             ui->cbxDanhmuc->addItem("Chăm sóc ô tô");
@@ -241,3 +242,88 @@ void nhaphang::on_cbxLoaihang_currentIndexChanged(const QString &arg1)
         }
     }
 }
+
+void nhaphang::on_btnLuu_clicked()
+{
+    hang h;
+    QString th=ui->lineEdit->text();
+    if (th.length()<=0)
+        {
+            ui->statusbar->showMessage("Tên hàng trống!");
+            return;
+        }
+    for (int i=0;i<th.length();i++)
+    {
+
+        if((th[i]==32 && th[i+1]==32)||th[0]==32||th[th.length()]==32)
+        {
+            for(int j=i;j<th.length();j++)
+            {
+            th[j]=th[j+1];
+            i--;
+            }
+        }
+    }
+    th[0]=th[0].toUpper();
+    h.name = th.toStdString();
+    QString mahang=ui->lineEdit_2->text();
+    for (int i =0;i<mahang.size();i++)
+    {
+        if (mahang[i].isPunct()||mahang[i].isSpace())
+       {
+            ui->statusbar->showMessage("Mã hàng không hợp lệ!");
+            return;
+       }
+    for (int i=0;i<mahang.length();i++)
+    {
+
+        if(mahang[i]==32)
+        {
+            for(int j=i;j<th.length();j++)
+            {
+            th[j]=th[j+1];
+            i--;
+            }
+        }
+    }
+    mahang=mahang.toUpper();
+     h.id = mahang.toStdString();
+     QString giahang=ui->lineEdit_3->text();
+     for (int i =0;i<giahang.size();i++)
+     {
+         if (!giahang[i].isNumber())
+        {
+             ui->statusbar->showMessage("Giá hàng không hợp lệ!");
+             return;
+        }
+     }
+     h.price=giahang.toInt();
+     h.sl= ui->spinBox->value();
+     QDate Mydate=ui->dateEdit->date();
+     QString date=Mydate.toString("dd/mm/yyyy");
+     h.day =date.toStdString();
+     QString phanloaihang = ui->cbxLoaihang->currentText();
+     h.pl= phanloaihang.toStdString();
+     QString danhmuchang=ui->cbxDanhmuc->currentText();
+     h.dm=danhmuchang.toStdString();
+     nodehang *p;
+     p=tao1node(h);
+     if (kiemtratontai(lkho,h.name,h.id)==true)
+     {
+         ui->statusbar->showMessage("hàng đã tồn tại!");
+         delete p;
+         return;
+     }
+     else
+     {
+         themcuoi(lkho,p);
+     }
+
+
+
+
+
+}
+}
+
+
