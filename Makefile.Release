@@ -240,22 +240,26 @@ compiler_rcc_clean:
 release\qrc_res.cpp: res.qrc \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\bin\rcc.exe \
 		res\background.png \
-		res\icon\baocao.png \
-		res\icon\save.png \
-		res\icon\cart.png \
-		res\icon\login.png \
 		res\icon\personal-card.png \
-		res\icon\taodonhang.png \
-		res\icon\permission.png \
-		"res\icon\cart (1).png" \
-		res\icon\deluser.png \
-		res\icon\quanlyuser.png \
-		res\icon\changepw.png \
-		res\icon\adduser.png \
-		res\icon\pen.png \
-		"res\icon\login (2).png" \
+		res\icon\sortdown.png \
 		res\icon\discard.png \
-		res\icon\showpw.png
+		res\icon\refresh.png \
+		res\icon\adduser.png \
+		res\icon\find.png \
+		res\icon\deluser.png \
+		res\icon\showpw.png \
+		res\icon\baocao.png \
+		res\icon\login.png \
+		res\icon\quanlyuser.png \
+		res\icon\taodonhang.png \
+		res\icon\cart.png \
+		res\icon\sortup.png \
+		res\icon\permission.png \
+		res\icon\pen.png \
+		res\icon\changepw.png \
+		res\icon\save.png \
+		"res\icon\login (2).png" \
+		"res\icon\cart (1).png"
 	D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\bin\rcc.exe -name res res.qrc -o release\qrc_res.cpp
 
 compiler_moc_predefs_make_all: release\moc_predefs.h
@@ -2696,7 +2700,8 @@ release\danhsachdon.obj: danhsachdon.cpp danhsachdon.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qmessagebox.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qdialog.h \
 		thongtinkhach.h \
-		dslkUser.h
+		dslkUser.h \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtCore\QDebug
 
 release\dslkKho.obj: dslkKho.cpp dslkKho.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtCore\QDate \
@@ -2866,13 +2871,8 @@ release\khohang.obj: khohang.cpp khohang.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qdesktopwidget.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtGui\qguiapplication.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtGui\qinputmethod.h \
-		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\QHeaderView \
-		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qheaderview.h \
-		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qabstractitemview.h \
-		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
-		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qframe.h \
-		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtCore\qabstractitemmodel.h \
-		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtCore\qitemselectionmodel.h \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\QComboBox \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qcombobox.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qabstractitemdelegate.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qstyleoption.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qabstractspinbox.h \
@@ -2883,8 +2883,21 @@ release\khohang.obj: khohang.cpp khohang.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qstyle.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qtabbar.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qrubberband.h \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qframe.h \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtCore\qabstractitemmodel.h \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\QHeaderView \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qheaderview.h \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qabstractitemview.h \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qabstractscrollarea.h \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtCore\qitemselectionmodel.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\QLabel \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qlabel.h \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\QLineEdit \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qlineedit.h \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtGui\qtextcursor.h \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtGui\qtextformat.h \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtGui\qpen.h \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtGui\qtextoption.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\QPushButton \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qpushbutton.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qabstractbutton.h \

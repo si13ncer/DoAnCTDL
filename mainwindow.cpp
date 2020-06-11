@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
         ui->actTaouser->setDisabled(true);
         ui->actDsdon->setDisabled(true);
     }
-    ui->statusBar->showMessage("Xin chào " + QString::fromStdString(usingid)+"!",10000);
+    ui->statusBar->showMessage("Xin chào " + QString::fromStdString(usingid)+"!",5000);
 }
 
 MainWindow::~MainWindow()

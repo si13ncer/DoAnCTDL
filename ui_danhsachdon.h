@@ -10,6 +10,7 @@
 #define UI_DANHSACHDON_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
@@ -63,7 +64,7 @@ public:
     QLabel *label_9;
     QLineEdit *leditFind;
     QPushButton *btnFind;
-    QPushButton *pushButton;
+    QPushButton *btnRefresh;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *danhsachdon)
@@ -85,15 +86,21 @@ public:
         btnNew = new QPushButton(centralwidget);
         btnNew->setObjectName(QString::fromUtf8("btnNew"));
         btnNew->setGeometry(QRect(360, 80, 75, 21));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/res/res/icon/sortup.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnNew->setIcon(icon);
         btnOld = new QPushButton(centralwidget);
         btnOld->setObjectName(QString::fromUtf8("btnOld"));
         btnOld->setGeometry(QRect(360, 110, 75, 21));
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8(":/res/res/icon/sortdown.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnOld->setIcon(icon1);
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(20, 100, 71, 21));
+        label->setGeometry(QRect(20, 70, 71, 21));
         cbxID = new QComboBox(centralwidget);
         cbxID->setObjectName(QString::fromUtf8("cbxID"));
-        cbxID->setGeometry(QRect(100, 100, 121, 21));
+        cbxID->setGeometry(QRect(100, 70, 121, 21));
         tblDsdon = new QTableWidget(centralwidget);
         if (tblDsdon->columnCount() < 4)
             tblDsdon->setColumnCount(4);
@@ -124,6 +131,7 @@ public:
         lblID = new QLabel(groupBox);
         lblID->setObjectName(QString::fromUtf8("lblID"));
         lblID->setGeometry(QRect(60, 40, 141, 21));
+        lblID->setFont(font);
         lblID->setFrameShape(QFrame::StyledPanel);
         lblID->setFrameShadow(QFrame::Plain);
         label_4 = new QLabel(groupBox);
@@ -133,6 +141,7 @@ public:
         leditAdress = new QLineEdit(groupBox);
         leditAdress->setObjectName(QString::fromUtf8("leditAdress"));
         leditAdress->setGeometry(QRect(60, 80, 171, 21));
+        leditAdress->setFont(font);
         leditAdress->setReadOnly(false);
         label_6 = new QLabel(groupBox);
         label_6->setObjectName(QString::fromUtf8("label_6"));
@@ -141,14 +150,17 @@ public:
         lblTen = new QLabel(groupBox);
         lblTen->setObjectName(QString::fromUtf8("lblTen"));
         lblTen->setGeometry(QRect(360, 40, 131, 21));
+        lblTen->setFont(font);
         lblTen->setFrameShape(QFrame::StyledPanel);
         lblSdt = new QLabel(groupBox);
         lblSdt->setObjectName(QString::fromUtf8("lblSdt"));
         lblSdt->setGeometry(QRect(360, 80, 131, 21));
+        lblSdt->setFont(font);
         lblSdt->setFrameShape(QFrame::StyledPanel);
         lblTongtien = new QLabel(groupBox);
         lblTongtien->setObjectName(QString::fromUtf8("lblTongtien"));
         lblTongtien->setGeometry(QRect(360, 240, 121, 21));
+        lblTongtien->setFont(font);
         lblTongtien->setFrameShape(QFrame::StyledPanel);
         label_17 = new QLabel(groupBox);
         label_17->setObjectName(QString::fromUtf8("label_17"));
@@ -172,14 +184,17 @@ public:
         lblSoluong = new QLabel(groupBox);
         lblSoluong->setObjectName(QString::fromUtf8("lblSoluong"));
         lblSoluong->setGeometry(QRect(360, 200, 47, 21));
+        lblSoluong->setFont(font);
         lblSoluong->setFrameShape(QFrame::StyledPanel);
         lblDanhmuc = new QLabel(groupBox);
         lblDanhmuc->setObjectName(QString::fromUtf8("lblDanhmuc"));
         lblDanhmuc->setGeometry(QRect(100, 200, 161, 21));
+        lblDanhmuc->setFont(font);
         lblDanhmuc->setFrameShape(QFrame::StyledPanel);
         lblTenhang = new QLabel(groupBox);
         lblTenhang->setObjectName(QString::fromUtf8("lblTenhang"));
         lblTenhang->setGeometry(QRect(100, 160, 161, 21));
+        lblTenhang->setFont(font);
         lblTenhang->setFrameShape(QFrame::StyledPanel);
         label_8 = new QLabel(groupBox);
         label_8->setObjectName(QString::fromUtf8("label_8"));
@@ -188,6 +203,7 @@ public:
         lblThanhToan = new QLabel(groupBox);
         lblThanhToan->setObjectName(QString::fromUtf8("lblThanhToan"));
         lblThanhToan->setGeometry(QRect(100, 240, 161, 21));
+        lblThanhToan->setFont(font);
         lblThanhToan->setFrameShape(QFrame::StyledPanel);
         label_13 = new QLabel(groupBox);
         label_13->setObjectName(QString::fromUtf8("label_13"));
@@ -196,6 +212,7 @@ public:
         lblVanchuyen = new QLabel(groupBox);
         lblVanchuyen->setObjectName(QString::fromUtf8("lblVanchuyen"));
         lblVanchuyen->setGeometry(QRect(100, 280, 161, 21));
+        lblVanchuyen->setFont(font);
         lblVanchuyen->setFrameShape(QFrame::StyledPanel);
         label_7 = new QLabel(groupBox);
         label_7->setObjectName(QString::fromUtf8("label_7"));
@@ -204,25 +221,40 @@ public:
         lblMahang = new QLabel(groupBox);
         lblMahang->setObjectName(QString::fromUtf8("lblMahang"));
         lblMahang->setGeometry(QRect(360, 160, 121, 21));
+        lblMahang->setFont(font);
         lblMahang->setFrameShape(QFrame::StyledPanel);
         bntLuu = new QPushButton(centralwidget);
         bntLuu->setObjectName(QString::fromUtf8("bntLuu"));
-        bntLuu->setGeometry(QRect(360, 460, 75, 31));
+        bntLuu->setGeometry(QRect(360, 460, 81, 31));
+        QIcon icon2;
+        icon2.addFile(QString::fromUtf8(":/res/res/icon/save.png"), QSize(), QIcon::Normal, QIcon::Off);
+        bntLuu->setIcon(icon2);
         btnThoat = new QPushButton(centralwidget);
         btnThoat->setObjectName(QString::fromUtf8("btnThoat"));
         btnThoat->setGeometry(QRect(860, 460, 75, 31));
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/res/res/icon/discard.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnThoat->setIcon(icon3);
         label_9 = new QLabel(centralwidget);
         label_9->setObjectName(QString::fromUtf8("label_9"));
-        label_9->setGeometry(QRect(20, 70, 71, 21));
+        label_9->setGeometry(QRect(20, 100, 71, 21));
         leditFind = new QLineEdit(centralwidget);
         leditFind->setObjectName(QString::fromUtf8("leditFind"));
-        leditFind->setGeometry(QRect(100, 70, 121, 21));
+        leditFind->setGeometry(QRect(100, 100, 121, 21));
         btnFind = new QPushButton(centralwidget);
         btnFind->setObjectName(QString::fromUtf8("btnFind"));
-        btnFind->setGeometry(QRect(240, 70, 41, 23));
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(240, 100, 41, 23));
+        btnFind->setGeometry(QRect(230, 100, 31, 31));
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/res/res/icon/find.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnFind->setIcon(icon4);
+        btnFind->setIconSize(QSize(24, 24));
+        btnRefresh = new QPushButton(centralwidget);
+        btnRefresh->setObjectName(QString::fromUtf8("btnRefresh"));
+        btnRefresh->setGeometry(QRect(20, 460, 41, 31));
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/res/res/icon/refresh.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnRefresh->setIcon(icon5);
+        btnRefresh->setIconSize(QSize(20, 20));
         danhsachdon->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(danhsachdon);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -237,8 +269,8 @@ public:
     {
         danhsachdon->setWindowTitle(QCoreApplication::translate("danhsachdon", "MainWindow", nullptr));
         label_2->setText(QCoreApplication::translate("danhsachdon", "DANH S\303\201CH \304\220\306\240N \304\220\341\272\266T H\303\200NG", nullptr));
-        btnNew->setText(QCoreApplication::translate("danhsachdon", "M\341\273\233i", nullptr));
-        btnOld->setText(QCoreApplication::translate("danhsachdon", "C\305\251", nullptr));
+        btnNew->setText(QCoreApplication::translate("danhsachdon", "  M\341\273\233i  ", nullptr));
+        btnOld->setText(QCoreApplication::translate("danhsachdon", "  C\305\251   ", nullptr));
         label->setText(QCoreApplication::translate("danhsachdon", "T\303\254m theo ID", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tblDsdon->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("danhsachdon", "M\303\243 \304\220\306\241n", nullptr));
@@ -276,7 +308,7 @@ public:
         btnThoat->setText(QCoreApplication::translate("danhsachdon", "Tho\303\241t", nullptr));
         label_9->setText(QCoreApplication::translate("danhsachdon", "T\303\254m m\303\243 \304\221\306\241n", nullptr));
         btnFind->setText(QString());
-        pushButton->setText(QString());
+        btnRefresh->setText(QString());
     } // retranslateUi
 
 };

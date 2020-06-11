@@ -17,5 +17,9 @@
         <file>res/icon/pen.png</file>
         <file>res/icon/personal-card.png</file>
         <file>res/icon/taodonhang.png</file>
+        <file>res/icon/sortdown.png</file>
+        <file>res/icon/sortup.png</file>
+        <file>res/icon/find.png</file>
+        <file>res/icon/refresh.png</file>
     </qresource>
 </RCC>

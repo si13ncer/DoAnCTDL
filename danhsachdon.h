@@ -22,9 +22,19 @@ private slots:
 
     void on_tblDsdon_cellClicked(int row, int column);
 
-//    void on_cbxID_activated(const QString &arg1);
+    void on_cbxID_activated(const QString &arg1);
 
-//    void on_cbxID_currentTextChanged(const QString &arg1);
+    void on_btnRefresh_clicked();
+
+    void on_btnFind_clicked();
+
+    void on_bntLuu_clicked();
+
+    void on_tblDsdon_cellChanged(int row, int column);
+
+    void on_btnNew_clicked();
+
+    void on_btnOld_clicked();
 
 private:
     Ui::danhsachdon *ui;

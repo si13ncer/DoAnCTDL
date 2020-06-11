@@ -112,7 +112,11 @@ void lichsumua::on_btnThoat_clicked()
 
 void lichsumua::on_btnLuu_clicked()
 {
-    ghilistdon(ldon);
-    this->close();
+    if(QMessageBox::question(this,"Thông báo","Các thay đổi sẽ được lưu lại, tiếp tục?")==QMessageBox::Yes)
+    {
+        ghilistdon(ldon);
+        QMessageBox::information(this,"Xác nhận","Lưu thành công!");
+        this->close();
+    }
 }
 

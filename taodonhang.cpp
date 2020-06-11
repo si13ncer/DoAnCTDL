@@ -372,14 +372,11 @@ void taodonhang::on_btnLuu_clicked()
     }
     QString ttoan=ui->cbxThanhtoan->currentText();
     QString ship=ui->cbxGiao->currentText();
-//    QString ntaoq = ntao.toString("dd/MM/yyyy");//convert QDate to QString
-//    std::string ids=id.toStdString();
     std::string names = name.toStdString();
     std::string addrs = addr.toStdString();
     std::string phones = phone.toStdString();
     std::string ttoans = ttoan.toStdString();
     std::string ships = ship.toStdString();
-//    std::string ntaos=ntaoq.toStdString();
     if (avaiableK(lkh,usingid)==false)// nếu chưa có - thêm vào đuôi; nếu đã có - cập nhật
     {
         nodek* n = lkh.head;
