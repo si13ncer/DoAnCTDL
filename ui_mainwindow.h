@@ -52,10 +52,13 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(660, 372);
+        QFont font;
+        font.setPointSize(10);
+        MainWindow->setFont(font);
         actTaodon = new QAction(MainWindow);
         actTaodon->setObjectName(QString::fromUtf8("actTaodon"));
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/res/res/icon/taodonhang.ico"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8(":/res/res/icon/taodonhang.png"), QSize(), QIcon::Normal, QIcon::Off);
         actTaodon->setIcon(icon);
         actTaodon->setVisible(true);
         actTaodon->setIconVisibleInMenu(true);

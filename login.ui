@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>451</width>
-    <height>235</height>
+    <width>460</width>
+    <height>247</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -15,6 +15,11 @@
     <width>451</width>
     <height>235</height>
    </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>10</pointsize>
+   </font>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -54,9 +59,9 @@
     <widget class="QPushButton" name="btnLog">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>80</x>
        <y>90</y>
-       <width>80</width>
+       <width>91</width>
        <height>25</height>
       </rect>
      </property>
@@ -68,63 +73,69 @@
        <normaloff>:/res/res/icon/login.png</normaloff>:/res/res/icon/login.png</iconset>
      </property>
     </widget>
-    <widget class="QSplitter" name="splitter">
+    <widget class="QLineEdit" name="leditPW">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>208</width>
+       <x>80</x>
+       <y>60</y>
+       <width>128</width>
        <height>20</height>
       </rect>
      </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+     <property name="text">
+      <string/>
      </property>
-     <widget class="QLabel" name="lblID">
-      <property name="text">
-       <string>Tên người dùng</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="leditID">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="maxLength">
-       <number>15</number>
-      </property>
-      <property name="clearButtonEnabled">
-       <bool>false</bool>
-      </property>
-     </widget>
+     <property name="maxLength">
+      <number>15</number>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
     </widget>
-    <widget class="QSplitter" name="splitter_2">
+    <widget class="QLabel" name="lblPW">
      <property name="geometry">
       <rect>
        <x>10</x>
        <y>62</y>
-       <width>207</width>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Mật khẩu          </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lblID">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>61</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ID</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="leditID">
+     <property name="geometry">
+      <rect>
+       <x>81</x>
+       <y>28</y>
+       <width>128</width>
        <height>20</height>
       </rect>
      </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+     <property name="text">
+      <string/>
      </property>
-     <widget class="QLabel" name="lblPW">
-      <property name="text">
-       <string>Mật khẩu          </string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="leditPW">
-      <property name="text">
-       <string/>
-      </property>
-      <property name="maxLength">
-       <number>15</number>
-      </property>
-      <property name="echoMode">
-       <enum>QLineEdit::Password</enum>
-      </property>
-     </widget>
+     <property name="maxLength">
+      <number>15</number>
+     </property>
+     <property name="clearButtonEnabled">
+      <bool>false</bool>
+     </property>
     </widget>
    </widget>
   </widget>

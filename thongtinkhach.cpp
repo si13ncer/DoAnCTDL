@@ -39,7 +39,6 @@ void readkh(ifstream& filein, kh& k)
 }
 void readlk(ifstream& filein, listk& l)//đọc toàn bộ list trong file
 {
-
     while (!filein.eof())// đọc đến cuối file thì dừng
     {
         kh k;

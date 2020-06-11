@@ -37,6 +37,10 @@ private slots:
 
     void on_spbSoluong_valueChanged(int arg1);
 
+    void on_cbxDanhmuc_currentTextChanged(const QString &arg1);
+
+    void on_cbxTenhang_currentTextChanged(const QString &arg1);
+
 private:
     Ui::taodonhang *ui;
 };

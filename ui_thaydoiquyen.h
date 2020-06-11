@@ -33,6 +33,9 @@ public:
         if (thaydoiquyen->objectName().isEmpty())
             thaydoiquyen->setObjectName(QString::fromUtf8("thaydoiquyen"));
         thaydoiquyen->resize(352, 162);
+        QFont font;
+        font.setPointSize(10);
+        thaydoiquyen->setFont(font);
         btnAD = new QRadioButton(thaydoiquyen);
         btnAD->setObjectName(QString::fromUtf8("btnAD"));
         btnAD->setGeometry(QRect(70, 70, 101, 31));
@@ -53,7 +56,7 @@ public:
         btnHuy->setIcon(icon1);
         lblCapquyen = new QLabel(thaydoiquyen);
         lblCapquyen->setObjectName(QString::fromUtf8("lblCapquyen"));
-        lblCapquyen->setGeometry(QRect(100, 10, 161, 61));
+        lblCapquyen->setGeometry(QRect(100, 10, 171, 61));
 
         retranslateUi(thaydoiquyen);
 

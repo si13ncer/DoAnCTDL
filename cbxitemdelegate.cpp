@@ -1,5 +1,6 @@
 #include "cbxitemdelegate.h"
 #include <QComboBox>
+#include "dslkUser.h"
 
 ComboBoxItemDelegate::ComboBoxItemDelegate(QObject *parent)
     : QStyledItemDelegate(parent)
@@ -18,11 +19,24 @@ QWidget *ComboBoxItemDelegate::createEditor(QWidget *parent, const QStyleOptionV
     Q_UNUSED(index);
     Q_UNUSED(option);
     QComboBox *cb = new QComboBox(parent);
-    cb->addItem(QString("Xác nhận đơn"));
+    cb->addItem(QString("Đã tạo đơn"));
     cb->addItem(QString("Đang gửi"));
     cb->addItem(QString("Huỷ đơn"));
     cb->addItem(QString("Đã nhận"));
     cb->addItem(QString("Lỗi - Gửi trả"));
+    if (per=="ad") // phân quyền trạng thái
+    {
+
+       cb->model()->setData(cb->model()->index(2, 0), 0, Qt::UserRole - 1);
+       cb->model()->setData(cb->model()->index(3, 0), 0, Qt::UserRole - 1);
+       cb->model()->setData(cb->model()->index(4, 0), 0, Qt::UserRole - 1);
+    }
+    else
+    {
+        cb->model()->setData(cb->model()->index(0, 0), 0, Qt::UserRole - 1);
+        cb->model()->setData(cb->model()->index(1, 0), 0, Qt::UserRole - 1);
+    }
+
     return cb;
 }
 

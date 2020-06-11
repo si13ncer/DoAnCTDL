@@ -3,8 +3,6 @@
 
 #include <QDialog>
 #include "cbxitemdelegate.h"
-//#include "thongtinkhach.h"
-
 namespace Ui {
 class lichsumua;
 }
@@ -19,7 +17,11 @@ public:
 
 private slots:
 
+    void on_tblLichsudon_cellChanged(int row, int column);
+
     void on_btnThoat_clicked();
+
+    void on_btnLuu_clicked();
 
 private:
     Ui::lichsumua *ui;

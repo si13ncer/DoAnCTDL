@@ -6,6 +6,8 @@
 #include "QDebug"
 #include "dslkUser.h"
 #include "thongtinkhach.h"
+#include "listdonhang.h"
+#include "dslkKho.h"
 
 taodonhang::taodonhang(QWidget *parent) :
     QMainWindow(parent),
@@ -56,87 +58,6 @@ taodonhang::~taodonhang()
        event->ignore();
    }
 }*/
-void taodonhang::on_btnLuu_clicked()
-{
-//    QString id=ui->lblID->text();
-    QString name=ui->leditName->text();
-    if (name.length()<=0)
-        {
-            ui->statusbar->showMessage("Tên khách hàng trống!");
-            return;
-        }
-        for (int i =0;i<name.size();i++)
-        {
-            if (name[i].isNumber()) // Chỉ check số vì dấu cũng là kí tự đặc biệt
-           {
-                ui->statusbar->showMessage("Tên không hợp lệ! Không được dùng số");
-                return;
-           }
-        }
-    QString addr=ui->leditAdress->text();
-    if (addr.length()<=0)
-        {
-            ui->statusbar->showMessage("Địa chỉ trống!");
-            return;
-        }
-    QString phone=ui->leditPhone->text();
-    if (phone.length()<=0)
-        {
-            ui->statusbar->showMessage("Số điện thoại trống!");
-            return;
-        }
-    for (int i =0;i<phone.size();i++)
-    {
-        if (!phone[i].isNumber())
-       {
-            ui->statusbar->showMessage("SĐT không hợp lệ!");
-            return;
-       }
-    }
-    QString ttoan=ui->cbxThanhtoan->currentText();
-    QString ship=ui->cbxGiao->currentText();
-//    QString ntaoq = ntao.toString("dd/MM/yyyy");//convert QDate to QString
-//    std::string ids=id.toStdString();
-    std::string names = name.toStdString();
-    std::string addrs = addr.toStdString();
-    std::string phones = phone.toStdString();
-    std::string ttoans = ttoan.toStdString();
-    std::string ships = ship.toStdString();
-//    std::string ntaos=ntaoq.toStdString();
-    if (avaiableK(lkh,usingid)==false)// nếu chưa có - thêm vào đuôi; nếu đã có - cập nhật
-    {
-        nodek* n = lkh.head;
-        while (n)
-        {
-            if (n->data.id==usingid)
-            {
-               n->data.ten=names;
-               n->data.addr=addrs;
-               n->data.phone=phones;
-               break;
-            }
-            n = n->next;
-        }
-    }
-    else
-    {
-        kh k;
-        k.id=usingid;
-        k.ten=names;
-        k.addr=addrs;
-        k.phone=phones;
-        nodek* n = nkinit(k);
-        addTailk(lkh, n);
-    }
-    ghilistkh(lkh);
-}
-void taodonhang::on_btnHuy_clicked()
-{
-    if(QMessageBox::question(this,"Xác nhận","Dữ liệu chưa được lưu, bạn có chắc chắn muốn thoát?")==QMessageBox::Yes)
-    {
-        this->close();
-    }
-}
 
 void taodonhang::on_cbxLoai_currentIndexChanged(const QString &arg1)
 {
@@ -341,6 +262,36 @@ void taodonhang::on_cbxLoai_currentIndexChanged(const QString &arg1)
     }
 }
 
+
+
+void taodonhang::on_cbxDanhmuc_currentTextChanged(const QString &arg1)
+{
+    Q_UNUSED(arg1);
+    QString danhmuc= ui->cbxDanhmuc->currentText();
+    std::string danhmucs = danhmuc.toStdString();
+    nodehang* k = lkho.pHead;
+    while (k)
+    {
+        if(k->data.dm==danhmucs)
+        {
+            QString item=QString::fromStdString(k->data.name);
+            ui->cbxTenhang->addItem(item);
+        }
+        k = k->pNext;
+    }
+}
+
+void taodonhang::on_spbSoluong_valueChanged(int arg1)
+{
+    Q_UNUSED(arg1);
+    float voucher;
+    QString dg = ui->lblDongia->text();
+    int dongia=dg.toInt();
+    int Soluong=ui->spbSoluong->value();
+    int Tong = Soluong * (dongia-dongia*voucher);
+    ui->lblTong->setNum(Tong);
+}
+
 void taodonhang::on_btnThemvaogio_clicked()
 {
     ui->tblGiohang->insertRow(ui->tblGiohang->rowCount());//thêm dòng vào cuối bảng
@@ -359,20 +310,107 @@ void taodonhang::on_tblGiohang_itemChanged(QTableWidgetItem *item)
     }
     ui->lblGiatridon->setNum(Giatridon);
 }
-
 void taodonhang::on_btnXoakhoigio_clicked()
 {
     int row = ui->tblGiohang->currentRow();
     ui->tblGiohang->removeRow(row);
 }
-
-void taodonhang::on_spbSoluong_valueChanged(int arg1)
+void taodonhang::on_cbxTenhang_currentTextChanged(const QString &arg1)
 {
     Q_UNUSED(arg1);
-    float voucher;
-    QString dg = ui->lblDongia->text();
-    int dongia=dg.toInt();
-    int Soluong=ui->spbSoluong->value();
-    int Tong = Soluong * (dongia-dongia*voucher);
-    ui->lblTong->setNum(Tong);
+    QString tenhang= ui->cbxTenhang->currentText();
+    std::string tenhangs = tenhang.toStdString();
+    nodehang* k = lkho.pHead;
+    while (k)
+    {
+        if(k->data.name==tenhangs)
+        {
+            int dongia=k->data.price;
+            ui->lblDongia->setNum(dongia);
+            break;
+        }
+        k = k->pNext;
+    }
+}
+
+void taodonhang::on_btnLuu_clicked()
+{
+//    QString id=ui->lblID->text();
+    QString name=ui->leditName->text();
+    if (name.length()<=0)
+        {
+            ui->statusbar->showMessage("Tên khách hàng trống!");
+            return;
+        }
+        for (int i =0;i<name.size();i++)
+        {
+            if (name[i].isNumber()) // Chỉ check số vì dấu cũng là kí tự đặc biệt
+           {
+                ui->statusbar->showMessage("Tên không hợp lệ! Không được dùng số");
+                return;
+           }
+        }
+    QString addr=ui->leditAdress->text();
+    if (addr.length()<=0)
+        {
+            ui->statusbar->showMessage("Địa chỉ trống!");
+            return;
+        }
+    QString phone=ui->leditPhone->text();
+    if (phone.length()<=0)
+        {
+            ui->statusbar->showMessage("Số điện thoại trống!");
+            return;
+        }
+    for (int i =0;i<phone.size();i++)
+    {
+        if (!phone[i].isNumber())
+       {
+            ui->statusbar->showMessage("SĐT không hợp lệ!");
+            return;
+       }
+    }
+    QString ttoan=ui->cbxThanhtoan->currentText();
+    QString ship=ui->cbxGiao->currentText();
+//    QString ntaoq = ntao.toString("dd/MM/yyyy");//convert QDate to QString
+//    std::string ids=id.toStdString();
+    std::string names = name.toStdString();
+    std::string addrs = addr.toStdString();
+    std::string phones = phone.toStdString();
+    std::string ttoans = ttoan.toStdString();
+    std::string ships = ship.toStdString();
+//    std::string ntaos=ntaoq.toStdString();
+    if (avaiableK(lkh,usingid)==false)// nếu chưa có - thêm vào đuôi; nếu đã có - cập nhật
+    {
+        nodek* n = lkh.head;
+        while (n)
+        {
+            if (n->data.id==usingid)
+            {
+               n->data.ten=names;
+               n->data.addr=addrs;
+               n->data.phone=phones;
+               break;
+            }
+            n = n->next;
+        }
+    }
+    else
+    {
+        kh k;
+        k.id=usingid;
+        k.ten=names;
+        k.addr=addrs;
+        k.phone=phones;
+        nodek* n = nkinit(k);
+        addTailk(lkh, n);
+    }
+    ghilistkh(lkh);
+}
+void taodonhang::on_btnHuy_clicked()
+{
+    if(QMessageBox::question(this,"Xác nhận","Dữ liệu chưa được lưu, bạn có chắc chắn muốn thoát?")==QMessageBox::Yes)
+    {
+        this->close();
+    }
 }

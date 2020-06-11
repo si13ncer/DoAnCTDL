@@ -2,6 +2,7 @@
 #define CBXITEMDELEGATE_H
 
 #include <QStyledItemDelegate>
+#include <QTableWidget>
 
 class ComboBoxItemDelegate : public QStyledItemDelegate
 {

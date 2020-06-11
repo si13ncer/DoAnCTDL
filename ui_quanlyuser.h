@@ -33,13 +33,16 @@ public:
     {
         if (quanlyuser->objectName().isEmpty())
             quanlyuser->setObjectName(QString::fromUtf8("quanlyuser"));
-        quanlyuser->resize(408, 319);
+        quanlyuser->resize(402, 319);
+        QFont font;
+        font.setPointSize(10);
+        quanlyuser->setFont(font);
         lblTitle = new QLabel(quanlyuser);
         lblTitle->setObjectName(QString::fromUtf8("lblTitle"));
         lblTitle->setGeometry(QRect(110, 10, 191, 41));
         lblSlt = new QLabel(quanlyuser);
         lblSlt->setObjectName(QString::fromUtf8("lblSlt"));
-        lblSlt->setGeometry(QRect(30, 50, 101, 16));
+        lblSlt->setGeometry(QRect(30, 50, 121, 21));
         cBxUser = new QComboBox(quanlyuser);
         cBxUser->setObjectName(QString::fromUtf8("cBxUser"));
         cBxUser->setGeometry(QRect(80, 80, 251, 22));
@@ -79,9 +82,9 @@ public:
         quanlyuser->setWindowTitle(QCoreApplication::translate("quanlyuser", "Dialog", nullptr));
         lblTitle->setText(QCoreApplication::translate("quanlyuser", "      QU\341\272\242N L\303\235 NG\306\257\341\273\234I D\303\231NG", nullptr));
         lblSlt->setText(QCoreApplication::translate("quanlyuser", "Ch\341\273\215n ng\306\260\341\273\235i d\303\271ng:", nullptr));
-        btnCPW->setText(QCoreApplication::translate("quanlyuser", "                    \304\220\341\273\225i m\341\272\255t kh\341\272\251u", nullptr));
-        btnCapquyen->setText(QCoreApplication::translate("quanlyuser", "                   C\341\272\245p quy\341\273\201n", nullptr));
-        btnDeluser->setText(QCoreApplication::translate("quanlyuser", "                 Xo\303\241 ng\306\260\341\273\235i d\303\271ng", nullptr));
+        btnCPW->setText(QCoreApplication::translate("quanlyuser", "               \304\220\341\273\225i m\341\272\255t kh\341\272\251u", nullptr));
+        btnCapquyen->setText(QCoreApplication::translate("quanlyuser", "              C\341\272\245p quy\341\273\201n", nullptr));
+        btnDeluser->setText(QCoreApplication::translate("quanlyuser", "           Xo\303\241 ng\306\260\341\273\235i d\303\271ng", nullptr));
     } // retranslateUi
 
 };

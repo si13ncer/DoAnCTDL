@@ -10,6 +10,11 @@
     <height>162</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
@@ -78,7 +83,7 @@
     <rect>
      <x>100</x>
      <y>10</y>
-     <width>161</width>
+     <width>171</width>
      <height>61</height>
     </rect>
    </property>

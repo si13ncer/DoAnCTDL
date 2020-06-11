@@ -12,8 +12,8 @@ struct hang
     string dm;
     string name;
     string id;
-    string price;
-    string sl;
+    int price;
+    int sl;
     string day;
 
 };

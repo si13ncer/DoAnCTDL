@@ -17,7 +17,6 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSplitter>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -30,20 +29,21 @@ public:
     QLabel *label;
     QGroupBox *groupBox;
     QPushButton *btnLog;
-    QSplitter *splitter;
+    QLineEdit *leditPW;
+    QLabel *lblPW;
     QLabel *lblID;
     QLineEdit *leditID;
-    QSplitter *splitter_2;
-    QLabel *lblPW;
-    QLineEdit *leditPW;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *login)
     {
         if (login->objectName().isEmpty())
             login->setObjectName(QString::fromUtf8("login"));
-        login->resize(451, 235);
+        login->resize(460, 247);
         login->setMinimumSize(QSize(451, 235));
+        QFont font;
+        font.setPointSize(10);
+        login->setFont(font);
         centralwidget = new QWidget(login);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
@@ -56,34 +56,26 @@ public:
         groupBox->setGeometry(QRect(210, 50, 231, 131));
         btnLog = new QPushButton(groupBox);
         btnLog->setObjectName(QString::fromUtf8("btnLog"));
-        btnLog->setGeometry(QRect(90, 90, 80, 25));
+        btnLog->setGeometry(QRect(80, 90, 91, 25));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/res/res/icon/login.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnLog->setIcon(icon);
-        splitter = new QSplitter(groupBox);
-        splitter->setObjectName(QString::fromUtf8("splitter"));
-        splitter->setGeometry(QRect(10, 30, 208, 20));
-        splitter->setOrientation(Qt::Horizontal);
-        lblID = new QLabel(splitter);
-        lblID->setObjectName(QString::fromUtf8("lblID"));
-        splitter->addWidget(lblID);
-        leditID = new QLineEdit(splitter);
-        leditID->setObjectName(QString::fromUtf8("leditID"));
-        leditID->setMaxLength(15);
-        leditID->setClearButtonEnabled(false);
-        splitter->addWidget(leditID);
-        splitter_2 = new QSplitter(groupBox);
-        splitter_2->setObjectName(QString::fromUtf8("splitter_2"));
-        splitter_2->setGeometry(QRect(10, 62, 207, 20));
-        splitter_2->setOrientation(Qt::Horizontal);
-        lblPW = new QLabel(splitter_2);
-        lblPW->setObjectName(QString::fromUtf8("lblPW"));
-        splitter_2->addWidget(lblPW);
-        leditPW = new QLineEdit(splitter_2);
+        leditPW = new QLineEdit(groupBox);
         leditPW->setObjectName(QString::fromUtf8("leditPW"));
+        leditPW->setGeometry(QRect(80, 60, 128, 20));
         leditPW->setMaxLength(15);
         leditPW->setEchoMode(QLineEdit::Password);
-        splitter_2->addWidget(leditPW);
+        lblPW = new QLabel(groupBox);
+        lblPW->setObjectName(QString::fromUtf8("lblPW"));
+        lblPW->setGeometry(QRect(10, 62, 61, 16));
+        lblID = new QLabel(groupBox);
+        lblID->setObjectName(QString::fromUtf8("lblID"));
+        lblID->setGeometry(QRect(10, 30, 61, 16));
+        leditID = new QLineEdit(groupBox);
+        leditID->setObjectName(QString::fromUtf8("leditID"));
+        leditID->setGeometry(QRect(81, 28, 128, 20));
+        leditID->setMaxLength(15);
+        leditID->setClearButtonEnabled(false);
         login->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(login);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -100,10 +92,10 @@ public:
         label->setText(QString());
         groupBox->setTitle(QCoreApplication::translate("login", "\304\220\304\202NG NH\341\272\254P", nullptr));
         btnLog->setText(QCoreApplication::translate("login", "\304\220\304\203ng nh\341\272\255p", nullptr));
-        lblID->setText(QCoreApplication::translate("login", "T\303\252n ng\306\260\341\273\235i d\303\271ng", nullptr));
-        leditID->setText(QString());
-        lblPW->setText(QCoreApplication::translate("login", "M\341\272\255t kh\341\272\251u          ", nullptr));
         leditPW->setText(QString());
+        lblPW->setText(QCoreApplication::translate("login", "M\341\272\255t kh\341\272\251u          ", nullptr));
+        lblID->setText(QCoreApplication::translate("login", "ID", nullptr));
+        leditID->setText(QString());
     } // retranslateUi
 
 };

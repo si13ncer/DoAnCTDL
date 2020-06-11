@@ -78,7 +78,7 @@ void doc1hang(ifstream &Filein, hang &h)
     getline(Filein, h.day, ',');//Nhap sstring ma hang
     Filein.seekg(1, 1);//Dich sang phai 1 bit ki tu
     Filein >> h.price;//Nhap gia hang
-    Filein.seekg(1, 1);//Dich sang phai 1 bit ki tu
+    Filein.seekg(1, 2);//Dich sang phai 2 bit ki tu, bao gồm dấu "," và khoảng trắng
     Filein >> h.sl;
     string temp;
     getline(Filein, temp);
@@ -100,7 +100,7 @@ void ghi1hang (ofstream &Fileout,hang h)
     Fileout << h.dm << ", ";
     Fileout << h.name << ", ";
     Fileout << h.id << ", ";
-    Fileout <<h.day <<", ";
+    Fileout << h.day <<", ";
     Fileout << h.price << ", ";
     Fileout << h.sl;
 }

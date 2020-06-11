@@ -87,7 +87,6 @@ void readur(ifstream &filein, user &ur)//đọc 1 user từ file
 }
 void readlist(ifstream& filein, list& l)//đọc toàn bộ user trong file
 {
-
     while (!filein.eof())// đọc đến cuối file thì dừng
     {
         user ur;

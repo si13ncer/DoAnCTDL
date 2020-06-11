@@ -9,14 +9,16 @@
 #include "fstream"
 #include "dslkUser.h"
 #include "thongtinkhach.h"
-
+#include "listdonhang.h"
 
     ::list lur;
-    ::listk lkh;
+    listk lkh;
     std::string per;
     std::string chosenone;
     std::string usingid;
-    ::listkho lkho;
+    listkho lkho;
+    listdon ldon;
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
@@ -29,7 +31,11 @@ int main(int argc, char *argv[])
     lkinit(lkh);
     ifstream kfilein;
     kfilein.open("data/thongtinkhach.txt", ios::in);
-    readlk(kfilein, lkh);// đọc và thêm vào dslk
+    readlk(kfilein, lkh);// đọc và thêm vào lk
+    listdoninit(ldon);
+    ifstream dfilein;
+    dfilein.open("data/dsdon.txt", ios::in);
+    readlistdon(dfilein,ldon);
     log.show();
     return a.exec();
 }

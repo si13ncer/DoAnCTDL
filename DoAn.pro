@@ -23,7 +23,9 @@ SOURCES += \
     danhsachdon.cpp \
     dslkKho.cpp \
     dslkUser.cpp \
+    khohang.cpp \
     lichsumua.cpp \
+    listdonhang.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -41,7 +43,9 @@ HEADERS += \
     danhsachdon.h \
     dslkKho.h \
     dslkUser.h \
+    khohang.h \
     lichsumua.h \
+    listdonhang.h \
     login.h \
     mainwindow.h \
     nhaphang.h \
@@ -54,6 +58,7 @@ FORMS += \
     adduser.ui \
     changepw.ui \
     danhsachdon.ui \
+    khohang.ui \
     lichsumua.ui \
     login.ui \
     mainwindow.ui \

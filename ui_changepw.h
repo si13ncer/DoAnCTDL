@@ -38,6 +38,9 @@ public:
         if (changepw->objectName().isEmpty())
             changepw->setObjectName(QString::fromUtf8("changepw"));
         changepw->resize(350, 216);
+        QFont font;
+        font.setPointSize(10);
+        changepw->setFont(font);
         centralwidget = new QWidget(changepw);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         btnLuu = new QPushButton(centralwidget);
@@ -54,7 +57,7 @@ public:
         btnHuy->setIcon(icon1);
         lblNP = new QLabel(centralwidget);
         lblNP->setObjectName(QString::fromUtf8("lblNP"));
-        lblNP->setGeometry(QRect(20, 70, 121, 16));
+        lblNP->setGeometry(QRect(20, 70, 131, 16));
         lEditNP = new QLineEdit(centralwidget);
         lEditNP->setObjectName(QString::fromUtf8("lEditNP"));
         lEditNP->setGeometry(QRect(50, 110, 211, 23));

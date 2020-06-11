@@ -10,6 +10,11 @@
     <height>372</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -113,7 +118,7 @@
   <action name="actTaodon">
    <property name="icon">
     <iconset resource="res.qrc">
-     <normaloff>:/res/res/icon/taodonhang.ico</normaloff>:/res/res/icon/taodonhang.ico</iconset>
+     <normaloff>:/res/res/icon/taodonhang.png</normaloff>:/res/res/icon/taodonhang.png</iconset>
    </property>
    <property name="text">
     <string>Tạo đơn</string>
