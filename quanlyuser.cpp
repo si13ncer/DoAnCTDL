@@ -14,13 +14,19 @@ quanlyuser::quanlyuser(QWidget *parent) :
     ui->setupUi(this);
     QString title="Quản lý User";
     this->setWindowTitle(title);
-    node* k = lur.head;
-    while (k)
+    ui->btnCapquyen->setDisabled(true);
+    if (per=="ad")
     {
-        QString item=QString::fromStdString(k->data.id);// convert std::string to Qstring
-        ui->cBxUser->addItem(item);
-        k = k->next;
+        ui->btnCapquyen->setDisabled(false);
+        node* k = lur.head;
+        while (k)
+        {
+            QString item=QString::fromStdString(k->data.id);// convert std::string to Qstring
+            ui->cBxUser->addItem(item);
+            k = k->next;
+        }
     }
+    else ui->cBxUser->addItem(QString::fromStdString(usingid));
 }
 
 quanlyuser::~quanlyuser()

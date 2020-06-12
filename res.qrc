@@ -21,5 +21,6 @@
         <file>res/icon/sortup.png</file>
         <file>res/icon/find.png</file>
         <file>res/icon/refresh.png</file>
+        <file>res/icon/delete.png</file>
     </qresource>
 </RCC>

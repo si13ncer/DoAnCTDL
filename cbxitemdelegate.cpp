@@ -26,8 +26,6 @@ QWidget *ComboBoxItemDelegate::createEditor(QWidget *parent, const QStyleOptionV
     cb->addItem(QString("Lỗi - Gửi trả"));
     if (per=="ad") // phân quyền trạng thái
     {
-
-       cb->model()->setData(cb->model()->index(2, 0), 0, Qt::UserRole - 1);
        cb->model()->setData(cb->model()->index(3, 0), 0, Qt::UserRole - 1);
        cb->model()->setData(cb->model()->index(4, 0), 0, Qt::UserRole - 1);
     }

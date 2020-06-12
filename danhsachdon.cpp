@@ -220,10 +220,10 @@ void danhsachdon::on_bntLuu_clicked()
 
 void danhsachdon::on_btnNew_clicked()
 {
-    ui->tblDsdon->sortByColumn(0,Qt::AscendingOrder);
+    ui->tblDsdon->sortByColumn(0,Qt::DescendingOrder);
 }
 
 void danhsachdon::on_btnOld_clicked()
 {
-    ui->tblDsdon->sortByColumn(0,Qt::DescendingOrder);
+    ui->tblDsdon->sortByColumn(0,Qt::AscendingOrder);
 }

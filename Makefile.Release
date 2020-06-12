@@ -245,6 +245,7 @@ release\qrc_res.cpp: res.qrc \
 		res\icon\discard.png \
 		res\icon\refresh.png \
 		res\icon\adduser.png \
+		res\icon\delete.png \
 		res\icon\find.png \
 		res\icon\deluser.png \
 		res\icon\showpw.png \
@@ -998,6 +999,10 @@ release\moc_khohang.cpp: khohang.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtGui\qtouchdevice.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qtabwidget.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtGui\qicon.h \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtCore\QString \
+		dslkKho.h \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtCore\QDate \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtCore\qdatetime.h \
 		release\moc_predefs.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\bin\moc.exe
 	D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include "E:/Source Code/DoAn/DoAnCTDL/release/moc_predefs.h" -ID:/Qt/Qt5.14.2/5.14.2/msvc2015_64/mkspecs/win32-msvc -I"E:/Source Code/DoAn/DoAnCTDL" -ID:/Qt/Qt5.14.2/5.14.2/msvc2015_64/include -ID:/Qt/Qt5.14.2/5.14.2/msvc2015_64/include/QtWidgets -ID:/Qt/Qt5.14.2/5.14.2/msvc2015_64/include/QtGui -ID:/Qt/Qt5.14.2/5.14.2/msvc2015_64/include/QtANGLE -ID:/Qt/Qt5.14.2/5.14.2/msvc2015_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.25.28610\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" -I"E:\Windows Kits\10\include\10.0.18362.0\ucrt" -I"E:\Windows Kits\10\include\10.0.18362.0\shared" -I"E:\Windows Kits\10\include\10.0.18362.0\um" -I"E:\Windows Kits\10\include\10.0.18362.0\winrt" -I"E:\Windows Kits\10\include\10.0.18362.0\cppwinrt" khohang.h -o release\moc_khohang.cpp
@@ -2669,6 +2674,7 @@ release\danhsachdon.obj: danhsachdon.cpp danhsachdon.h \
 		listdonhang.h \
 		ui_danhsachdon.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtCore\QVariant \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtGui\QIcon \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\QApplication \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qapplication.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtCore\qcoreapplication.h \
@@ -2862,6 +2868,10 @@ release\khohang.obj: khohang.cpp khohang.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtGui\qtouchdevice.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\qtabwidget.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtGui\qicon.h \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtCore\QString \
+		dslkKho.h \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtCore\QDate \
+		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtCore\qdatetime.h \
 		ui_khohang.h \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtCore\QVariant \
 		D:\Qt\Qt5.14.2\5.14.2\msvc2015_64\include\QtWidgets\QApplication \

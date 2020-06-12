@@ -67,10 +67,10 @@ public:
         __qtablewidgetitem3->setBackground(QColor(170, 255, 127));
         tblkhohang->setHorizontalHeaderItem(3, __qtablewidgetitem3);
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
-        __qtablewidgetitem4->setBackground(QColor(0, 170, 255));
+        __qtablewidgetitem4->setBackground(QColor(255, 170, 255));
         tblkhohang->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
-        __qtablewidgetitem5->setBackground(QColor(255, 170, 255));
+        __qtablewidgetitem5->setBackground(QColor(0, 170, 255));
         tblkhohang->setHorizontalHeaderItem(5, __qtablewidgetitem5);
         QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
         __qtablewidgetitem6->setBackground(QColor(0, 170, 0));
@@ -157,9 +157,9 @@ public:
         QTableWidgetItem *___qtablewidgetitem3 = tblkhohang->horizontalHeaderItem(3);
         ___qtablewidgetitem3->setText(QCoreApplication::translate("khohang", "M\303\243 h\303\240ng", nullptr));
         QTableWidgetItem *___qtablewidgetitem4 = tblkhohang->horizontalHeaderItem(4);
-        ___qtablewidgetitem4->setText(QCoreApplication::translate("khohang", "Gi\303\241 h\303\240ng", nullptr));
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("khohang", "Ng\303\240y nh\341\272\255p h\303\240ng", nullptr));
         QTableWidgetItem *___qtablewidgetitem5 = tblkhohang->horizontalHeaderItem(5);
-        ___qtablewidgetitem5->setText(QCoreApplication::translate("khohang", "Ng\303\240y nh\341\272\255p h\303\240ng", nullptr));
+        ___qtablewidgetitem5->setText(QCoreApplication::translate("khohang", "Gi\303\241 h\303\240ng", nullptr));
         QTableWidgetItem *___qtablewidgetitem6 = tblkhohang->horizontalHeaderItem(6);
         ___qtablewidgetitem6->setText(QCoreApplication::translate("khohang", "S\341\273\221 l\306\260\341\273\243ng h\303\240ng", nullptr));
         label_2->setText(QCoreApplication::translate("khohang", "Ph\303\242n lo\341\272\241i h\303\240ng mu\341\273\221n xem", nullptr));

@@ -2,7 +2,11 @@
 #define KHOHANG_H
 
 #include <QMainWindow>
-
+#include <string>
+#include <iostream>
+#include <QString>
+#include <dslkKho.h>
+using namespace std;
 namespace Ui {
 class khohang;
 }
@@ -18,6 +22,16 @@ public:
 
 private slots:
     void on_cbxplh_currentIndexChanged(const QString &arg1);
+
+    void on_btnload_clicked();
+
+    void on_btnexit_clicked();
+
+    void on_btnxoa_clicked();
+
+    void on_btnchange_clicked();
+
+    void on_btnsearch_clicked();
 
 private:
     Ui::khohang *ui;

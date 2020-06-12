@@ -7,6 +7,7 @@
 #include "listdonhang.h"
 #include <QDebug>
 
+string temp=per;
 lichsumua::lichsumua(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::lichsumua)
@@ -70,6 +71,7 @@ lichsumua::lichsumua(QWidget *parent) :
     ui->lblThanhcong->setNum(done);
     ui->lblGiatri->setNum(price);
     ui->lblGiatri->setStyleSheet("color: green;");
+    per="kh"; //đổi quyền khách hàng để xác nhận đơn, trả lại như cũ sau khi đóng dialog
 }
 
 lichsumua::~lichsumua()
@@ -106,6 +108,7 @@ void lichsumua::on_btnThoat_clicked()
 {
     if(QMessageBox::question(this,"Xác nhận","Dữ liệu chưa được lưu, bạn có chắc chắn muốn thoát?")==QMessageBox::Yes)
     {
+        per=temp;
         this->close();
     }
 }
@@ -116,6 +119,7 @@ void lichsumua::on_btnLuu_clicked()
     {
         ghilistdon(ldon);
         QMessageBox::information(this,"Xác nhận","Lưu thành công!");
+        per=temp;
         this->close();
     }
 }

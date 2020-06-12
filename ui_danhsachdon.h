@@ -65,6 +65,7 @@ public:
     QLineEdit *leditFind;
     QPushButton *btnFind;
     QPushButton *btnRefresh;
+    QPushButton *btnDel;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *danhsachdon)
@@ -225,10 +226,11 @@ public:
         lblMahang->setFrameShape(QFrame::StyledPanel);
         bntLuu = new QPushButton(centralwidget);
         bntLuu->setObjectName(QString::fromUtf8("bntLuu"));
-        bntLuu->setGeometry(QRect(360, 460, 81, 31));
+        bntLuu->setGeometry(QRect(390, 460, 41, 31));
         QIcon icon2;
         icon2.addFile(QString::fromUtf8(":/res/res/icon/save.png"), QSize(), QIcon::Normal, QIcon::Off);
         bntLuu->setIcon(icon2);
+        bntLuu->setIconSize(QSize(20, 20));
         btnThoat = new QPushButton(centralwidget);
         btnThoat->setObjectName(QString::fromUtf8("btnThoat"));
         btnThoat->setGeometry(QRect(860, 460, 75, 31));
@@ -255,6 +257,13 @@ public:
         icon5.addFile(QString::fromUtf8(":/res/res/icon/refresh.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnRefresh->setIcon(icon5);
         btnRefresh->setIconSize(QSize(20, 20));
+        btnDel = new QPushButton(centralwidget);
+        btnDel->setObjectName(QString::fromUtf8("btnDel"));
+        btnDel->setGeometry(QRect(210, 460, 41, 31));
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/res/res/icon/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnDel->setIcon(icon6);
+        btnDel->setIconSize(QSize(30, 30));
         danhsachdon->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(danhsachdon);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -304,11 +313,12 @@ public:
         lblVanchuyen->setText(QString());
         label_7->setText(QCoreApplication::translate("danhsachdon", "M\303\243 H\303\240ng", nullptr));
         lblMahang->setText(QString());
-        bntLuu->setText(QCoreApplication::translate("danhsachdon", "C\341\272\255p Nh\341\272\255t", nullptr));
+        bntLuu->setText(QString());
         btnThoat->setText(QCoreApplication::translate("danhsachdon", "Tho\303\241t", nullptr));
         label_9->setText(QCoreApplication::translate("danhsachdon", "T\303\254m m\303\243 \304\221\306\241n", nullptr));
         btnFind->setText(QString());
         btnRefresh->setText(QString());
+        btnDel->setText(QString());
     } // retranslateUi
 
 };

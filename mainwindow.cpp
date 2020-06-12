@@ -17,7 +17,6 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowTitle(title);
     if (per!="ad")
     {
-        ui->actQliUser->setDisabled(true);
         ui->actTaouser->setDisabled(true);
         ui->actDsdon->setDisabled(true);
     }
