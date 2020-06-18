@@ -4,6 +4,7 @@
 #include "thongtinkhach.h"
 #include "dslkUser.h"
 #include <QDebug>
+#include "listdonhang.h"
 danhsachdon::danhsachdon(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::danhsachdon)
@@ -11,7 +12,7 @@ danhsachdon::danhsachdon(QWidget *parent) :
     ui->setupUi(this);
     QString title= "Danh sách đơn hàng";
     this->setWindowTitle(title);
-    ui->tblDsdon->setItemDelegateForColumn(2,new ComboBoxItemDelegate);
+    ui->tblDsdon->setItemDelegateForColumn(3,new ComboBoxItemDelegate);
     nodedon* k = ldon.head;
     while (k)
     {
@@ -25,9 +26,10 @@ danhsachdon::danhsachdon(QWidget *parent) :
         QString ghichu=QString::fromStdString(k->data.ghichu);
         ui->tblDsdon->insertRow(ui->tblDsdon->rowCount());
         ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 0, new QTableWidgetItem(pref+"-"+stt));
-        ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 1, new QTableWidgetItem(date));
-        ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 2, new QTableWidgetItem(trangthai));
-        ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 3, new QTableWidgetItem(ghichu));
+        ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 1, new QTableWidgetItem(QString::fromStdString(k->data.mahang)));
+        ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 2, new QTableWidgetItem(date));
+        ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 3, new QTableWidgetItem(trangthai));
+        ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 4, new QTableWidgetItem(ghichu));
         k=k->next;
     }
     node* u = lur.head;
@@ -119,9 +121,10 @@ void danhsachdon::on_cbxID_activated(const QString &arg1)
             QString ghichu=QString::fromStdString(k->data.ghichu);
             ui->tblDsdon->insertRow(ui->tblDsdon->rowCount());
             ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 0, new QTableWidgetItem(pref+"-"+stt));
-            ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 1, new QTableWidgetItem(date));
-            ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 2, new QTableWidgetItem(trangthai));
-            ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 3, new QTableWidgetItem(ghichu));
+            ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 1, new QTableWidgetItem(QString::fromStdString(k->data.mahang)));
+            ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 2, new QTableWidgetItem(date));
+            ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 3, new QTableWidgetItem(trangthai));
+            ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 4, new QTableWidgetItem(ghichu));
         }
         k=k->next;
     }
@@ -143,9 +146,10 @@ void danhsachdon::on_btnRefresh_clicked()
         QString ghichu=QString::fromStdString(k->data.ghichu);
         ui->tblDsdon->insertRow(ui->tblDsdon->rowCount());
         ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 0, new QTableWidgetItem(pref+"-"+stt));
-        ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 1, new QTableWidgetItem(date));
-        ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 2, new QTableWidgetItem(trangthai));
-        ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 3, new QTableWidgetItem(ghichu));
+        ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 1, new QTableWidgetItem(QString::fromStdString(k->data.mahang)));
+        ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 2, new QTableWidgetItem(date));
+        ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 3, new QTableWidgetItem(trangthai));
+        ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 4, new QTableWidgetItem(ghichu));
         k=k->next;
     }
 }
@@ -173,9 +177,10 @@ void danhsachdon::on_btnFind_clicked()
             QString ghichu=QString::fromStdString(k->data.ghichu);
             ui->tblDsdon->insertRow(ui->tblDsdon->rowCount());
             ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 0, new QTableWidgetItem(pref+"-"+stt));
-            ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 1, new QTableWidgetItem(date));
-            ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 2, new QTableWidgetItem(trangthai));
-            ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 3, new QTableWidgetItem(ghichu));
+            ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 1, new QTableWidgetItem(QString::fromStdString(k->data.mahang)));
+            ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 2, new QTableWidgetItem(date));
+            ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 3, new QTableWidgetItem(trangthai));
+            ui->tblDsdon->setItem(ui->tblDsdon->rowCount()-1, 4, new QTableWidgetItem(ghichu));
         }
         k=k->next;
     }
@@ -185,10 +190,9 @@ void danhsachdon::on_tblDsdon_cellChanged(int row, int column)
 {
     row=ui->tblDsdon->currentRow();
     column=ui->tblDsdon->currentColumn();
-    if (column==2 || column==3)
+    if (column==3)
     {
-        std::string trangthai=ui->tblDsdon->item(row,2)->text().toStdString(); //get cell of col2 content
-        std::string ghichu=ui->tblDsdon->item(row,3)->text().toStdString(); //get cell of col3 content
+        std::string trangthai=ui->tblDsdon->item(row,3)->text().toStdString(); //get cell of col2 content
         QString match=ui->tblDsdon->item(row,0)->text();//cell of col0 (madon)
         nodedon* k = ldon.head;
         while (k)
@@ -196,9 +200,30 @@ void danhsachdon::on_tblDsdon_cellChanged(int row, int column)
             QString pref=QString::fromStdString(k->data.ma.pref);
             QString stt=QString::number(k->data.ma.stt);
             QString madon=pref+"-"+stt;
-            if(madon==match)
+            QString mahang=ui->tblDsdon->item(row,1)->text();
+            QString match2=QString::fromStdString(k->data.mahang);
+            if(madon==match && mahang==match2)
             {
                 k->data.trangthai=trangthai;
+                break;
+            }
+            k = k->next;
+        }
+    }
+    if (column==4)
+    {
+        std::string ghichu=ui->tblDsdon->item(row,4)->text().toStdString(); //get cell of col3 content
+        QString match=ui->tblDsdon->item(row,0)->text();//cell of col0 (madon)
+        nodedon* k = ldon.head;
+        while (k)
+        {
+            QString pref=QString::fromStdString(k->data.ma.pref);
+            QString stt=QString::number(k->data.ma.stt);
+            QString madon=pref+"-"+stt;
+            QString mahang=ui->tblDsdon->item(row,1)->text();
+            QString match2=QString::fromStdString(k->data.mahang);
+            if(madon==match && mahang==match2)
+            {
                 k->data.ghichu=ghichu;
                 break;
             }
@@ -226,4 +251,27 @@ void danhsachdon::on_btnNew_clicked()
 void danhsachdon::on_btnOld_clicked()
 {
     ui->tblDsdon->sortByColumn(0,Qt::AscendingOrder);
+}
+
+void danhsachdon::on_btnDel_clicked()
+{
+    int slt=ui->tblDsdon->currentRow();
+    QString ktramadon=ui->tblDsdon->item(slt,0)->text();
+    QString ktramahang=ui->tblDsdon->item(slt,1)->text();
+    nodedon* k = ldon.head;
+    while (k)
+    {
+        QString pref=QString::fromStdString(k->data.ma.pref);
+        QString stt=QString::number(k->data.ma.stt);
+        if (pref+"-"+stt==ktramadon)
+        {
+            if (ktramahang==QString::fromStdString(k->data.mahang))
+            {
+                ui->tblDsdon->removeRow(slt);
+                delSltdon(ldon,k->data.mahang);
+                break;
+            }
+        }
+        k=k->next;
+    }
 }

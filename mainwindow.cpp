@@ -7,6 +7,9 @@
 #include "QMessageBox"
 #include "dslkUser.h"
 #include "QToolBar"
+#include "listdonhang.h"
+#include "thongtinkhach.h"
+#include "QDebug"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -19,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     {
         ui->actTaouser->setDisabled(true);
         ui->actDsdon->setDisabled(true);
+        ui->actBaocao->setDisabled(true);
     }
     ui->statusBar->showMessage("Xin chào " + QString::fromStdString(usingid)+"!",5000);
 }
@@ -62,4 +66,18 @@ void MainWindow::on_actNhaphang_triggered()
 {
     nhap =new nhaphang(this);
     nhap->show();
+}
+
+void MainWindow::closeEvent(QCloseEvent *event) //Giải phóng bộ nhớ sau khi đóng chương trình
+{
+    Q_UNUSED(event);
+    urmemfree(lur);
+    kmemfree(lkh);
+    dmemfree(ldon);
+}
+
+void MainWindow::on_actTaoVc_triggered()
+{
+    avc = new AddVoucher(this);
+    avc->show();
 }

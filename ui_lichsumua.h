@@ -107,8 +107,8 @@ public:
         font2.setWeight(50);
         label->setFont(font2);
         tblLichsudon = new QTableWidget(lichsumua);
-        if (tblLichsudon->columnCount() < 9)
-            tblLichsudon->setColumnCount(9);
+        if (tblLichsudon->columnCount() < 10)
+            tblLichsudon->setColumnCount(10);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         tblLichsudon->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
@@ -127,6 +127,8 @@ public:
         tblLichsudon->setHorizontalHeaderItem(7, __qtablewidgetitem7);
         QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
         tblLichsudon->setHorizontalHeaderItem(8, __qtablewidgetitem8);
+        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
+        tblLichsudon->setHorizontalHeaderItem(9, __qtablewidgetitem9);
         tblLichsudon->setObjectName(QString::fromUtf8("tblLichsudon"));
         tblLichsudon->setGeometry(QRect(30, 200, 921, 271));
         tblLichsudon->setFont(font1);
@@ -227,6 +229,8 @@ public:
         ___qtablewidgetitem7->setText(QCoreApplication::translate("lichsumua", "Tr\341\272\241ng Th\303\241i", nullptr));
         QTableWidgetItem *___qtablewidgetitem8 = tblLichsudon->horizontalHeaderItem(8);
         ___qtablewidgetitem8->setText(QCoreApplication::translate("lichsumua", "Ghi Ch\303\272", nullptr));
+        QTableWidgetItem *___qtablewidgetitem9 = tblLichsudon->horizontalHeaderItem(9);
+        ___qtablewidgetitem9->setText(QCoreApplication::translate("lichsumua", "M\303\243 H\303\240ng", nullptr));
         btnLuu->setText(QCoreApplication::translate("lichsumua", "L\306\260u", nullptr));
         btnThoat->setText(QCoreApplication::translate("lichsumua", "Tho\303\241t", nullptr));
         groupBox_2->setTitle(QString());

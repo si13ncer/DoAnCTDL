@@ -248,6 +248,11 @@
      <string>Ghi Chú</string>
     </property>
    </column>
+   <column>
+    <property name="text">
+     <string>Mã Hàng</string>
+    </property>
+   </column>
   </widget>
   <widget class="QPushButton" name="btnLuu">
    <property name="geometry">

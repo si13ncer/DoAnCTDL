@@ -6,7 +6,7 @@
 #include <fstream>
 using namespace std;
 
-struct date
+struct Date
 {
     int ngay;
     int thang;
@@ -26,7 +26,7 @@ struct don
     string mahang;
     int soluong;
     int thanhtien;
-    date ngaytao;
+    Date ngaytao;
     string thanhtoan;
     string vanchuyen;
     string trangthai;
@@ -44,7 +44,7 @@ struct listdon
     nodedon* tail;
 };
 
-void dateread(ifstream& filein, date& date);
+void dateread(ifstream& filein, Date& date);
 nodedon* nodedoninit(don d);
 void listdoninit(listdon& l);
 void addHeaddon(listdon& l, nodedon *d);
@@ -53,5 +53,9 @@ void readlistdon(ifstream& filein, listdon& l);
 void ghinodedon(ofstream& fileout, don d);
 void ghilistdon(listdon l);
 extern listdon ldon;
+void dmemfree(listdon &l);
+void delHeaddon(listdon& l);
+void delTaildon(listdon& l);
+void delSltdon(listdon& l, string s);
 
 #endif // LISTDONHANG_H

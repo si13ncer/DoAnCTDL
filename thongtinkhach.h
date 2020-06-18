@@ -38,4 +38,5 @@ void ghinodekh(ofstream& fileout, kh k);
 void ghilistkh(::listk l);
 bool avaiableK(listk l,string id);
 extern listk lkh;
+void kmemfree(listk &l);
 

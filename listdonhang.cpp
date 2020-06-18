@@ -1,12 +1,12 @@
 #include "listdonhang.h"
 
-void dateread(ifstream& filein, date& date) // đọc ngày tháng năm từ file
+void dateread(ifstream& filein, Date& Date) // đọc ngày tháng năm từ file
 {
-    filein >> date.ngay;
+    filein >> Date.ngay;
     filein.seekg(1, 1); // dịch sang phải 1 byte để bỏ qua kí tự '/'
-    filein >> date.thang;
+    filein >> Date.thang;
     filein.seekg(1, 1);
-    filein >> date.nam;
+    filein >> Date.nam;
     filein.seekg(1,1);
 }
 void listdoninit(listdon& l)
@@ -84,49 +84,48 @@ void readlistdon(ifstream& filein, listdon& l)
     }
 }
 
-//void delHeaddon(listdon& l)
-//{
-//    nodedon* p = l.head; // node p là node sẽ xóa
-//    l.head = l.head->next;// cập nhật lại l.head là phần tử kế tiếp
-//    delete p;
-//}
-//
-//void delTaildon(listdon& l)
-//{
-//    if (l.head->next == NULL)
-//    {
-//        return;
-//    }
-//    l.tail = l.tail->prev;
-//    l.tail->next = NULL;
-//}
-//void delSltdon(listdon& l, string s)
-//{
-//    if (l.head->data.id == s)
-//    {
-//        delHead(l);
-//        return;
-//    }
-//    if (l.tail->data.id == s)
-//    {
-//        delTail(l);
-//        return;
-//    }
-//
-//    node* g = new node; // node g là node trỏ đến node nằm trước node cần xóa: x
-//    node* k = l.head;
-//    while (k)
-//    {
-//        if (k->data.id == s)
-//        {
-//            g->next = k->next; // cập nhật mối liên kết giữa node k với node sau node h
-//            delete k; // xóa node nằm sau node k
-//            return;
-//        }
-//        g = k; // cho node g trỏ đến node k
-//        k = k->next;
-//    }
-//}
+void delHeaddon(listdon& l)
+{
+    nodedon* p = l.head; // node p là node sẽ xóa
+    l.head = l.head->next;// cập nhật lại l.head là phần tử kế tiếp
+    delete p;
+}
+void delTaildon(listdon& l)
+{
+    if (l.head->next == NULL)
+    {
+        return;
+    }
+    l.tail = l.tail->prev;
+    l.tail->next = NULL;
+}
+void delSltdon(listdon& l, string s)
+{
+    if (l.head->data.mahang == s)
+    {
+        delHeaddon(l);
+        return;
+    }
+    if (l.tail->data.mahang == s)
+    {
+        delTaildon(l);
+        return;
+    }
+
+    nodedon* g = new nodedon; // node g là node trỏ đến node nằm trước node cần xóa: x
+    nodedon* k = l.head;
+    while (k)
+    {
+        if (k->data.mahang == s)
+        {
+            g->next = k->next; // cập nhật mối liên kết giữa node k với node sau node h
+            delete k; // xóa node nằm sau node k
+            return;
+        }
+        g = k; // cho node g trỏ đến node k
+        k = k->next;
+    }
+}
 
 void ghinodedon(ofstream& fileout, don d)
 {
@@ -173,8 +172,13 @@ void ghilistdon(listdon l)
 //    }
 //    cout << "Khong co trong danh sach";
 
-
-
-
-
-
+void dmemfree(listdon &l)
+{
+    nodedon *p = NULL;
+    while (l.head != NULL)
+    {
+        p = l.head;
+        l.head= l.head->next;
+        delete p;
+    }
+}

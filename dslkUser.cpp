@@ -145,3 +145,13 @@ bool avaiable(list l,string id)//bool account id avaiable?
         }
     return true;
 }
+void urmemfree(list &l)
+{
+    node *p = NULL;
+    while (l.head != NULL)
+    {
+        p = l.head;
+        l.head= l.head->next;
+        delete p;
+    }
+}

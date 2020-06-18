@@ -60,6 +60,9 @@ public:
     QLabel *label_13;
     QLabel *lblDongia;
     QLabel *label_11;
+    QLabel *label_19;
+    QLabel *label_20;
+    QLabel *lblKm;
     QGroupBox *groupBox_3;
     QTableWidget *tblGiohang;
     QPushButton *btnXoakhoigio;
@@ -214,6 +217,16 @@ public:
         label_11 = new QLabel(groupBox_2);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setGeometry(QRect(330, 70, 51, 21));
+        label_19 = new QLabel(groupBox_2);
+        label_19->setObjectName(QString::fromUtf8("label_19"));
+        label_19->setGeometry(QRect(10, 150, 71, 21));
+        label_20 = new QLabel(groupBox_2);
+        label_20->setObjectName(QString::fromUtf8("label_20"));
+        label_20->setGeometry(QRect(140, 150, 21, 21));
+        lblKm = new QLabel(groupBox_2);
+        lblKm->setObjectName(QString::fromUtf8("lblKm"));
+        lblKm->setGeometry(QRect(100, 150, 31, 21));
+        lblKm->setFrameShape(QFrame::StyledPanel);
         groupBox_3 = new QGroupBox(centralwidget);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
         groupBox_3->setGeometry(QRect(20, 290, 651, 231));
@@ -221,8 +234,8 @@ public:
         font1.setPointSize(9);
         groupBox_3->setFont(font1);
         tblGiohang = new QTableWidget(groupBox_3);
-        if (tblGiohang->columnCount() < 6)
-            tblGiohang->setColumnCount(6);
+        if (tblGiohang->columnCount() < 7)
+            tblGiohang->setColumnCount(7);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         tblGiohang->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
@@ -235,7 +248,10 @@ public:
         tblGiohang->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
         tblGiohang->setHorizontalHeaderItem(5, __qtablewidgetitem5);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        tblGiohang->setHorizontalHeaderItem(6, __qtablewidgetitem6);
         tblGiohang->setObjectName(QString::fromUtf8("tblGiohang"));
+        tblGiohang->setEnabled(true);
         tblGiohang->setGeometry(QRect(10, 30, 621, 111));
         tblGiohang->setFont(font);
         btnXoakhoigio = new QPushButton(groupBox_3);
@@ -360,6 +376,9 @@ public:
         label_13->setText(QCoreApplication::translate("taodonhang", "VND", nullptr));
         lblDongia->setText(QString());
         label_11->setText(QCoreApplication::translate("taodonhang", "\304\220\306\241n Gi\303\241", nullptr));
+        label_19->setText(QCoreApplication::translate("taodonhang", "Khuy\341\272\277n M\303\243i", nullptr));
+        label_20->setText(QCoreApplication::translate("taodonhang", "%", nullptr));
+        lblKm->setText(QString());
         groupBox_3->setTitle(QCoreApplication::translate("taodonhang", "GI\341\273\216 H\303\200NG", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tblGiohang->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("taodonhang", "Danh M\341\273\245c", nullptr));
@@ -373,6 +392,8 @@ public:
         ___qtablewidgetitem4->setText(QCoreApplication::translate("taodonhang", "\304\220\306\241n gi\303\241 sau KM", nullptr));
         QTableWidgetItem *___qtablewidgetitem5 = tblGiohang->horizontalHeaderItem(5);
         ___qtablewidgetitem5->setText(QCoreApplication::translate("taodonhang", "Th\303\240nh Ti\341\273\201n", nullptr));
+        QTableWidgetItem *___qtablewidgetitem6 = tblGiohang->horizontalHeaderItem(6);
+        ___qtablewidgetitem6->setText(QCoreApplication::translate("taodonhang", "Ghi Ch\303\272", nullptr));
         btnXoakhoigio->setText(QString());
         lblGiatridon->setText(QString());
         label->setText(QCoreApplication::translate("taodonhang", "VND", nullptr));

@@ -24,9 +24,9 @@ private slots:
 
     void on_btnCapquyen_pressed();
 
-    void on_cBxUser_currentIndexChanged(const QString &arg1);
-
     void on_btnDeluser_pressed();
+
+    void on_cBxUser_activated(const QString &arg1);
 
 private:
     Ui::quanlyuser *ui;

@@ -17,6 +17,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QWidget>
 
@@ -43,12 +44,20 @@ public:
     QLabel *label_6;
     QPushButton *btnsapxep;
     QComboBox *cbxplh;
+    QPushButton *btnEditsl;
+    QLabel *label_7;
+    QPushButton *btnsearch;
+    QComboBox *cbxplh_2;
+    QPushButton *btnEditpldm;
+    QComboBox *cbxdmh_2;
+    QLabel *label_8;
+    QSpinBox *spinbsl;
 
     void setupUi(QMainWindow *khohang)
     {
         if (khohang->objectName().isEmpty())
             khohang->setObjectName(QString::fromUtf8("khohang"));
-        khohang->resize(789, 356);
+        khohang->resize(804, 586);
         centralwidget = new QWidget(khohang);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         tblkhohang = new QTableWidget(centralwidget);
@@ -76,52 +85,55 @@ public:
         __qtablewidgetitem6->setBackground(QColor(0, 170, 0));
         tblkhohang->setHorizontalHeaderItem(6, __qtablewidgetitem6);
         tblkhohang->setObjectName(QString::fromUtf8("tblkhohang"));
-        tblkhohang->setGeometry(QRect(0, 30, 741, 191));
+        tblkhohang->setGeometry(QRect(10, 30, 741, 331));
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(10, 250, 141, 16));
+        label_2->setGeometry(QRect(10, 370, 141, 16));
         label_3 = new QLabel(centralwidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(160, 250, 141, 16));
+        label_3->setGeometry(QRect(10, 420, 141, 16));
         cbxdmh = new QComboBox(centralwidget);
         cbxdmh->setObjectName(QString::fromUtf8("cbxdmh"));
-        cbxdmh->setGeometry(QRect(160, 270, 121, 22));
+        cbxdmh->setGeometry(QRect(10, 440, 181, 22));
         btnload = new QPushButton(centralwidget);
         btnload->setObjectName(QString::fromUtf8("btnload"));
-        btnload->setGeometry(QRect(90, 300, 121, 23));
+        btnload->setGeometry(QRect(10, 470, 181, 23));
         label = new QLabel(centralwidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(40, 10, 111, 16));
         lineEditid = new QLineEdit(centralwidget);
         lineEditid->setObjectName(QString::fromUtf8("lineEditid"));
-        lineEditid->setGeometry(QRect(310, 270, 113, 20));
+        lineEditid->setGeometry(QRect(330, 390, 181, 21));
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(310, 240, 151, 31));
+        label_4->setGeometry(QRect(330, 360, 201, 31));
         btnxoa = new QPushButton(centralwidget);
         btnxoa->setObjectName(QString::fromUtf8("btnxoa"));
-        btnxoa->setGeometry(QRect(320, 300, 75, 23));
+        btnxoa->setGeometry(QRect(600, 400, 81, 23));
         btnexit = new QPushButton(centralwidget);
         btnexit->setObjectName(QString::fromUtf8("btnexit"));
-        btnexit->setGeometry(QRect(710, 330, 75, 23));
+        btnexit->setGeometry(QRect(690, 560, 75, 23));
         cbxelement = new QComboBox(centralwidget);
+        cbxelement->addItem(QString());
+        cbxelement->addItem(QString());
+        cbxelement->addItem(QString());
         cbxelement->setObjectName(QString::fromUtf8("cbxelement"));
-        cbxelement->setGeometry(QRect(480, 270, 69, 22));
+        cbxelement->setGeometry(QRect(298, 440, 91, 22));
         lineEditchange = new QLineEdit(centralwidget);
         lineEditchange->setObjectName(QString::fromUtf8("lineEditchange"));
-        lineEditchange->setGeometry(QRect(590, 270, 113, 20));
+        lineEditchange->setGeometry(QRect(402, 440, 131, 20));
         btnchange = new QPushButton(centralwidget);
         btnchange->setObjectName(QString::fromUtf8("btnchange"));
-        btnchange->setGeometry(QRect(540, 300, 75, 23));
+        btnchange->setGeometry(QRect(600, 430, 81, 23));
         label_5 = new QLabel(centralwidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(470, 239, 101, 31));
+        label_5->setGeometry(QRect(300, 410, 91, 31));
         label_6 = new QLabel(centralwidget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(600, 250, 91, 16));
+        label_6->setGeometry(QRect(420, 410, 101, 31));
         btnsapxep = new QPushButton(centralwidget);
         btnsapxep->setObjectName(QString::fromUtf8("btnsapxep"));
-        btnsapxep->setGeometry(QRect(190, 330, 161, 23));
+        btnsapxep->setGeometry(QRect(600, 490, 81, 21));
         cbxplh = new QComboBox(centralwidget);
         cbxplh->addItem(QString());
         cbxplh->addItem(QString());
@@ -137,7 +149,44 @@ public:
         cbxplh->addItem(QString());
         cbxplh->addItem(QString());
         cbxplh->setObjectName(QString::fromUtf8("cbxplh"));
-        cbxplh->setGeometry(QRect(10, 270, 131, 22));
+        cbxplh->setGeometry(QRect(10, 390, 181, 22));
+        btnEditsl = new QPushButton(centralwidget);
+        btnEditsl->setObjectName(QString::fromUtf8("btnEditsl"));
+        btnEditsl->setGeometry(QRect(600, 460, 81, 23));
+        label_7 = new QLabel(centralwidget);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setGeometry(QRect(480, 460, 51, 21));
+        btnsearch = new QPushButton(centralwidget);
+        btnsearch->setObjectName(QString::fromUtf8("btnsearch"));
+        btnsearch->setGeometry(QRect(600, 370, 81, 23));
+        cbxplh_2 = new QComboBox(centralwidget);
+        cbxplh_2->addItem(QString());
+        cbxplh_2->addItem(QString());
+        cbxplh_2->addItem(QString());
+        cbxplh_2->addItem(QString());
+        cbxplh_2->addItem(QString());
+        cbxplh_2->addItem(QString());
+        cbxplh_2->addItem(QString());
+        cbxplh_2->addItem(QString());
+        cbxplh_2->addItem(QString());
+        cbxplh_2->addItem(QString());
+        cbxplh_2->addItem(QString());
+        cbxplh_2->addItem(QString());
+        cbxplh_2->addItem(QString());
+        cbxplh_2->setObjectName(QString::fromUtf8("cbxplh_2"));
+        cbxplh_2->setGeometry(QRect(270, 520, 111, 22));
+        btnEditpldm = new QPushButton(centralwidget);
+        btnEditpldm->setObjectName(QString::fromUtf8("btnEditpldm"));
+        btnEditpldm->setGeometry(QRect(580, 520, 131, 23));
+        cbxdmh_2 = new QComboBox(centralwidget);
+        cbxdmh_2->setObjectName(QString::fromUtf8("cbxdmh_2"));
+        cbxdmh_2->setGeometry(QRect(400, 520, 131, 22));
+        label_8 = new QLabel(centralwidget);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setGeometry(QRect(320, 500, 161, 16));
+        spinbsl = new QSpinBox(centralwidget);
+        spinbsl->setObjectName(QString::fromUtf8("spinbsl"));
+        spinbsl->setGeometry(QRect(540, 460, 42, 22));
         khohang->setCentralWidget(centralwidget);
 
         retranslateUi(khohang);
@@ -166,13 +215,17 @@ public:
         label_3->setText(QCoreApplication::translate("khohang", "Danh m\341\273\245c h\303\240ng mu\341\273\221n xem", nullptr));
         btnload->setText(QCoreApplication::translate("khohang", "Load Th\303\264ng Tin", nullptr));
         label->setText(QCoreApplication::translate("khohang", "Danh s\303\241ch kho h\303\240ng", nullptr));
-        label_4->setText(QCoreApplication::translate("khohang", "Nh\341\272\255p m\303\243 h\303\240ng mu\341\273\221n xo\303\241/ s\341\273\255a", nullptr));
+        label_4->setText(QCoreApplication::translate("khohang", "Nh\341\272\255p m\303\243 h\303\240ng mu\341\273\221n xo\303\241/ s\341\273\255a/t\303\254m ki\341\272\277m", nullptr));
         btnxoa->setText(QCoreApplication::translate("khohang", "Xo\303\241", nullptr));
         btnexit->setText(QCoreApplication::translate("khohang", "Tho\303\241t", nullptr));
+        cbxelement->setItemText(0, QCoreApplication::translate("khohang", "T\303\252n h\303\240ng", nullptr));
+        cbxelement->setItemText(1, QCoreApplication::translate("khohang", "M\303\243 h\303\240ng", nullptr));
+        cbxelement->setItemText(2, QCoreApplication::translate("khohang", "Gi\303\241 nh\341\272\255p", nullptr));
+
         btnchange->setText(QCoreApplication::translate("khohang", "Ch\341\273\211nh S\341\273\255a", nullptr));
-        label_5->setText(QCoreApplication::translate("khohang", "S\341\273\255a th\303\264ng tin n\303\240o", nullptr));
+        label_5->setText(QCoreApplication::translate("khohang", "  S\341\273\255a th\303\264ng tin", nullptr));
         label_6->setText(QCoreApplication::translate("khohang", "N\341\273\231i dung ch\341\273\211nh s\341\273\255a", nullptr));
-        btnsapxep->setText(QCoreApplication::translate("khohang", "N\303\272t th\341\272\247n k\341\273\263 s\341\272\257p x\341\272\277p t\341\273\253 a-z", nullptr));
+        btnsapxep->setText(QCoreApplication::translate("khohang", "S\341\272\257p X\341\272\277p", nullptr));
         cbxplh->setItemText(0, QCoreApplication::translate("khohang", "Thi\341\272\277t B\341\273\213 \304\220i\341\273\207n T\341\273\255", nullptr));
         cbxplh->setItemText(1, QCoreApplication::translate("khohang", "Ph\341\273\245 Ki\341\273\207n \304\220i\341\273\207n T\341\273\255", nullptr));
         cbxplh->setItemText(2, QCoreApplication::translate("khohang", "TV & Thi\341\272\277t B\341\273\213 \304\220i\341\273\207n Gia D\341\273\245ng", nullptr));
@@ -187,6 +240,25 @@ public:
         cbxplh->setItemText(11, QCoreApplication::translate("khohang", "\303\224t\303\264, Xe M\303\241y & Thi\341\272\277t B\341\273\213 \304\220\341\273\213nh V\341\273\213", nullptr));
         cbxplh->setItemText(12, QCoreApplication::translate("khohang", "To\303\240n b\341\273\231", nullptr));
 
+        btnEditsl->setText(QCoreApplication::translate("khohang", "S\341\273\255a s\341\273\221 l\306\260\341\273\243ng", nullptr));
+        label_7->setText(QCoreApplication::translate("khohang", "S\341\273\221 l\306\260\341\273\243ng", nullptr));
+        btnsearch->setText(QCoreApplication::translate("khohang", "T\303\254m ki\341\272\277m", nullptr));
+        cbxplh_2->setItemText(0, QCoreApplication::translate("khohang", "Thi\341\272\277t B\341\273\213 \304\220i\341\273\207n T\341\273\255", nullptr));
+        cbxplh_2->setItemText(1, QCoreApplication::translate("khohang", "Ph\341\273\245 Ki\341\273\207n \304\220i\341\273\207n T\341\273\255", nullptr));
+        cbxplh_2->setItemText(2, QCoreApplication::translate("khohang", "TV & Thi\341\272\277t B\341\273\213 \304\220i\341\273\207n Gia D\341\273\245ng", nullptr));
+        cbxplh_2->setItemText(3, QCoreApplication::translate("khohang", "S\341\273\251c Kho\341\272\273 & L\303\240m \304\220\341\272\271p", nullptr));
+        cbxplh_2->setItemText(4, QCoreApplication::translate("khohang", "H\303\240ng M\341\272\271, B\303\251 & \304\220\341\273\223 Ch\306\241i", nullptr));
+        cbxplh_2->setItemText(5, QCoreApplication::translate("khohang", "Si\303\252u Th\341\273\213 T\341\272\241p Ho\303\241", nullptr));
+        cbxplh_2->setItemText(6, QCoreApplication::translate("khohang", "H\303\240ng Gia D\341\273\245ng & \304\220\341\273\235i S\341\273\221ng", nullptr));
+        cbxplh_2->setItemText(7, QCoreApplication::translate("khohang", "Th\341\273\235i Trang N\341\273\257", nullptr));
+        cbxplh_2->setItemText(8, QCoreApplication::translate("khohang", "Th\341\273\235i Trang Nam", nullptr));
+        cbxplh_2->setItemText(9, QCoreApplication::translate("khohang", "Ph\341\273\245 Ki\341\273\207n Th\341\273\235i Trang", nullptr));
+        cbxplh_2->setItemText(10, QCoreApplication::translate("khohang", "Th\341\273\203 Thao & Du L\341\273\213ch", nullptr));
+        cbxplh_2->setItemText(11, QCoreApplication::translate("khohang", "\303\224t\303\264, Xe M\303\241y & Thi\341\272\277t B\341\273\213 \304\220\341\273\213nh V\341\273\213", nullptr));
+        cbxplh_2->setItemText(12, QCoreApplication::translate("khohang", "To\303\240n b\341\273\231", nullptr));
+
+        btnEditpldm->setText(QCoreApplication::translate("khohang", "S\341\273\255a danh m\341\273\245c/ ph\303\242n lo\341\272\241i", nullptr));
+        label_8->setText(QCoreApplication::translate("khohang", "Ph\303\242n lo\341\272\241i / Danh m\341\273\245c mu\341\273\221n s\341\273\255a", nullptr));
     } // retranslateUi
 
 };

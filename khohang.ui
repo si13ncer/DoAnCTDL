@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>789</width>
-    <height>572</height>
+    <width>804</width>
+    <height>586</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -209,8 +209,8 @@
    <widget class="QPushButton" name="btnexit">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>550</y>
+      <x>690</x>
+      <y>560</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -236,11 +236,6 @@
     <item>
      <property name="text">
       <string>Mã hàng</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Ngày nhập</string>
      </property>
     </item>
     <item>
@@ -386,16 +381,6 @@
      </property>
     </item>
    </widget>
-   <widget class="QSpinBox" name="spinsl">
-    <property name="geometry">
-     <rect>
-      <x>540</x>
-      <y>460</y>
-      <width>42</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
    <widget class="QPushButton" name="btnEditsl">
     <property name="geometry">
      <rect>
@@ -439,7 +424,7 @@
     <property name="geometry">
      <rect>
       <x>270</x>
-      <y>510</y>
+      <y>520</y>
       <width>111</width>
       <height>22</height>
      </rect>
@@ -527,7 +512,7 @@
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>510</y>
+      <y>520</y>
       <width>131</width>
       <height>22</height>
      </rect>
@@ -537,13 +522,23 @@
     <property name="geometry">
      <rect>
       <x>320</x>
-      <y>490</y>
+      <y>500</y>
       <width>161</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
      <string>Phân loại / Danh mục muốn sửa</string>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="spinbsl">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>460</y>
+      <width>42</width>
+      <height>22</height>
+     </rect>
     </property>
    </widget>
   </widget>

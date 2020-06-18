@@ -36,6 +36,8 @@ private slots:
 
     void on_btnOld_clicked();
 
+    void on_btnDel_clicked();
+
 private:
     Ui::danhsachdon *ui;
 };

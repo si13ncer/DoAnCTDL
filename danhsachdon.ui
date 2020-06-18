@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>962</width>
+    <width>1065</width>
     <height>527</height>
    </rect>
   </property>
@@ -40,7 +40,7 @@
    <widget class="QPushButton" name="btnNew">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>470</x>
       <y>80</y>
       <width>75</width>
       <height>21</height>
@@ -57,7 +57,7 @@
    <widget class="QPushButton" name="btnOld">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>470</x>
       <y>110</y>
       <width>75</width>
       <height>21</height>
@@ -99,13 +99,18 @@
      <rect>
       <x>20</x>
       <y>140</y>
-      <width>421</width>
+      <width>521</width>
       <height>311</height>
      </rect>
     </property>
     <column>
      <property name="text">
       <string>Mã Đơn</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Mã Hàng</string>
      </property>
     </column>
     <column>
@@ -127,7 +132,7 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>550</x>
       <y>100</y>
       <width>511</width>
       <height>351</height>
@@ -590,9 +595,9 @@
    <widget class="QPushButton" name="bntLuu">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>500</x>
       <y>460</y>
-      <width>41</width>
+      <width>31</width>
       <height>31</height>
      </rect>
     </property>
@@ -613,7 +618,7 @@
    <widget class="QPushButton" name="btnThoat">
     <property name="geometry">
      <rect>
-      <x>860</x>
+      <x>980</x>
       <y>460</y>
       <width>75</width>
       <height>31</height>
@@ -678,7 +683,7 @@
      <rect>
       <x>20</x>
       <y>460</y>
-      <width>41</width>
+      <width>31</width>
       <height>31</height>
      </rect>
     </property>
@@ -699,9 +704,9 @@
    <widget class="QPushButton" name="btnDel">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>270</x>
       <y>460</y>
-      <width>41</width>
+      <width>31</width>
       <height>31</height>
      </rect>
     </property>

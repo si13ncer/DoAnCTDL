@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_quanlyuser_t {
     QByteArrayData data[7];
-    char stringdata0[111];
+    char stringdata0[101];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,15 +36,14 @@ QT_MOC_LITERAL(0, 0, 10), // "quanlyuser"
 QT_MOC_LITERAL(1, 11, 17), // "on_btnCPW_pressed"
 QT_MOC_LITERAL(2, 29, 0), // ""
 QT_MOC_LITERAL(3, 30, 22), // "on_btnCapquyen_pressed"
-QT_MOC_LITERAL(4, 53, 30), // "on_cBxUser_currentIndexChanged"
-QT_MOC_LITERAL(5, 84, 4), // "arg1"
-QT_MOC_LITERAL(6, 89, 21) // "on_btnDeluser_pressed"
+QT_MOC_LITERAL(4, 53, 21), // "on_btnDeluser_pressed"
+QT_MOC_LITERAL(5, 75, 20), // "on_cBxUser_activated"
+QT_MOC_LITERAL(6, 96, 4) // "arg1"
 
     },
     "quanlyuser\0on_btnCPW_pressed\0\0"
-    "on_btnCapquyen_pressed\0"
-    "on_cBxUser_currentIndexChanged\0arg1\0"
-    "on_btnDeluser_pressed"
+    "on_btnCapquyen_pressed\0on_btnDeluser_pressed\0"
+    "on_cBxUser_activated\0arg1"
 };
 #undef QT_MOC_LITERAL
 
@@ -64,14 +63,14 @@ static const uint qt_meta_data_quanlyuser[] = {
  // slots: name, argc, parameters, tag, flags
        1,    0,   34,    2, 0x08 /* Private */,
        3,    0,   35,    2, 0x08 /* Private */,
-       4,    1,   36,    2, 0x08 /* Private */,
-       6,    0,   39,    2, 0x08 /* Private */,
+       4,    0,   36,    2, 0x08 /* Private */,
+       5,    1,   37,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,    5,
     QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    6,
 
        0        // eod
 };
@@ -84,8 +83,8 @@ void quanlyuser::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->on_btnCPW_pressed(); break;
         case 1: _t->on_btnCapquyen_pressed(); break;
-        case 2: _t->on_cBxUser_currentIndexChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 3: _t->on_btnDeluser_pressed(); break;
+        case 2: _t->on_btnDeluser_pressed(); break;
+        case 3: _t->on_cBxUser_activated((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         default: ;
         }
     }

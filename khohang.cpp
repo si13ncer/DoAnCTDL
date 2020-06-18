@@ -3713,9 +3713,15 @@ void khohang::on_btnxoa_clicked()
        }
     }
     string id= ui->lineEditid->text().toStdString();
+    if (kiemtratontai (lkho,id) ==false)
+    {
+        QMessageBox::information(this,"Xác nhận","Mã hàng không tồn tại");
+        return;
+    }
     if(QMessageBox::question(this,"Xác nhận","Bạn có chắc chắn muốn xoá sản phẩm này?")==QMessageBox::Yes)
     {
         xoa(lkho,id);
+        ghikhohang(lkho);
         QMessageBox::information(this,"Xác nhận","Sản phẩm này đã bị xoá");
     }
 
@@ -3736,10 +3742,35 @@ void khohang::on_btnchange_clicked()
      string id= ui->lineEditid->text().toStdString();
      if(QMessageBox::question(this,"Xác nhận","Bạn có chắc chắn muốn sửa sản phẩm này?")==QMessageBox::Yes)
      {
-         string x=ui->cbxelement->currentText().toStdString();
-         if (x=="Phân loại")
+         if (kiemtratontai (lkho,id) ==false)
          {
+             QMessageBox::information(this,"Xác nhận","Mã hàng không tồn tại");
+             return;
+         }
 
+         string x=ui->cbxelement->currentText().toStdString();
+
+         if (x=="Tên hàng")
+         {
+             string change =ui->lineEditchange->text().toStdString();
+             SuaTenHang(lkho,change,id);
+             ghikhohang(lkho);
+             QMessageBox::information(this,"Xác nhận","Đã hoàn tất");
+         }
+
+         else if (x=="Mã hàng")
+         {
+              string change =ui->lineEditchange->text().toStdString();
+              SuaMaHang(lkho,change,id);
+              ghikhohang(lkho);
+              QMessageBox::information(this,"Xác nhận","Đã hoàn tất");
+         }
+         else if (x=="Giá nhập")
+         {
+             int change =ui->lineEditchange->text().toInt();
+             SuaGiaHangCuaMaHang(lkho,change,id);
+             ghikhohang(lkho);
+             QMessageBox::information(this,"Xác nhận","Đã hoàn tất");
          }
      }
 }
@@ -3748,6 +3779,91 @@ void khohang::on_btnchange_clicked()
 
 
 void khohang::on_btnsearch_clicked()
+{
+    QString mahang=ui->lineEditid->text();
+    for (int i =0;i<mahang.size();i++)
+    {
+        if (mahang[i].isPunct()||mahang[i].isSpace())
+       {
+            QMessageBox::information(this,"Xác nhận","Mã hàng không hợp lệ");
+            return;
+       }
+    }
+
+    string id= ui->lineEditid->text().toStdString();
+
+    if(QMessageBox::question(this,"Xác nhận","Bạn có chắc chắn muốn tìm sản phẩm này?")==QMessageBox::Yes)
+   {
+        if (kiemtratontai (lkho,id) ==false)
+        {
+            QMessageBox::information(this,"Xác nhận","Mã hàng không tồn tại");
+            return;
+        }
+     nodehang *p=lkho.pHead;
+     while (p)
+      {
+         if(p->data.id==id)
+         {
+            ui->tblkhohang->clear();
+            QString pl = QString::fromStdString(p->data.pl);
+            QString dm = QString::fromStdString(p->data.dm);
+            QString name = QString::fromStdString(p->data.name);
+            QString id = QString::fromStdString(p->data.id);
+            QString day = QString::fromStdString(p->data.day);
+            QString price = QString::number(p->data.price);
+            QString sl = QString::number(p->data.sl);
+            ui->tblkhohang->insertRow(ui->tblkhohang->rowCount());
+            ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,0,new QTableWidgetItem(pl));
+            ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,1,new QTableWidgetItem(dm));
+            ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,2,new QTableWidgetItem(name));
+            ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,3,new QTableWidgetItem(id));
+            ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
+            ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
+            ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+         }
+         p=p->pNext;
+      }
+     QMessageBox::information(this,"Xác nhận","Đã hoàn tất");
+   }
+
+}
+
+void khohang::on_btnEditsl_clicked()
+{
+    QString mahang=ui->lineEditid->text();
+    for (int i =0;i<mahang.size();i++)
+    {
+        if (mahang[i].isPunct()||mahang[i].isSpace())
+       {
+            QMessageBox::information(this,"Xác nhận","Mã hàng không hợp lệ");
+            return;
+       }
+    }
+
+    string id= ui->lineEditid->text().toStdString();
+    if(QMessageBox::question(this,"Xác nhận","Bạn có chắc chắn muốn sửa sản phẩm này?")==QMessageBox::Yes)
+    {
+        if (kiemtratontai (lkho,id) ==false)
+        {
+            QMessageBox::information(this,"Xác nhận","Mã hàng không tồn tại");
+            return;
+        }
+
+    int change =ui->spinbsl->value();
+
+    SuaSoLuongCuaMaHang(lkho,change,id);
+
+    ghikhohang(lkho);
+
+    QMessageBox::information(this,"Xác nhận","Đã hoàn tất");
+
+    }
+
+}
+
+
+
+void khohang::on_btnsapxep_clicked()
 {
 
 }

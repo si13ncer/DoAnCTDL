@@ -33,6 +33,11 @@ private slots:
 
     void on_btnsearch_clicked();
 
+    void on_btnEditsl_clicked();
+
+
+    void on_btnsapxep_clicked();
+
 private:
     Ui::khohang *ui;
 };

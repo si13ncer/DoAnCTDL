@@ -16,6 +16,7 @@ lichsumua::lichsumua(QWidget *parent) :
     QString title= "Đơn đã tạo";
     this->setWindowTitle(title);
     ui->lblID->setText(QString::fromStdString(usingid));
+    ui->tblLichsudon->hideColumn(9);
     nodek* n = lkh.head;
     while (n)
     {
@@ -49,6 +50,7 @@ lichsumua::lichsumua(QWidget *parent) :
             QString vanchuyen=QString::fromStdString(k->data.vanchuyen);
             QString trangthai=QString::fromStdString(k->data.trangthai);
             QString ghichu=QString::fromStdString(k->data.ghichu);
+            QString mahang=QString::fromStdString(k->data.mahang);
             if (trangthai=="Đã nhận")
             {
                 done+=1;
@@ -64,6 +66,7 @@ lichsumua::lichsumua(QWidget *parent) :
             ui->tblLichsudon->setItem(ui->tblLichsudon->rowCount()-1, 6, new QTableWidgetItem(vanchuyen));
             ui->tblLichsudon->setItem(ui->tblLichsudon->rowCount()-1, 7, new QTableWidgetItem(trangthai));
             ui->tblLichsudon->setItem(ui->tblLichsudon->rowCount()-1, 8, new QTableWidgetItem(ghichu));
+            ui->tblLichsudon->setItem(ui->tblLichsudon->rowCount()-1, 9, new QTableWidgetItem(mahang));
         }
         k = k->next;
     }
@@ -83,10 +86,10 @@ void lichsumua::on_tblLichsudon_cellChanged(int row, int column)
 {
     row=ui->tblLichsudon->currentRow();
     column=ui->tblLichsudon->currentColumn();
-    if (column==7 || column==8)
+    if (column==7)
     {
+        QString mahang=ui->tblLichsudon->item(row,9)->text();
         std::string trangthai=ui->tblLichsudon->item(row,7)->text().toStdString(); //get cell of col7 content
-        std::string ghichu=ui->tblLichsudon->item(row,8)->text().toStdString(); //get cell of col8 content
         QString match=ui->tblLichsudon->item(row,0)->text();//cell of col0 (madon)
         nodedon* k = ldon.head;
         while (k)
@@ -94,9 +97,29 @@ void lichsumua::on_tblLichsudon_cellChanged(int row, int column)
             QString pref=QString::fromStdString(k->data.ma.pref);
             QString stt=QString::number(k->data.ma.stt);
             QString madon=pref+"-"+stt;
-            if(madon==match)
+            QString match2=QString::fromStdString(k->data.mahang);
+            if(madon==match && mahang==match2)
             {
                 k->data.trangthai=trangthai;
+                break;
+            }
+            k = k->next;
+        }
+    }
+    if (column==8)
+    {
+        std::string ghichu=ui->tblLichsudon->item(row,8)->text().toStdString(); //get cell of col8 content
+        QString match=ui->tblLichsudon->item(row,0)->text();//cell of col0 (madon)
+        nodedon* k = ldon.head;
+        while (k)
+        {
+            QString mahang=ui->tblLichsudon->item(row,9)->text();
+            QString pref=QString::fromStdString(k->data.ma.pref);
+            QString stt=QString::number(k->data.ma.stt);
+            QString madon=pref+"-"+stt;
+            QString match2=QString::fromStdString(k->data.mahang);
+            if(madon==match && mahang==match2)
+            {
                 k->data.ghichu=ghichu;
                 break;
             }
@@ -123,4 +146,3 @@ void lichsumua::on_btnLuu_clicked()
         this->close();
     }
 }
-

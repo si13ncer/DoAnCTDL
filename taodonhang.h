@@ -27,8 +27,6 @@ private slots:
 
     void on_btnLuu_clicked();
 
-    void on_cbxLoai_currentIndexChanged(const QString &arg1);
-
     void on_tblGiohang_itemChanged(QTableWidgetItem *item);
 
     void on_btnThemvaogio_clicked();
@@ -37,9 +35,15 @@ private slots:
 
     void on_spbSoluong_valueChanged(int arg1);
 
-    void on_cbxDanhmuc_currentTextChanged(const QString &arg1);
-
     void on_cbxTenhang_currentTextChanged(const QString &arg1);
+
+    void on_cbxVoucher_activated(const QString &arg1);
+
+    void on_cbxLoai_activated(int index);
+
+    void on_cbxDanhmuc_activated(const QString &arg1);
+
+    void on_cbxTenhang_activated(const QString &arg1);
 
 private:
     Ui::taodonhang *ui;

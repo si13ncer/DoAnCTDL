@@ -124,3 +124,13 @@ bool avaiableK(listk l,string id)//bool id avaiable in lk?
         }
     return true;
 }
+void kmemfree(listk &l)
+{
+    nodek *p = NULL;
+    while (l.head != NULL)
+    {
+        p = l.head;
+        l.head= l.head->next;
+        delete p;
+    }
+}

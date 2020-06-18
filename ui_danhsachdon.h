@@ -72,7 +72,7 @@ public:
     {
         if (danhsachdon->objectName().isEmpty())
             danhsachdon->setObjectName(QString::fromUtf8("danhsachdon"));
-        danhsachdon->resize(962, 527);
+        danhsachdon->resize(1065, 527);
         QFont font;
         font.setPointSize(10);
         danhsachdon->setFont(font);
@@ -86,13 +86,13 @@ public:
         label_2->setFont(font1);
         btnNew = new QPushButton(centralwidget);
         btnNew->setObjectName(QString::fromUtf8("btnNew"));
-        btnNew->setGeometry(QRect(360, 80, 75, 21));
+        btnNew->setGeometry(QRect(470, 80, 75, 21));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/res/res/icon/sortup.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnNew->setIcon(icon);
         btnOld = new QPushButton(centralwidget);
         btnOld->setObjectName(QString::fromUtf8("btnOld"));
-        btnOld->setGeometry(QRect(360, 110, 75, 21));
+        btnOld->setGeometry(QRect(470, 110, 75, 21));
         QIcon icon1;
         icon1.addFile(QString::fromUtf8(":/res/res/icon/sortdown.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnOld->setIcon(icon1);
@@ -103,8 +103,8 @@ public:
         cbxID->setObjectName(QString::fromUtf8("cbxID"));
         cbxID->setGeometry(QRect(100, 70, 121, 21));
         tblDsdon = new QTableWidget(centralwidget);
-        if (tblDsdon->columnCount() < 4)
-            tblDsdon->setColumnCount(4);
+        if (tblDsdon->columnCount() < 5)
+            tblDsdon->setColumnCount(5);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         tblDsdon->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
@@ -113,11 +113,13 @@ public:
         tblDsdon->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
         tblDsdon->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        tblDsdon->setHorizontalHeaderItem(4, __qtablewidgetitem4);
         tblDsdon->setObjectName(QString::fromUtf8("tblDsdon"));
-        tblDsdon->setGeometry(QRect(20, 140, 421, 311));
+        tblDsdon->setGeometry(QRect(20, 140, 521, 311));
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        groupBox->setGeometry(QRect(450, 100, 511, 351));
+        groupBox->setGeometry(QRect(550, 100, 511, 351));
         QFont font2;
         font2.setPointSize(8);
         groupBox->setFont(font2);
@@ -226,14 +228,14 @@ public:
         lblMahang->setFrameShape(QFrame::StyledPanel);
         bntLuu = new QPushButton(centralwidget);
         bntLuu->setObjectName(QString::fromUtf8("bntLuu"));
-        bntLuu->setGeometry(QRect(390, 460, 41, 31));
+        bntLuu->setGeometry(QRect(500, 460, 31, 31));
         QIcon icon2;
         icon2.addFile(QString::fromUtf8(":/res/res/icon/save.png"), QSize(), QIcon::Normal, QIcon::Off);
         bntLuu->setIcon(icon2);
         bntLuu->setIconSize(QSize(20, 20));
         btnThoat = new QPushButton(centralwidget);
         btnThoat->setObjectName(QString::fromUtf8("btnThoat"));
-        btnThoat->setGeometry(QRect(860, 460, 75, 31));
+        btnThoat->setGeometry(QRect(980, 460, 75, 31));
         QIcon icon3;
         icon3.addFile(QString::fromUtf8(":/res/res/icon/discard.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnThoat->setIcon(icon3);
@@ -252,14 +254,14 @@ public:
         btnFind->setIconSize(QSize(24, 24));
         btnRefresh = new QPushButton(centralwidget);
         btnRefresh->setObjectName(QString::fromUtf8("btnRefresh"));
-        btnRefresh->setGeometry(QRect(20, 460, 41, 31));
+        btnRefresh->setGeometry(QRect(20, 460, 31, 31));
         QIcon icon5;
         icon5.addFile(QString::fromUtf8(":/res/res/icon/refresh.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnRefresh->setIcon(icon5);
         btnRefresh->setIconSize(QSize(20, 20));
         btnDel = new QPushButton(centralwidget);
         btnDel->setObjectName(QString::fromUtf8("btnDel"));
-        btnDel->setGeometry(QRect(210, 460, 41, 31));
+        btnDel->setGeometry(QRect(270, 460, 31, 31));
         QIcon icon6;
         icon6.addFile(QString::fromUtf8(":/res/res/icon/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnDel->setIcon(icon6);
@@ -284,11 +286,13 @@ public:
         QTableWidgetItem *___qtablewidgetitem = tblDsdon->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("danhsachdon", "M\303\243 \304\220\306\241n", nullptr));
         QTableWidgetItem *___qtablewidgetitem1 = tblDsdon->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QCoreApplication::translate("danhsachdon", "Ng\303\240y Mua", nullptr));
+        ___qtablewidgetitem1->setText(QCoreApplication::translate("danhsachdon", "M\303\243 H\303\240ng", nullptr));
         QTableWidgetItem *___qtablewidgetitem2 = tblDsdon->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QCoreApplication::translate("danhsachdon", "Tr\341\272\241ng Th\303\241i", nullptr));
+        ___qtablewidgetitem2->setText(QCoreApplication::translate("danhsachdon", "Ng\303\240y Mua", nullptr));
         QTableWidgetItem *___qtablewidgetitem3 = tblDsdon->horizontalHeaderItem(3);
-        ___qtablewidgetitem3->setText(QCoreApplication::translate("danhsachdon", "Ghi Ch\303\272", nullptr));
+        ___qtablewidgetitem3->setText(QCoreApplication::translate("danhsachdon", "Tr\341\272\241ng Th\303\241i", nullptr));
+        QTableWidgetItem *___qtablewidgetitem4 = tblDsdon->horizontalHeaderItem(4);
+        ___qtablewidgetitem4->setText(QCoreApplication::translate("danhsachdon", "Ghi Ch\303\272", nullptr));
         groupBox->setTitle(QCoreApplication::translate("danhsachdon", "TH\303\224NG TIN CHI TI\341\272\276T", nullptr));
         label_3->setText(QCoreApplication::translate("danhsachdon", "T\303\252n kh\303\241ch h\303\240ng", nullptr));
         label_5->setText(QCoreApplication::translate("danhsachdon", "S\304\220T                    ", nullptr));

@@ -300,15 +300,17 @@ void nhaphang::on_btnLuu_clicked()
      h.price=giahang.toInt();
      h.sl= ui->spinBox->value();
      QDate Mydate=ui->dateEdit->date();
-     QString date=Mydate.toString("dd/mm/yyyy");
-     h.day =date.toStdString();
-     QString phanloaihang = ui->cbxLoaihang->currentText();
-     h.pl= phanloaihang.toStdString();
-     QString danhmuchang=ui->cbxDanhmuc->currentText();
-     h.dm=danhmuchang.toStdString();
-     nodehang *p;
-     p=tao1node(h);
-     if (kiemtratontai(lkho,h.name,h.id)==true)
+     //QString date=Mydate.toString("dd/mm/yyyy")
+     //h.day=date.toStdString();
+     h.day =Mydate.toString("dd/mm/yyyy").toStdString();
+     //QString phanloai=ui->cbxLoaihang->currentText();
+     //h.pl= phanloai.toStdString();
+     h.pl= ui->cbxLoaihang->currentText().toStdString();
+     //QString danhmuchang=ui->cbxDanhmuc->currentText();
+     //h.dm=danhmuchang.toStdString();
+     h.dm=ui->cbxDanhmuc->currentText().toStdString();
+     nodehang *p=tao1node(h);
+     if (kiemtracotontai(lkho,h.name,h.id)==true)
      {
          ui->statusbar->showMessage("hàng đã tồn tại!");
          delete p;
@@ -317,6 +319,9 @@ void nhaphang::on_btnLuu_clicked()
      else
      {
          themcuoi(lkho,p);
+         ghikhohang(lkho);
+         QMessageBox::information(this,"Xác nhận","Đã thêm sản phẩm vào kho hoàn tất!");
+
      }
 
 

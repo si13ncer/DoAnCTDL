@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    AddVoucher.cpp \
     SpbTable.cpp \
     adduser.cpp \
     cbxitemdelegate.cpp \
@@ -33,9 +34,11 @@ SOURCES += \
     quanlyuser.cpp \
     taodonhang.cpp \
     thaydoiquyen.cpp \
-    thongtinkhach.cpp
+    thongtinkhach.cpp \
+    voucher.cpp
 
 HEADERS += \
+    AddVoucher.h \
     SpbTable.h \
     adduser.h \
     cbxitemdelegate.h \
@@ -52,9 +55,11 @@ HEADERS += \
     quanlyuser.h \
     taodonhang.h \
     thaydoiquyen.h \
-    thongtinkhach.h
+    thongtinkhach.h \
+    voucher.h
 
 FORMS += \
+    AddVoucher.ui \
     adduser.ui \
     changepw.ui \
     danhsachdon.ui \

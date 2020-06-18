@@ -27,6 +27,8 @@ quanlyuser::quanlyuser(QWidget *parent) :
         }
     }
     else ui->cBxUser->addItem(QString::fromStdString(usingid));
+    QString chose = ui->cBxUser->currentText();
+    chosenone = chose.toStdString();
 }
 
 quanlyuser::~quanlyuser()
@@ -34,14 +36,7 @@ quanlyuser::~quanlyuser()
     delete ui;
 }
 
-void quanlyuser::on_cBxUser_currentIndexChanged(const QString &arg1)//lựa chọn hiện tại
-{
-    Q_UNUSED(arg1);
-    QString chose = ui->cBxUser->currentText();
-    chosenone = chose.toStdString();
-}
-
- void quanlyuser::on_btnCPW_pressed()
+void quanlyuser::on_btnCPW_pressed()
 {
     cpw=new changepw(this);
     cpw->show();
@@ -72,14 +67,23 @@ void quanlyuser::on_btnDeluser_pressed()
             qApp->quit();
             QProcess::startDetached(qApp->arguments()[0], qApp->arguments());
         }
-    }
-    ui->cBxUser->clear();
-    node* k = lur.head;
-    while (k)//update danh sach
-    {
-        QString item=QString::fromStdString(k->data.id);// convert std::string to Qstring
-        ui->cBxUser->addItem(item);
-        k = k->next;
+        ui->cBxUser->clear();
+        if (per=="ad")//update danh sach neu xoa
+        {
+            node* k = lur.head;
+            while (k)
+            {
+                QString item=QString::fromStdString(k->data.id);// convert std::string to Qstring
+                ui->cBxUser->addItem(item);
+                k = k->next;
+            }
+        }
     }
 }
 
+void quanlyuser::on_cBxUser_activated(const QString &arg1)
+{
+    Q_UNUSED(arg1);
+    QString chose = ui->cBxUser->currentText();
+    chosenone = chose.toStdString();
+}

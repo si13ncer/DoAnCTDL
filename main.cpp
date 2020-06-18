@@ -10,6 +10,9 @@
 #include "dslkUser.h"
 #include "thongtinkhach.h"
 #include "listdonhang.h"
+#include "AddVoucher.h"
+#include "ui_AddVoucher.h"
+#include "voucher.h"
 
     ::list lur;
     listk lkh;
@@ -18,6 +21,7 @@
     std::string usingid;
     listkho lkho;
     listdon ldon;
+    ::listvc lvc;
 
 int main(int argc, char *argv[])
 {
@@ -28,14 +32,24 @@ int main(int argc, char *argv[])
     std::ifstream ufilein;
     ufilein.open("data/user.txt", std::ios::in);
     readlist(ufilein, lur);//đọc file và thêm vào lur
+    log.show();
     lkinit(lkh);
-    ifstream kfilein;
-    kfilein.open("data/thongtinkhach.txt", ios::in);
-    readlk(kfilein, lkh);// đọc và thêm vào lk
+    ifstream khfilein;
+    khfilein.open("data/thongtinkhach.txt", ios::in);
+    readlk(khfilein, lkh);// đọc và thêm vào lk
     listdoninit(ldon);
     ifstream dfilein;
     dfilein.open("data/dsdon.txt", ios::in);
     readlistdon(dfilein,ldon);
-    log.show();
+    khoitaokho(lkho);
+    ifstream khofilein;
+    khofilein.open("data/khohang.txt",ios::in);
+    dockhohang(khofilein,lkho);
+    ifstream vfilein;
+    vfilein.open("data/voucher.txt",ios::in);
+    readlistvc(vfilein,lvc);
+    ufilein.close();
+    khfilein.close();
+    dfilein.close();
     return a.exec();
 }

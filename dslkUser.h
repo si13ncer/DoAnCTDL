@@ -42,3 +42,4 @@ extern string per;// biến permission
 bool avaiable(::list l, string s);
 extern string chosenone;
 extern string usingid;
+void urmemfree(::list &l);
