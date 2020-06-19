@@ -35,6 +35,7 @@ SOURCES += \
     quanlyuser.cpp \
     taodonhang.cpp \
     thaydoiquyen.cpp \
+    thongkedon.cpp \
     thongtin.cpp \
     thongtinkhach.cpp \
     voucher.cpp
@@ -58,6 +59,7 @@ HEADERS += \
     quanlyuser.h \
     taodonhang.h \
     thaydoiquyen.h \
+    thongkedon.h \
     thongtin.h \
     thongtinkhach.h \
     voucher.h
@@ -76,6 +78,7 @@ FORMS += \
     quanlyuser.ui \
     taodonhang.ui \
     thaydoiquyen.ui \
+    thongkedon.ui \
     thongtin.ui
 
 # Default rules for deployment.

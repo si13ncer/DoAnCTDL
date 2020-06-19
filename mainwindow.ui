@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>660</width>
-    <height>372</height>
+    <width>850</width>
+    <height>505</height>
    </rect>
   </property>
   <property name="font">
@@ -22,10 +22,10 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>60</y>
-      <width>411</width>
-      <height>211</height>
+      <x>640</x>
+      <y>10</y>
+      <width>201</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="text">
@@ -38,13 +38,184 @@
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="btnload">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>60</y>
+      <width>181</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Load Thông Tin</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>161</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Phân loại hàng muốn xem</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cbxdmh">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>60</y>
+      <width>181</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tblkhohang">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>831</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <column>
+     <property name="text">
+      <string>Tên hàng</string>
+     </property>
+     <property name="background">
+      <color>
+       <red>170</red>
+       <green>255</green>
+       <blue>255</blue>
+      </color>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Giá hàng</string>
+     </property>
+     <property name="background">
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>255</blue>
+      </color>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Số lượng hàng</string>
+     </property>
+     <property name="background">
+      <color>
+       <red>0</red>
+       <green>170</green>
+       <blue>0</blue>
+      </color>
+     </property>
+    </column>
+   </widget>
+   <widget class="QComboBox" name="cbxplh">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>181</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Thiết Bị Điện Tử</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Phụ Kiện Điện Tử</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>TV &amp; Thiết Bị Điện Gia Dụng</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Sức Khoẻ &amp; Làm Đẹp</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Hàng Mẹ, Bé &amp; Đồ Chơi</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Siêu Thị Tạp Hoá</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Hàng Gia Dụng &amp; Đời Sống</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Thời Trang Nữ</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Thời Trang Nam</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Phụ Kiện Thời Trang</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Thể Thao &amp; Du Lịch</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ôtô, Xe Máy &amp; Thiết Bị Định Vị</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>20</y>
+      <width>171</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Danh mục hàng muốn xem</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>660</width>
+     <width>850</width>
      <height>21</height>
     </rect>
    </property>
@@ -73,9 +244,9 @@
    </widget>
    <widget class="QMenu" name="menuB_o_c_o">
     <property name="title">
-     <string>Báo cáo</string>
+     <string>Thống kê</string>
     </property>
-    <addaction name="actBaocao"/>
+    <addaction name="actionDoanh_thu"/>
    </widget>
    <widget class="QMenu" name="menuQu_n_l_User">
     <property name="title">
@@ -110,7 +281,7 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actTaodon"/>
-   <addaction name="actBaocao"/>
+   <addaction name="actionDoanh_thu"/>
    <addaction name="actTaouser"/>
    <addaction name="actQliUser"/>
   </widget>
@@ -168,15 +339,6 @@
     <string>Quản lí User</string>
    </property>
   </action>
-  <action name="actBaocao">
-   <property name="icon">
-    <iconset resource="res.qrc">
-     <normaloff>:/res/res/icon/baocao.png</normaloff>:/res/res/icon/baocao.png</iconset>
-   </property>
-   <property name="text">
-    <string>Xuất báo cáo</string>
-   </property>
-  </action>
   <action name="actDsdon">
    <property name="text">
     <string>Danh sách đơn</string>
@@ -190,6 +352,15 @@
   <action name="actDanhmuc">
    <property name="text">
     <string>Danh mục sản phẩm</string>
+   </property>
+  </action>
+  <action name="actionDoanh_thu">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/res/res/icon/baocao.png</normaloff>:/res/res/icon/baocao.png</iconset>
+   </property>
+   <property name="text">
+    <string>Doanh thu</string>
    </property>
   </action>
  </widget>

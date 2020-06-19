@@ -45,6 +45,8 @@ private slots:
 
     void on_cbxTenhang_activated(const QString &arg1);
 
+    void on_tblGiohang_itemClicked(QTableWidgetItem *item);
+
 private:
     Ui::taodonhang *ui;
 };

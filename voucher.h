@@ -18,7 +18,8 @@ struct voucher
     string ten;
     string loai;
     float giatri;
-    string datefr,dateto;
+    string datefr;
+    string dateto;
 };
 struct nodevc {
     voucher data;

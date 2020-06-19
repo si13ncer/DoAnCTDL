@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_taodonhang_t {
-    QByteArrayData data[17];
-    char stringdata0[311];
+    QByteArrayData data[18];
+    char stringdata0[337];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -48,7 +48,8 @@ QT_MOC_LITERAL(12, 212, 23), // "on_cbxVoucher_activated"
 QT_MOC_LITERAL(13, 236, 20), // "on_cbxLoai_activated"
 QT_MOC_LITERAL(14, 257, 5), // "index"
 QT_MOC_LITERAL(15, 263, 23), // "on_cbxDanhmuc_activated"
-QT_MOC_LITERAL(16, 287, 23) // "on_cbxTenhang_activated"
+QT_MOC_LITERAL(16, 287, 23), // "on_cbxTenhang_activated"
+QT_MOC_LITERAL(17, 311, 25) // "on_tblGiohang_itemClicked"
 
     },
     "taodonhang\0on_btnHuy_clicked\0\0"
@@ -59,7 +60,8 @@ QT_MOC_LITERAL(16, 287, 23) // "on_cbxTenhang_activated"
     "on_cbxTenhang_currentTextChanged\0"
     "on_cbxVoucher_activated\0on_cbxLoai_activated\0"
     "index\0on_cbxDanhmuc_activated\0"
-    "on_cbxTenhang_activated"
+    "on_cbxTenhang_activated\0"
+    "on_tblGiohang_itemClicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -69,7 +71,7 @@ static const uint qt_meta_data_taodonhang[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -77,17 +79,18 @@ static const uint qt_meta_data_taodonhang[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   69,    2, 0x08 /* Private */,
-       3,    0,   70,    2, 0x08 /* Private */,
-       4,    1,   71,    2, 0x08 /* Private */,
-       7,    0,   74,    2, 0x08 /* Private */,
-       8,    0,   75,    2, 0x08 /* Private */,
-       9,    1,   76,    2, 0x08 /* Private */,
-      11,    1,   79,    2, 0x08 /* Private */,
-      12,    1,   82,    2, 0x08 /* Private */,
-      13,    1,   85,    2, 0x08 /* Private */,
-      15,    1,   88,    2, 0x08 /* Private */,
-      16,    1,   91,    2, 0x08 /* Private */,
+       1,    0,   74,    2, 0x08 /* Private */,
+       3,    0,   75,    2, 0x08 /* Private */,
+       4,    1,   76,    2, 0x08 /* Private */,
+       7,    0,   79,    2, 0x08 /* Private */,
+       8,    0,   80,    2, 0x08 /* Private */,
+       9,    1,   81,    2, 0x08 /* Private */,
+      11,    1,   84,    2, 0x08 /* Private */,
+      12,    1,   87,    2, 0x08 /* Private */,
+      13,    1,   90,    2, 0x08 /* Private */,
+      15,    1,   93,    2, 0x08 /* Private */,
+      16,    1,   96,    2, 0x08 /* Private */,
+      17,    1,   99,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -101,6 +104,7 @@ static const uint qt_meta_data_taodonhang[] = {
     QMetaType::Void, QMetaType::Int,   14,
     QMetaType::Void, QMetaType::QString,   10,
     QMetaType::Void, QMetaType::QString,   10,
+    QMetaType::Void, 0x80000000 | 5,    6,
 
        0        // eod
 };
@@ -122,6 +126,7 @@ void taodonhang::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 8: _t->on_cbxLoai_activated((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 9: _t->on_cbxDanhmuc_activated((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 10: _t->on_cbxTenhang_activated((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 11: _t->on_tblGiohang_itemClicked((*reinterpret_cast< QTableWidgetItem*(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -156,13 +161,13 @@ int taodonhang::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 11)
+        if (_id < 12)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 11;
+        _id -= 12;
     }
     return _id;
 }

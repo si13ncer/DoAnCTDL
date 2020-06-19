@@ -81,7 +81,7 @@ public:
     {
         if (taodonhang->objectName().isEmpty())
             taodonhang->setObjectName(QString::fromUtf8("taodonhang"));
-        taodonhang->resize(687, 597);
+        taodonhang->resize(687, 642);
         taodonhang->setMinimumSize(QSize(663, 395));
         QFont font;
         font.setPointSize(10);
@@ -90,14 +90,14 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         btnLuu = new QPushButton(centralwidget);
         btnLuu->setObjectName(QString::fromUtf8("btnLuu"));
-        btnLuu->setGeometry(QRect(481, 540, 75, 31));
+        btnLuu->setGeometry(QRect(481, 580, 75, 31));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/res/res/icon/save.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnLuu->setIcon(icon);
         btnLuu->setIconSize(QSize(20, 20));
         btnHuy = new QPushButton(centralwidget);
         btnHuy->setObjectName(QString::fromUtf8("btnHuy"));
-        btnHuy->setGeometry(QRect(570, 540, 75, 31));
+        btnHuy->setGeometry(QRect(570, 580, 75, 31));
         QIcon icon1;
         icon1.addFile(QString::fromUtf8(":/res/res/icon/discard.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnHuy->setIcon(icon1);
@@ -233,7 +233,7 @@ public:
         lblKm->setFrameShape(QFrame::StyledPanel);
         groupBox_3 = new QGroupBox(centralwidget);
         groupBox_3->setObjectName(QString::fromUtf8("groupBox_3"));
-        groupBox_3->setGeometry(QRect(20, 290, 651, 231));
+        groupBox_3->setGeometry(QRect(20, 290, 651, 271));
         QFont font1;
         font1.setPointSize(9);
         groupBox_3->setFont(font1);
@@ -256,18 +256,18 @@ public:
         tblGiohang->setHorizontalHeaderItem(6, __qtablewidgetitem6);
         tblGiohang->setObjectName(QString::fromUtf8("tblGiohang"));
         tblGiohang->setEnabled(true);
-        tblGiohang->setGeometry(QRect(10, 30, 621, 111));
+        tblGiohang->setGeometry(QRect(10, 30, 621, 151));
         tblGiohang->setFont(font);
         btnXoakhoigio = new QPushButton(groupBox_3);
         btnXoakhoigio->setObjectName(QString::fromUtf8("btnXoakhoigio"));
-        btnXoakhoigio->setGeometry(QRect(600, 150, 51, 31));
+        btnXoakhoigio->setGeometry(QRect(600, 190, 51, 31));
         QIcon icon3;
         icon3.addFile(QString::fromUtf8(":/res/res/icon/cart (1).png"), QSize(), QIcon::Normal, QIcon::Off);
         btnXoakhoigio->setIcon(icon3);
         btnXoakhoigio->setIconSize(QSize(25, 26));
         lblGiatridon = new QLabel(groupBox_3);
         lblGiatridon->setObjectName(QString::fromUtf8("lblGiatridon"));
-        lblGiatridon->setGeometry(QRect(260, 155, 111, 20));
+        lblGiatridon->setGeometry(QRect(250, 190, 111, 31));
         QFont font2;
         font2.setPointSize(9);
         font2.setBold(true);
@@ -276,17 +276,17 @@ public:
         lblGiatridon->setAlignment(Qt::AlignCenter);
         label = new QLabel(groupBox_3);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(380, 155, 31, 21));
+        label->setGeometry(QRect(370, 190, 31, 31));
         lblGiatridon_2 = new QLabel(groupBox_3);
         lblGiatridon_2->setObjectName(QString::fromUtf8("lblGiatridon_2"));
-        lblGiatridon_2->setGeometry(QRect(170, 150, 91, 31));
+        lblGiatridon_2->setGeometry(QRect(170, 190, 81, 31));
         QFont font3;
         font3.setBold(false);
         font3.setWeight(50);
         lblGiatridon_2->setFont(font3);
         splitter = new QSplitter(groupBox_3);
         splitter->setObjectName(QString::fromUtf8("splitter"));
-        splitter->setGeometry(QRect(320, 190, 281, 20));
+        splitter->setGeometry(QRect(320, 230, 281, 20));
         splitter->setOrientation(Qt::Horizontal);
         lblGiao = new QLabel(splitter);
         lblGiao->setObjectName(QString::fromUtf8("lblGiao"));
@@ -306,7 +306,7 @@ public:
         splitter->addWidget(cbxGiao);
         splitter_2 = new QSplitter(groupBox_3);
         splitter_2->setObjectName(QString::fromUtf8("splitter_2"));
-        splitter_2->setGeometry(QRect(10, 190, 211, 20));
+        splitter_2->setGeometry(QRect(10, 230, 211, 20));
         splitter_2->setOrientation(Qt::Horizontal);
         lblThanhtoan = new QLabel(splitter_2);
         lblThanhtoan->setObjectName(QString::fromUtf8("lblThanhtoan"));

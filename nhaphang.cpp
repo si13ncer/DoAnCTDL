@@ -262,7 +262,7 @@ void nhaphang::on_btnLuu_clicked()
     for (int i=0;i<th.length();i++)
     {
 
-        if((th[i]==32 && th[i+1]==32)||th[0]==32||th[th.length()]==32)
+        if((th[i]==32 && th[i+1]==32)||(th[0]==32)||th[th.length()]==32)
         {
             for(int j=i;j<th.length();j++)
             {
@@ -281,18 +281,6 @@ void nhaphang::on_btnLuu_clicked()
             QMessageBox::information(this,"Xác nhận","Mã hàng không hợp lệ!");
             return;
        }
-    }
-    for (int i=0;i<mahang.length();i++)
-    {
-
-        if(mahang[i]==32)
-        {
-            for(int j=i;j<th.length();j++)
-            {
-            th[j]=th[j+1];
-            i--;
-            }
-        }
     }
     mahang=mahang.toUpper();
     h.id = mahang.toStdString();

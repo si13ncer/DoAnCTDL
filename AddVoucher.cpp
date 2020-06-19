@@ -13,7 +13,7 @@ AddVoucher::AddVoucher(QWidget *parent)
     ui->setupUi(this);
     QString title="Thêm voucher";
     this->setWindowTitle(title);
-    ui->cbxLoaiVoucher->addItem("Thiết bị điện tử");
+    ui->cbxLoaiVoucher->addItem("Thiết Bị Điện Tử");
     ui->cbxLoaiVoucher->addItem("Phụ Kiện Điện Tử");
     ui->cbxLoaiVoucher->addItem("TV & Thiết Bị Điện Gia Dụng");
     ui->cbxLoaiVoucher->addItem("Sức Khoẻ & Làm Đẹp");

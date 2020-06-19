@@ -23,6 +23,19 @@ khohang::khohang(QWidget *parent) :
     ui->cbxdmh->addItem("Đồng hồ thông minh");
     ui->cbxdmh->addItem("Máy chơi game");
     ui->spinbsl->setMaximum(1000);
+    ui->cbxdmh_2->addItem("Điện thoại di động");
+    ui->cbxdmh_2->addItem("Máy tính bảng");
+    ui->cbxdmh_2->addItem("Laptop");
+    ui->cbxdmh_2->addItem("Máy tính để bàn");
+    ui->cbxdmh_2->addItem("Âm thanh");
+    ui->cbxdmh_2->addItem("Camera giám sát");
+    ui->cbxdmh_2->addItem("Máy ảnh kỹ thuật số");
+    ui->cbxdmh_2->addItem("Máy quay phim và máy quay hành động");
+    ui->cbxdmh_2->addItem("Màn hình vi tính");
+    ui->cbxdmh_2->addItem("Máy in");
+    ui->cbxdmh_2->addItem("Đồng hồ thông minh");
+    ui->cbxdmh_2->addItem("Máy chơi game");
+
 }
 
 khohang::~khohang()
@@ -243,13 +256,14 @@ int index = ui->cbxplh->currentIndex();
 
 void khohang::on_btnload_clicked()
 {
-     ui->tblkhohang->clear();
+    ui->tblkhohang->setRowCount(0);
     QString pl= ui->cbxplh->currentText();
     QString dm=ui->cbxdmh->currentText();
     string plh=pl.toStdString();
     string dmh=dm.toStdString();
     if (plh == "Toàn bộ")
     {
+
         nodehang *p=lkho.pHead;
         while (p)
         {
@@ -269,8 +283,17 @@ void khohang::on_btnload_clicked()
             ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
             ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
             ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+            if (p->data.sl <=3)
+            {
+                QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                QMessageBox q;
+                q.setText(notif);
+                q.exec();
+            }
             p=p->pNext;
         }
+        QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+        return;
 
     }
     else if(plh=="Thiết Bị Điện Tử")
@@ -282,7 +305,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Điện thoại di động")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -298,9 +321,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
 
         }
         else if(dmh=="Máy tính bảng")
@@ -310,7 +342,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Máy tính bảng")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -326,9 +358,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
 
         }
         else if(dmh=="Laptop")
@@ -338,7 +379,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Laptop")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -354,9 +395,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
 
         }
         else if(dmh=="Máy tính để bàn")
@@ -366,7 +416,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Máy tính để bàn")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -382,9 +432,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
 
         }
         else if(dmh=="Âm thanh")
@@ -394,7 +453,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Âm thanh")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -410,9 +469,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                   p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
 
         }
         else if(dmh=="Camera giám sát")
@@ -422,7 +490,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Điện thoại di động")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -438,9 +506,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
 
         }
         else if(dmh=="Máy ảnh kỹ thuật số")
@@ -450,7 +527,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Máy ảnh kỹ thuật số")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -466,9 +543,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
 
         }
         else if(dmh=="Máy quay phim và máy quay hành động")
@@ -478,7 +564,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Máy quay phim và máy quay hành động")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -494,9 +580,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
 
         }
         else if(dmh=="Màn hình vi tính")
@@ -506,7 +601,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Màn hình vi tính")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -522,9 +617,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if(dmh=="Máy in")
         {
@@ -533,7 +637,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Máy in")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -549,9 +653,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if(dmh=="Đồng hồ thông minh")
         {
@@ -560,7 +673,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồng hồ thông minh")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -576,9 +689,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if(dmh=="Máy chơi game")
         {
@@ -587,7 +709,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Máy chơi game")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -603,9 +725,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
 
     }
@@ -618,7 +749,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Phụ kiện di động")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -634,9 +765,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Thiết bị thông minh")
         {
@@ -645,7 +785,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Thiết bị thông minh")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -661,9 +801,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Phụ kiện máy ảnh")
         {
@@ -672,7 +821,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Phụ kiện máy ảnh")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -688,9 +837,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Phụ kiện máy bay camera")
         {
@@ -699,7 +857,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Phụ kiện máy bay camera")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -715,9 +873,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Thiết bị lưu trữ")
         {
@@ -726,7 +893,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Thiết bị lưu trữ")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -742,9 +909,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Phụ kiện máy tính")
         {
@@ -753,7 +929,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Phụ kiện máy tính")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -769,9 +945,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Linh kiện máy tính")
         {
@@ -780,7 +965,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Linh kiện máy tính")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -796,9 +981,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Phụ kiện ống kính")
         {
@@ -807,7 +1001,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Phụ kiện ống kính")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -823,9 +1017,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Thiết bị mạng")
         {
@@ -834,7 +1037,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Thiết bị mạng")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -850,9 +1053,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Phụ kiện máy chơi game")
         {
@@ -861,7 +1073,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Phụ kiện máy chơi game")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -877,9 +1089,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
     }
     else if (plh =="TV & Thiết Bị Điện Gia Dụng")
@@ -891,7 +1112,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Tivi & Videos")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -907,9 +1128,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Điện gia dụng nhỏ")
         {
@@ -918,7 +1148,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Điện gia dụng nhỏ")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -934,9 +1164,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Điện gia dụng lớn")
         {
@@ -945,7 +1184,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Điện gia dụng lớn")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -961,9 +1200,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Phụ kiện Tivi")
         {
@@ -972,7 +1220,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Phụ kiện Tivi")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -988,9 +1236,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
     }
     else if (plh=="Sức Khoẻ & Làm Đẹp")
@@ -1002,7 +1259,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Chăm sóc da")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1018,9 +1275,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Trang điểm")
         {
@@ -1029,7 +1295,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Trang điểm")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1045,9 +1311,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Dụng cụ làm đẹp")
         {
@@ -1056,7 +1331,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Dụng cụ làm đẹp")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1072,9 +1347,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Chăm sóc cơ thể")
         {
@@ -1083,7 +1367,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Chăm sóc cơ thể")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1099,9 +1383,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Chăm sóc tóc")
         {
@@ -1110,7 +1403,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Chăm sóc tóc")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1126,9 +1419,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Chăm sóc cá nhân")
         {
@@ -1137,7 +1439,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Chăm sóc cá nhân")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1153,9 +1455,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Dành cho nam giới")
         {
@@ -1164,7 +1475,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Dành cho nam giới")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1180,9 +1491,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Nước hoa")
         {
@@ -1191,7 +1511,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Nước hoa")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1207,9 +1527,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Thực phẩm chức năng")
         {
@@ -1218,7 +1547,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Thực phẩm chức năng")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1234,9 +1563,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Thực phẩm cho sắc đẹp")
         {
@@ -1245,7 +1583,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Thực phẩm cho sắc đẹp")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1261,9 +1599,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Sức khoẻ tình dục")
         {
@@ -1272,7 +1619,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Sức khoẻ tình dục")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1288,9 +1635,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Thiết bị y tế")
         {
@@ -1299,7 +1655,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Thiết bị y tế")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1315,9 +1671,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
     }
     else if (dmh =="Hàng Mẹ, Bé & Đồ Chơi")
@@ -1329,7 +1694,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Tã bỉm & dụng cụ vệ sinh")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1345,9 +1710,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Sữa bột & thức ăn cho bé")
         {
@@ -1356,7 +1730,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Sữa bột & thức ăn cho bé")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1372,9 +1746,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Thời trang cho bé")
         {
@@ -1383,7 +1766,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Thời trang cho bé")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1399,9 +1782,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đồ dùng ăn dặm & bú sữa")
         {
@@ -1410,7 +1802,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồ dùng ăn dặm & bú sữa")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1426,9 +1818,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Xe, ghế & đai địu")
         {
@@ -1437,7 +1838,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Xe, ghế & đai địu")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1453,9 +1854,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đồ dùng phỏng ngủ")
         {
@@ -1464,7 +1874,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồ dùng phỏng ngủ")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1480,9 +1890,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Tắm gội & chăm sóc cơ thể")
         {
@@ -1491,7 +1910,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Tắm gội & chăm sóc cơ thể")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1507,9 +1926,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đồ chơi cho bé")
         {
@@ -1518,7 +1946,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồ chơi cho bé")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1534,9 +1962,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đồ chơi điện tử và điều khiển từ xa")
         {
@@ -1545,7 +1982,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồ chơi điện tử và điều khiển từ xa")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1561,9 +1998,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đồ chơi thể thao & ngoài trời")
         {
@@ -1572,7 +2018,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồ chơi thể thao & ngoài trời")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1588,9 +2034,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đồ chơi cho bé chập chững")
         {
@@ -1599,7 +2054,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồ chơi cho bé chập chững")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1615,9 +2070,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đồ chơi giáo dục")
         {
@@ -1626,7 +2090,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồ chơi giáo dục")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1642,9 +2106,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
     }
     else if (plh =="Siêu Thị Tạp Hoá")
@@ -1656,7 +2129,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Sữa tiệt trùng & sữa bột")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1672,9 +2145,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đồ uống, bia, rượu")
         {
@@ -1683,7 +2165,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồ uống, bia, rượu")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1699,9 +2181,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Thực phẩm từ sữa & đồ lạnh")
         {
@@ -1710,7 +2201,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Thực phẩm từ sữa & đồ lạnh")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1726,9 +2217,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đồ hộp, Thực phẩm đóng gói")
         {
@@ -1737,7 +2237,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồ hộp, Thực phẩm đóng gói")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1753,9 +2253,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Kẹo & Socola & đồ ăn vặt")
         {
@@ -1764,7 +2273,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Kẹo & Socola & đồ ăn vặt")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1780,9 +2289,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Nguyên liệu nấu ăn & làm bánh")
         {
@@ -1791,7 +2309,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Nguyên liệu nấu ăn & làm bánh")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1807,9 +2325,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Giấy & vệ sinh nhà cửa")
         {
@@ -1818,7 +2345,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Giấy & vệ sinh nhà cửa")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1834,9 +2361,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Lau chùi vệ sinh nhà bếp")
         {
@@ -1845,7 +2381,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Lau chùi vệ sinh nhà bếp")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1861,9 +2397,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đồ dùng giặt giũ")
         {
@@ -1872,7 +2417,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồ dùng giặt giũ")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1888,9 +2433,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Phụ kiện thú cưng")
         {
@@ -1899,7 +2453,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Phụ kiện thú cưng")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1915,9 +2469,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Thức ăn và chăm sóc thú cưng")
         {
@@ -1926,7 +2489,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Thức ăn và chăm sóc thú cưng")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1942,9 +2505,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
     }
     else if (plh =="Hàng Gia Dụng & Đời Sống")
@@ -1956,7 +2528,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Bếp & phòng ăn")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1972,9 +2544,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Sửa chữa nhà cửa")
         {
@@ -1983,7 +2564,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Sửa chữa nhà cửa")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -1999,9 +2580,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Dụng cụ điện")
         {
@@ -2010,7 +2600,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Dụng cụ điện")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2026,9 +2616,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Dụng cụ cầm tay")
         {
@@ -2037,7 +2636,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Dụng cụ cầm tay")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2053,9 +2652,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Phòng ngủ")
         {
@@ -2064,7 +2672,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Phòng ngủ")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2080,9 +2688,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Phòng tắm")
         {
@@ -2091,7 +2708,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Phòng tắm")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2107,9 +2724,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đèn & thiết bị đèn")
         {
@@ -2118,7 +2744,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đèn & thiết bị đèn")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2134,9 +2760,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Trang trí nhà cửa")
         {
@@ -2145,7 +2780,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Trang trí nhà cửa")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2161,9 +2796,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đồ nội thất")
         {
@@ -2172,7 +2816,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồ nội thất")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2188,9 +2832,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Văn phòng phẩm và thủ công")
         {
@@ -2199,7 +2852,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Văn phòng phẩm và thủ công")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2215,9 +2868,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Sách & nhạc cụ")
         {
@@ -2226,7 +2888,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Sách & nhạc cụ")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2242,9 +2904,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Thiết bị giặt & làm sạch")
         {
@@ -2253,7 +2924,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Thiết bị giặt & làm sạch")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2269,9 +2940,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
     }
     else if(plh=="Thời Trang Nữ")
@@ -2283,7 +2963,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đầm nữ")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2299,9 +2979,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Quần và chân váy")
         {
@@ -2310,7 +2999,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Quần và chân váy")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2326,9 +3015,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Áo nữ")
         {
@@ -2337,7 +3035,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Áo nữ")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2353,9 +3051,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Jumpsuits")
         {
@@ -2364,7 +3071,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Jumpsuits")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2380,9 +3087,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đồ đôi và gia đình")
         {
@@ -2391,7 +3107,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồ đôi và gia đình")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2407,9 +3123,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đồ ngủ và nội y")
         {
@@ -2418,7 +3143,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồ ngủ và nội y")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2434,9 +3159,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Phụ kiện nữ")
         {
@@ -2445,7 +3179,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Phụ kiện nữ")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2461,9 +3195,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Giày nữ")
         {
@@ -2472,7 +3215,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Giày nữ")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2488,9 +3231,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Trang phục bé gái")
         {
@@ -2499,7 +3251,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Trang phục bé gái")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2515,9 +3267,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Giày bé gái")
         {
@@ -2526,7 +3287,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Giày bé gái")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2542,9 +3303,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
     }
     else if (plh=="Thời Trang Nam")
@@ -2556,7 +3326,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Trang phục nam")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2572,9 +3342,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Giày dép nam")
         {
@@ -2583,7 +3362,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Giày dép nam")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2599,9 +3378,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đồ lót nam")
         {
@@ -2610,7 +3398,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồ lót nam")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2626,9 +3414,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Phụ kiện thời trang nam")
         {
@@ -2637,7 +3434,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Phụ kiện thời trang nam")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2653,9 +3450,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Trang phục bé trai")
         {
@@ -2664,7 +3470,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Trang phục bé trai")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2680,9 +3486,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Giày bé trai")
         {
@@ -2691,7 +3506,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Giày bé trai")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2707,9 +3522,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
     }
     else if (plh=="Phụ Kiện Thời Trang")
@@ -2721,7 +3545,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồng hồ nữ")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2737,9 +3561,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Trang sức nữ")
         {
@@ -2748,7 +3581,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Trang sức nữ")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2764,9 +3597,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Kính mát")
         {
@@ -2775,7 +3617,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Kính mát")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2791,9 +3633,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Kính thời trang")
         {
@@ -2802,7 +3653,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Kính thời trang")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2818,9 +3669,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Túi xách nữ")
         {
@@ -2829,7 +3689,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Túi xách nữ")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2845,9 +3705,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Balo nữ")
         {
@@ -2856,7 +3725,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Balo nữ")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2872,9 +3741,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đồng hồ nam")
         {
@@ -2883,7 +3761,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồng hồ nam")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2899,9 +3777,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Trang sức nam")
         {
@@ -2910,7 +3797,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Trang sức nam")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2926,9 +3813,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Túi xách nam")
         {
@@ -2937,7 +3833,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Túi xách nam")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2953,9 +3849,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Túi đeo chéo nam")
         {
@@ -2964,7 +3869,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Túi đeo chéo nam")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -2980,9 +3885,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Vali & túi du lịch")
         {
@@ -2991,7 +3905,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Vali & túi du lịch")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3007,9 +3921,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Túi trẻ em")
         {
@@ -3018,7 +3941,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Túi trẻ em")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3034,9 +3957,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
     }
     else if (plh=="Thể Thao & Du Lịch")
@@ -3048,7 +3980,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Giày thể thao nam")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3064,9 +3996,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Trang phục nam")
         {
@@ -3075,7 +4016,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Trang phục nam")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3091,9 +4032,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Giày thể thao nữ")
         {
@@ -3102,7 +4052,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Giày thể thao nữ")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3118,9 +4068,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Trang phục nữ")
         {
@@ -3129,7 +4088,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Trang phục nữ")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3145,9 +4104,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Vali & túi du lịch")
         {
@@ -3156,7 +4124,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Vali & túi du lịch")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3172,9 +4140,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Hoạt động dã ngoại")
         {
@@ -3183,7 +4160,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Hoạt động dã ngoại")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3199,9 +4176,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Thể thao và thể hình")
         {
@@ -3210,7 +4196,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Thể thao và thể hình")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3226,9 +4212,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Thể thao dùng vợt")
         {
@@ -3237,7 +4232,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Thể thao dùng vợt")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3253,9 +4248,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Thể thao đồng đội")
         {
@@ -3264,7 +4268,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Thể thao đồng đội")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3280,9 +4284,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đấm bốc và võ thuật")
         {
@@ -3291,7 +4304,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đấm bốc và võ thuật")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3307,9 +4320,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Thể thao dưới nước")
         {
@@ -3318,7 +4340,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Thể thao dưới nước")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3334,9 +4356,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Phụ kiện thể thao")
         {
@@ -3345,7 +4376,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Phụ kiện thể thao")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3361,9 +4392,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
     }
     else if (plh =="Ôtô, Xe Máy & Thiết Bị Định Vị")
@@ -3375,7 +4415,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Xe máy")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3391,9 +4431,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Chăm sóc ô tô")
         {
@@ -3402,7 +4451,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Chăm sóc ô tô")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3418,9 +4467,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Trang trí nội thât ô tô")
         {
@@ -3429,7 +4487,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Trang trí nội thât ô tô")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3445,9 +4503,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Trang trí ngoại thất ô tô")
         {
@@ -3456,7 +4523,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Trang trí ngoại thất ô tô")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3472,9 +4539,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Phụ tùng & phụ kiện ô tô")
         {
@@ -3483,7 +4559,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Phụ tùng & phụ kiện ô tô")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3499,9 +4575,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đồ điện tử dành cho ô tô")
         {
@@ -3510,7 +4595,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồ điện tử dành cho ô tô")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3526,9 +4611,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Dầu nhớt & phụ gia ô tô")
         {
@@ -3537,7 +4631,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Dầu nhớt & phụ gia ô tô")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3553,9 +4647,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Phụ tùng xe máy")
         {
@@ -3564,7 +4667,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Phụ tùng xe máy")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3580,9 +4683,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                   if (p->data.sl <=3)
+                   {
+                       QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                       QMessageBox q;
+                       q.setText(notif);
+                       q.exec();
+                   }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Đồ bảo hộ khi đi xe máy")
         {
@@ -3591,7 +4703,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Đồ bảo hộ khi đi xe máy")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3607,9 +4719,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Phụ kiện & đồ chơi xe máy")
         {
@@ -3618,7 +4739,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Phụ kiện & đồ chơi xe máy")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3634,9 +4755,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Dầu nhớt & phụ gia xe máy")
         {
@@ -3645,7 +4775,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Dầu nhớt & phụ gia xe máy")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3661,9 +4791,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
         else if (dmh=="Vỏ ruột bánh xe máy & mâm")
         {
@@ -3672,7 +4811,7 @@ void khohang::on_btnload_clicked()
             {
                 if(p->data.dm=="Vỏ ruột bánh xe máy & mâm")
                 {
-                    ui->tblkhohang->clear();
+
                     QString pl = QString::fromStdString(p->data.pl);
                     QString dm = QString::fromStdString(p->data.dm);
                     QString name = QString::fromStdString(p->data.name);
@@ -3688,9 +4827,18 @@ void khohang::on_btnload_clicked()
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
                     ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+                    if (p->data.sl <=3)
+                    {
+                        QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                        QMessageBox q;
+                        q.setText(notif);
+                        q.exec();
+                    }
                 }
                 p=p->pNext;
             }
+            QMessageBox::information(this,"Xác nhận","đã load thông tin!");
+            return;
         }
     }
 }
@@ -3726,6 +4874,9 @@ void khohang::on_btnxoa_clicked()
         xoa(lkho,id);
         ghikhohang(lkho);
         QMessageBox::information(this,"Xác nhận","Sản phẩm này đã bị xoá");
+        ui->lineEditid->clear();
+        ui->lineEditchange->clear();
+        return;
     }
 
 
@@ -3759,6 +4910,9 @@ void khohang::on_btnchange_clicked()
              SuaTenHang(lkho,change,id);
              ghikhohang(lkho);
              QMessageBox::information(this,"Xác nhận","Đã hoàn tất");
+             ui->lineEditid->clear();
+             ui->lineEditchange->clear();
+             return;
          }
 
          else if (x=="Mã hàng")
@@ -3767,6 +4921,9 @@ void khohang::on_btnchange_clicked()
               SuaMaHang(lkho,change,id);
               ghikhohang(lkho);
               QMessageBox::information(this,"Xác nhận","Đã hoàn tất");
+              ui->lineEditid->clear();
+              ui->lineEditchange->clear();
+              return;
          }
          else if (x=="Giá nhập")
          {
@@ -3774,6 +4931,9 @@ void khohang::on_btnchange_clicked()
              SuaGiaHangCuaMaHang(lkho,change,id);
              ghikhohang(lkho);
              QMessageBox::information(this,"Xác nhận","Đã hoàn tất");
+             ui->lineEditid->clear();
+             ui->lineEditchange->clear();
+             return;
          }
      }
 }
@@ -3783,6 +4943,7 @@ void khohang::on_btnchange_clicked()
 
 void khohang::on_btnsearch_clicked()
 {
+
     QString mahang=ui->lineEditid->text();
     for (int i =0;i<mahang.size();i++)
     {
@@ -3802,12 +4963,13 @@ void khohang::on_btnsearch_clicked()
             QMessageBox::information(this,"Xác nhận","Mã hàng không tồn tại");
             return;
         }
+     ui->tblkhohang->setRowCount(0);
      nodehang *p=lkho.pHead;
      while (p)
       {
          if(p->data.id==id)
          {
-            ui->tblkhohang->clear();
+
             QString pl = QString::fromStdString(p->data.pl);
             QString dm = QString::fromStdString(p->data.dm);
             QString name = QString::fromStdString(p->data.name);
@@ -3823,10 +4985,18 @@ void khohang::on_btnsearch_clicked()
             ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,4,new QTableWidgetItem(day));
             ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,5,new QTableWidgetItem(price));
             ui->tblkhohang->setItem(ui->tblkhohang->rowCount()-1,6,new QTableWidgetItem(sl));
+            if (p->data.sl <=3)
+            {
+                QString notif= QString("%1 hiện có số lượng dưới 3").arg(id);
+                QMessageBox q;
+                q.setText(notif);
+                q.exec();
+            }
          }
          p=p->pNext;
       }
      QMessageBox::information(this,"Xác nhận","Đã hoàn tất");
+     return;
    }
 
 }
@@ -3859,6 +5029,8 @@ void khohang::on_btnEditsl_clicked()
     ghikhohang(lkho);
 
     QMessageBox::information(this,"Xác nhận","Đã hoàn tất");
+    ui->lineEditid->clear();
+    return;
 
     }
 
@@ -3871,6 +5043,7 @@ void khohang::on_btnsapxep_clicked()
     SapXep(lkho);
     ghikhohang(lkho);
   QMessageBox::information(this,"Xác nhận","Đã hoàn tất");
+  return;
 }
 
 void khohang::on_cbxplh_2_currentIndexChanged(const QString &arg1)
@@ -4104,10 +5277,10 @@ void khohang::on_btnEditpldm_clicked()
 
     SuaPhanLoaiHang(lkho,pl,id);
     SuaDanhMucHang(lkho,dm,id);
-
     ghikhohang(lkho);
-
     QMessageBox::information(this,"Xác nhận","Đã hoàn tất");
+    ui->lineEditid->clear();
+    return;
 
     }
 }

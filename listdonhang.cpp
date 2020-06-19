@@ -57,18 +57,18 @@ void readdon(ifstream& filein, don &d)
     getline(filein, d.ma.pref,'-');
     filein >> d.ma.stt;
     filein.seekg(1, 1);
-    getline(filein, d.idmua, '.');
-    getline(filein, d.loai, '.');
-    getline(filein, d.ten, '.');
-    getline(filein, d.mahang, '.');
+    getline(filein, d.idmua, '|');
+    getline(filein, d.loai, '|');
+    getline(filein, d.ten, '|');
+    getline(filein, d.mahang, '|');
     filein >> d.soluong;
     filein.seekg(1, 1);
     filein >> d.thanhtien;
     filein.seekg(1, 1);
     dateread(filein, d.ngaytao);
-    getline(filein, d.thanhtoan,'.');
-    getline(filein, d.vanchuyen,'.');
-    getline(filein, d.trangthai,'.');
+    getline(filein, d.thanhtoan,'|');
+    getline(filein, d.vanchuyen,'|');
+    getline(filein, d.trangthai,'|');
     getline(filein, d.ghichu);
 }
 void readlistdon(ifstream& filein, listdon& l)
@@ -78,7 +78,9 @@ void readlistdon(ifstream& filein, listdon& l)
         don d;
         readdon(filein, d);
         if (d.ma.pref=="")
+        {
             break;
+        }
         nodedon* nd = nodedoninit(d);
         addTaildon(l, nd); // thêm node vào sau dslk
     }
@@ -130,17 +132,17 @@ void delSltdon(listdon& l, string s)
 void ghinodedon(ofstream& fileout, don d)
 {
     fileout << d.ma.pref << "-";
-    fileout << d.ma.stt << ".";
-    fileout << d.idmua << ".";
-    fileout << d.loai << ".";
-    fileout << d.ten << ".";
-    fileout << d.mahang << ".";
-    fileout << d.soluong << ".";
-    fileout << d.thanhtien << ".";
-    fileout << d.ngaytao.ngay << "/" << d.ngaytao.thang << "/" << d.ngaytao.nam << ".";
-    fileout << d.thanhtoan << ".";
-    fileout << d.vanchuyen << ".";
-    fileout << d.trangthai << ".";
+    fileout << d.ma.stt << "|";
+    fileout << d.idmua << "|";
+    fileout << d.loai << "|";
+    fileout << d.ten << "|";
+    fileout << d.mahang << "|";
+    fileout << d.soluong << "|";
+    fileout << d.thanhtien << "|";
+    fileout << d.ngaytao.ngay << "/" << d.ngaytao.thang << "/" << d.ngaytao.nam << "|";
+    fileout << d.thanhtoan << "|";
+    fileout << d.vanchuyen << "|";
+    fileout << d.trangthai << "|";
     fileout << d.ghichu << "\n";
 }
 void ghilistdon(listdon l)
@@ -155,23 +157,6 @@ void ghilistdon(listdon l)
     }
     fileout.close();
 }
-//void idfind(list& l, string i) {
-//
-//    node* k = l.head;
-//    while (k != NULL)
-//    {
-//        if (k->data.id == i)
-//        {
-//            cout << "ID: " << k->data.id << "\n";
-//            cout << "Ten: " << k->data.ten << "\n";
-//            cout << "Dia chi: " << k->data.addr << "\n";
-//            cout << "SDT: " << k->data.phone << "\n";
-//            return;
-//        }
-//        k = k->next;
-//    }
-//    cout << "Khong co trong danh sach";
-
 void dmemfree(listdon &l)
 {
     nodedon *p = NULL;

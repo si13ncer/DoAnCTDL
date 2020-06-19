@@ -23,5 +23,6 @@
         <file>res/icon/refresh.png</file>
         <file>res/icon/delete.png</file>
         <file>res/icon/personal.png</file>
+        <file>res/icon/growth.png</file>
     </qresource>
 </RCC>

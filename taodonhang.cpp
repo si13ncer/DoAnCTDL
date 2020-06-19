@@ -35,24 +35,13 @@ taodonhang::taodonhang(QWidget *parent) :
            ui->lblPhone->setText(QString::fromStdString(n->data.phone));
            break;
         }
-
         n = n->next;
     }
     ui->tblGiohang->hideColumn(0);
     ui->tblGiohang->setItemDelegateForColumn(3, new SpinBoxTable);
     ui->lblGiatridon->setStyleSheet("color: green;");
     ui->lblGiatridon->setNum(0);
-//    for (int i=0;i< ui->tblGiohang->rowCount();i++) //tắt chỉnh sửa ở cột
-//    {
-//            QTableWidgetItem *col0 =  ui->tblGiohang->item(i,0);
-//            QTableWidgetItem *col1 =  ui->tblGiohang->item(i,1);
-//            QTableWidgetItem *col2 =  ui->tblGiohang->item(i,2);
-//            QTableWidgetItem *col4 =  ui->tblGiohang->item(i,4);
-//            col0->setFlags(col0->flags() & ~Qt::ItemIsEditable);
-//            col1->setFlags(col1->flags() & ~Qt::ItemIsEditable);
-//            col2->setFlags(col2->flags() & ~Qt::ItemIsEditable);
-//            col4->setFlags(col4->flags() & ~Qt::ItemIsEditable);
-//    }  
+
 }
 
 taodonhang::~taodonhang()
@@ -99,16 +88,6 @@ void taodonhang::on_btnThemvaogio_clicked()
     std::string danhmuc=ui->cbxDanhmuc->currentText().toStdString();
     std::string tenhang=ui->cbxTenhang->currentText().toStdString();
     ui->tblGiohang->insertRow(row);//thêm dòng vào cuối bảng
-//    QTableWidgetItem *col1 =  ui->tblGiohang->item(row-1,1);
-//    QTableWidgetItem *col2 =  ui->tblGiohang->item(row-1,2);
-//    QTableWidgetItem *col4 =  ui->tblGiohang->item(row-1,4);
-//    QTableWidgetItem *col5 =  ui->tblGiohang->item(row-1,5);
-//    QTableWidgetItem *col6 =  ui->tblGiohang->item(row-1,6);
-//    col1->setFlags(col1->flags() & ~Qt::ItemIsEditable);
-//    col2->setFlags(col2->flags() & ~Qt::ItemIsEditable);
-//    col4->setFlags(col4->flags() & ~Qt::ItemIsEditable);
-//    col5->setFlags(col5->flags() & ~Qt::ItemIsEditable);
-//    col5->setFlags(col6->flags() & ~Qt::ItemIsEditable);
     for (int i=0;i< ui->tblGiohang->rowCount()-1;i++) //duyệt tên hàng bị trùng
     {
         QString check=ui->tblGiohang->item(i,2)->text();
@@ -209,8 +188,7 @@ void taodonhang::on_btnLuu_clicked()
             ui->statusbar->showMessage("Số điện thoại trống!");
             return;
         }
-    nodedon* h=ldon.head;
-    int next=h->data.ma.stt+1;
+    nodedon* n=ldon.head;
     for (int i=0;i< ui->tblGiohang->rowCount();i++)
     {
         std::string danhmuc=ui->tblGiohang->item(i,0)->text().toStdString();
@@ -221,7 +199,14 @@ void taodonhang::on_btnLuu_clicked()
         std::string ghichu=ui->tblGiohang->item(i,6)->text().toStdString();
         don d;
         d.ma.pref="LZD";
-        d.ma.stt=next;
+        if(n==NULL)
+        {
+            d.ma.stt=1;
+        }
+        else
+        {
+            d.ma.stt=n->data.ma.stt;
+        }
         d.idmua=usingid;
         d.loai=danhmuc;
         d.ten=tenhang;
@@ -265,6 +250,7 @@ void taodonhang::on_btnHuy_clicked()
 void taodonhang::on_cbxVoucher_activated(const QString &arg1)
 {
     Q_UNUSED(arg1);
+    ui->lblKm->clear();
     std::string vc=ui->cbxVoucher->currentText().toStdString();
     nodevc* n=lvc.head;
     while(n)
@@ -522,4 +508,23 @@ void taodonhang::on_cbxTenhang_activated(const QString &arg1)
         }
         k=k->pNext;
     }
-};
+}
+
+
+void taodonhang::on_tblGiohang_itemClicked(QTableWidgetItem *item)
+{
+    Q_UNUSED(item);
+    for (int i=0;i< ui->tblGiohang->rowCount();i++) //tắt chỉnh sửa ở cột
+    {
+            QTableWidgetItem *col0 =  ui->tblGiohang->item(i,0);
+            QTableWidgetItem *col1 =  ui->tblGiohang->item(i,1);
+            QTableWidgetItem *col2 =  ui->tblGiohang->item(i,2);
+            QTableWidgetItem *col4 =  ui->tblGiohang->item(i,4);
+            QTableWidgetItem *col5 =  ui->tblGiohang->item(i,5);
+            col0->setFlags(col0->flags() & ~Qt::ItemIsEditable);
+            col1->setFlags(col1->flags() & ~Qt::ItemIsEditable);
+            col2->setFlags(col2->flags() & ~Qt::ItemIsEditable);
+            col4->setFlags(col4->flags() & ~Qt::ItemIsEditable);
+            col5->setFlags(col5->flags() & ~Qt::ItemIsEditable);
+     }
+}

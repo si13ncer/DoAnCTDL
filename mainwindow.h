@@ -10,6 +10,8 @@
 #include "AddVoucher.h"
 #include "khohang.h"
 #include "qlvoucher.h"
+#include "thongkedon.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -43,6 +45,14 @@ private slots:
 
     void on_actQliVc_triggered();
 
+    void on_actionDoanh_thu_triggered();
+
+    void on_btnload_clicked();
+
+    void on_cbxplh_currentIndexChanged(const QString &arg1);
+
+
+
 private:
     Ui::MainWindow *ui;
     taodonhang *tdh;
@@ -54,5 +64,6 @@ private:
     AddVoucher *avc;
     khohang *kho;
     qlvoucher *qlvc;
+    thongkedon *thongke;
 };
 #endif // MAINWINDOW_H
