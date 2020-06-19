@@ -1,6 +1,4 @@
 ad,asd,ad
 hoang,h,kh
-user1,u1,kh
-root,r,ad
 ur1,u1,kh
 ur2,u2,kh

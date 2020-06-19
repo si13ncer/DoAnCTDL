@@ -261,7 +261,7 @@ public:
         btnRefresh->setIconSize(QSize(20, 20));
         btnDel = new QPushButton(centralwidget);
         btnDel->setObjectName(QString::fromUtf8("btnDel"));
-        btnDel->setGeometry(QRect(270, 460, 31, 31));
+        btnDel->setGeometry(QRect(260, 460, 31, 31));
         QIcon icon6;
         icon6.addFile(QString::fromUtf8(":/res/res/icon/delete.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnDel->setIcon(icon6);

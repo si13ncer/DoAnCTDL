@@ -28,12 +28,13 @@ public:
     QToolButton *btnCPW;
     QToolButton *btnCapquyen;
     QToolButton *btnDeluser;
+    QToolButton *btnTt;
 
     void setupUi(QDialog *quanlyuser)
     {
         if (quanlyuser->objectName().isEmpty())
             quanlyuser->setObjectName(QString::fromUtf8("quanlyuser"));
-        quanlyuser->resize(402, 319);
+        quanlyuser->resize(402, 355);
         QFont font;
         font.setPointSize(10);
         quanlyuser->setFont(font);
@@ -48,7 +49,7 @@ public:
         cBxUser->setGeometry(QRect(80, 80, 251, 22));
         btnCPW = new QToolButton(quanlyuser);
         btnCPW->setObjectName(QString::fromUtf8("btnCPW"));
-        btnCPW->setGeometry(QRect(80, 120, 251, 41));
+        btnCPW->setGeometry(QRect(80, 180, 251, 41));
         btnCPW->setLayoutDirection(Qt::LeftToRight);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/res/res/icon/changepw.png"), QSize(), QIcon::Normal, QIcon::Off);
@@ -57,7 +58,7 @@ public:
         btnCPW->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         btnCapquyen = new QToolButton(quanlyuser);
         btnCapquyen->setObjectName(QString::fromUtf8("btnCapquyen"));
-        btnCapquyen->setGeometry(QRect(80, 170, 251, 41));
+        btnCapquyen->setGeometry(QRect(80, 230, 251, 41));
         QIcon icon1;
         icon1.addFile(QString::fromUtf8(":/res/res/icon/permission.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnCapquyen->setIcon(icon1);
@@ -65,12 +66,22 @@ public:
         btnCapquyen->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
         btnDeluser = new QToolButton(quanlyuser);
         btnDeluser->setObjectName(QString::fromUtf8("btnDeluser"));
-        btnDeluser->setGeometry(QRect(80, 220, 251, 41));
+        btnDeluser->setGeometry(QRect(80, 280, 251, 41));
         QIcon icon2;
         icon2.addFile(QString::fromUtf8(":/res/res/icon/deluser.png"), QSize(), QIcon::Normal, QIcon::Off);
         btnDeluser->setIcon(icon2);
         btnDeluser->setIconSize(QSize(45, 45));
         btnDeluser->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        btnTt = new QToolButton(quanlyuser);
+        btnTt->setObjectName(QString::fromUtf8("btnTt"));
+        btnTt->setGeometry(QRect(80, 130, 251, 41));
+        btnTt->setFont(font);
+        btnTt->setLayoutDirection(Qt::LeftToRight);
+        QIcon icon3;
+        icon3.addFile(QString::fromUtf8(":/res/res/icon/personal.png"), QSize(), QIcon::Normal, QIcon::Off);
+        btnTt->setIcon(icon3);
+        btnTt->setIconSize(QSize(30, 30));
+        btnTt->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
         retranslateUi(quanlyuser);
 
@@ -85,6 +96,7 @@ public:
         btnCPW->setText(QCoreApplication::translate("quanlyuser", "               \304\220\341\273\225i m\341\272\255t kh\341\272\251u", nullptr));
         btnCapquyen->setText(QCoreApplication::translate("quanlyuser", "              C\341\272\245p quy\341\273\201n", nullptr));
         btnDeluser->setText(QCoreApplication::translate("quanlyuser", "           Xo\303\241 ng\306\260\341\273\235i d\303\271ng", nullptr));
+        btnTt->setText(QCoreApplication::translate("quanlyuser", "           Th\303\264ng tin c\303\241 nh\303\242n", nullptr));
     } // retranslateUi
 
 };

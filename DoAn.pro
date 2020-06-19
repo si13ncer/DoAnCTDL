@@ -31,9 +31,11 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     nhaphang.cpp \
+    qlvoucher.cpp \
     quanlyuser.cpp \
     taodonhang.cpp \
     thaydoiquyen.cpp \
+    thongtin.cpp \
     thongtinkhach.cpp \
     voucher.cpp
 
@@ -52,9 +54,11 @@ HEADERS += \
     login.h \
     mainwindow.h \
     nhaphang.h \
+    qlvoucher.h \
     quanlyuser.h \
     taodonhang.h \
     thaydoiquyen.h \
+    thongtin.h \
     thongtinkhach.h \
     voucher.h
 
@@ -68,9 +72,11 @@ FORMS += \
     login.ui \
     mainwindow.ui \
     nhaphang.ui \
+    qlvoucher.ui \
     quanlyuser.ui \
     taodonhang.ui \
-    thaydoiquyen.ui
+    thaydoiquyen.ui \
+    thongtin.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

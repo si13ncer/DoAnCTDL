@@ -5,6 +5,7 @@
 #include <QDialog>
 #include "changepw.h"
 #include "thaydoiquyen.h"
+#include "thongtin.h"
 
 namespace Ui {
 class quanlyuser;
@@ -28,10 +29,14 @@ private slots:
 
     void on_cBxUser_activated(const QString &arg1);
 
+    void on_btnTt_pressed();
+
 private:
     Ui::quanlyuser *ui;
     changepw *cpw;
     thaydoiquyen *tdq;
+//    thongtinnguoidung *tt;
+    thongtin *tt;
 };
 
 #endif // QUANLYUSER_H

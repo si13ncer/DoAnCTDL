@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>402</width>
-    <height>319</height>
+    <height>355</height>
    </rect>
   </property>
   <property name="font">
@@ -58,7 +58,7 @@
    <property name="geometry">
     <rect>
      <x>80</x>
-     <y>120</y>
+     <y>180</y>
      <width>251</width>
      <height>41</height>
     </rect>
@@ -87,7 +87,7 @@
    <property name="geometry">
     <rect>
      <x>80</x>
-     <y>170</y>
+     <y>230</y>
      <width>251</width>
      <height>41</height>
     </rect>
@@ -113,7 +113,7 @@
    <property name="geometry">
     <rect>
      <x>80</x>
-     <y>220</y>
+     <y>280</y>
      <width>251</width>
      <height>41</height>
     </rect>
@@ -129,6 +129,40 @@
     <size>
      <width>45</width>
      <height>45</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextBesideIcon</enum>
+   </property>
+  </widget>
+  <widget class="QToolButton" name="btnTt">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>130</y>
+     <width>251</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="text">
+    <string>           Thông tin cá nhân</string>
+   </property>
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/res/res/icon/personal.png</normaloff>:/res/res/icon/personal.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
     </size>
    </property>
    <property name="toolButtonStyle">

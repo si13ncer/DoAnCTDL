@@ -81,3 +81,15 @@ void MainWindow::on_actTaoVc_triggered()
     avc = new AddVoucher(this);
     avc->show();
 }
+
+void MainWindow::on_actDanhmuc_triggered()
+{
+    kho=new khohang(this);
+    kho->show();
+}
+
+void MainWindow::on_actQliVc_triggered()
+{
+    qlvc= new qlvoucher(this);
+    qlvc->show();
+}

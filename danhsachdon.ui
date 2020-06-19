@@ -704,7 +704,7 @@
    <widget class="QPushButton" name="btnDel">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>260</x>
       <y>460</y>
       <width>31</width>
       <height>31</height>

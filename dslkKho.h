@@ -65,5 +65,11 @@ void SuaMaHang(listkho &k, string mhcs,string id);
 void SuaGiaHangCuaMaHang(listkho &kh, int gh, string id);
 
 void SuaSoLuongCuaMaHang(listkho &kh, int sl, string id);
+
+void HoanVi(hang &x,hang&y);
+
+void SapXep(listkho &lkho);
+
+void khomemfree(listkho &kh);
 extern ::listkho lkho;
 

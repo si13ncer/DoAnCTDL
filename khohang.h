@@ -5,7 +5,7 @@
 #include <string>
 #include <iostream>
 #include <QString>
-#include <dslkKho.h>
+
 using namespace std;
 namespace Ui {
 class khohang;
@@ -37,6 +37,10 @@ private slots:
 
 
     void on_btnsapxep_clicked();
+
+    void on_cbxplh_2_currentIndexChanged(const QString &arg1);
+
+    void on_btnEditpldm_clicked();
 
 private:
     Ui::khohang *ui;

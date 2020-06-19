@@ -30,9 +30,9 @@ taodonhang::taodonhang(QWidget *parent) :
     {
         if (n->data.id==usingid)
         {
-           ui->leditName->setText(QString::fromStdString(n->data.ten));
-           ui->leditAdress->setText(QString::fromStdString(n->data.addr));
-           ui->leditPhone->setText(QString::fromStdString(n->data.phone));
+           ui->lblName->setText(QString::fromStdString(n->data.ten));
+           ui->leditAddress->setText(QString::fromStdString(n->data.addr));
+           ui->lblPhone->setText(QString::fromStdString(n->data.phone));
            break;
         }
 
@@ -42,9 +42,6 @@ taodonhang::taodonhang(QWidget *parent) :
     ui->tblGiohang->setItemDelegateForColumn(3, new SpinBoxTable);
     ui->lblGiatridon->setStyleSheet("color: green;");
     ui->lblGiatridon->setNum(0);
-    qDebug() << ngaytao /*<< ngay << thang << nam*/;
-
-
 //    for (int i=0;i< ui->tblGiohang->rowCount();i++) //tắt chỉnh sửa ở cột
 //    {
 //            QTableWidgetItem *col0 =  ui->tblGiohang->item(i,0);
@@ -74,6 +71,21 @@ taodonhang::~taodonhang()
 void taodonhang::on_spbSoluong_valueChanged(int arg1)
 {
     Q_UNUSED(arg1);
+    std::string tenhang=ui->cbxTenhang->currentText().toStdString();
+    nodehang* k=lkho.pHead;
+    while(k)
+    {
+        if (k->data.name==tenhang)
+        {
+            ui->spbSoluong->setMaximum(k->data.sl);
+            break;
+        }
+        k=k->pNext;
+    }
+    if (ui->spbSoluong->value()==ui->spbSoluong->maximum())
+    {
+        ui->statusbar->showMessage("Xin lỗi,hàng trong kho đã hết",5000);
+    }
     QString dg = ui->lblDongia->text();
     int dongia=dg.toInt();
     int Soluong=ui->spbSoluong->value();
@@ -102,7 +114,7 @@ void taodonhang::on_btnThemvaogio_clicked()
         QString check=ui->tblGiohang->item(i,2)->text();
         if (check==ui->cbxTenhang->currentText())
         {
-            ui->statusbar->showMessage("!!! Mặt hàng này bạn đã đặt mua, xin hãy thay đổi ở cột Số Lượng");
+            ui->statusbar->showMessage("!!! Mặt hàng này bạn đã đặt mua, xin hãy thay đổi ở cột Số Lượng",5000);
             ui->tblGiohang->removeRow(ui->tblGiohang->rowCount()-1);
             return;
         }
@@ -178,73 +190,25 @@ void taodonhang::on_cbxTenhang_currentTextChanged(const QString &arg1)
 
 void taodonhang::on_btnLuu_clicked()
 {
-    QString name=ui->leditName->text();
+    QString name=ui->lblName->text();
     if (name.length()<=0)
         {
             ui->statusbar->showMessage("Tên khách hàng trống!");
             return;
         }
-        for (int i =0;i<name.size();i++)
-        {
-            if (name[i].isNumber()) // Chỉ check số vì dấu cũng là kí tự đặc biệt
-           {
-                ui->statusbar->showMessage("Tên không hợp lệ! Không được dùng số");
-                return;
-           }
-        }
-    QString addr=ui->leditAdress->text();
+
+    QString addr=ui->leditAddress->text();
     if (addr.length()<=0)
         {
             ui->statusbar->showMessage("Địa chỉ trống!");
             return;
         }
-    QString phone=ui->leditPhone->text();
+    QString phone=ui->lblPhone->text();
     if (phone.length()<=0)
         {
             ui->statusbar->showMessage("Số điện thoại trống!");
             return;
         }
-    for (int i =0;i<phone.size();i++)
-    {
-        if (!phone[i].isNumber())
-       {
-            ui->statusbar->showMessage("SĐT không hợp lệ!");
-            return;
-       }
-    }
-    QString ttoan=ui->cbxThanhtoan->currentText();
-    QString ship=ui->cbxGiao->currentText();
-    std::string names = name.toStdString();
-    std::string addrs = addr.toStdString();
-    std::string phones = phone.toStdString();
-    std::string ttoans = ttoan.toStdString();
-    std::string ships = ship.toStdString();
-    if (avaiableK(lkh,usingid)==false)// nếu chưa có - thêm vào đuôi; nếu đã có - cập nhật
-    {
-        nodek* n = lkh.head;
-        while (n)
-        {
-            if (n->data.id==usingid)
-            {
-               n->data.ten=names;
-               n->data.addr=addrs;
-               n->data.phone=phones;
-               break;
-            }
-            n = n->next;
-        }
-    }
-    else
-    {
-        kh k;
-        k.id=usingid;
-        k.ten=names;
-        k.addr=addrs;
-        k.phone=phones;
-        nodek* n = nkinit(k);
-        addTailk(lkh, n);
-    }
-    ghilistkh(lkh);
     nodedon* h=ldon.head;
     int next=h->data.ma.stt+1;
     for (int i=0;i< ui->tblGiohang->rowCount();i++)
@@ -253,22 +217,41 @@ void taodonhang::on_btnLuu_clicked()
         std::string mahang=ui->tblGiohang->item(i,1)->text().toStdString();
         std::string tenhang=ui->tblGiohang->item(i,2)->text().toStdString();
         int soluong=ui->tblGiohang->item(i,3)->text().toInt();
-        int dongia=ui->tblGiohang->item(i,4)->text().toInt();
         int thanhtien=ui->tblGiohang->item(i,5)->text().toInt();
         std::string ghichu=ui->tblGiohang->item(i,6)->text().toStdString();
-        nodedon d;
-        d.data.ma.pref="LAZ-";
-        d.data.ma.stt=next;
-        d.data.idmua=usingid;
-        d.data.loai=danhmuc;
-        d.data.ten=tenhang;
-        d.data.mahang=mahang;
-        d.data.soluong=soluong;
-        d.data.thanhtien=thanhtien;
-//        d.data.ngaytao.ngay=
-
+        don d;
+        d.ma.pref="LZD";
+        d.ma.stt=next;
+        d.idmua=usingid;
+        d.loai=danhmuc;
+        d.ten=tenhang;
+        d.mahang=mahang;
+        d.soluong=soluong;
+        d.thanhtien=thanhtien;
+        d.ngaytao.ngay=ngay.toInt();
+        d.ngaytao.thang=thang.toInt();
+        d.ngaytao.nam=nam.toInt();
+        d.thanhtoan=ui->cbxThanhtoan->currentText().toStdString();
+        d.vanchuyen=ui->cbxGiao->currentText().toStdString();
+        d.trangthai="Đã tạo đơn";
+        d.ghichu=("Dự kiến giao ngày: "+ngaygiao).toStdString();
+        nodedon* n=nodedoninit(d);
+        addHeaddon(ldon,n);
+        nodehang* k=lkho.pHead;
+        while(k)
+        {
+            if (k->data.id==mahang)
+            {
+                k->data.sl-=soluong;
+                break;
+            }
+            k=k->pNext;
+        }
     }
-
+    ghilistdon(ldon);
+    ghikhohang(lkho);
+    QMessageBox::information(this,"Xác nhận","Tạo đơn hàng thành công!");
+    this->close();
 }
 
 void taodonhang::on_btnHuy_clicked()
@@ -469,11 +452,10 @@ void taodonhang::on_cbxLoai_activated(int index)
             ui->cbxDanhmuc->addItem("Vali & túi du lịch");
             ui->cbxDanhmuc->addItem("Túi trẻ em");
             break;
-
         }
+
     case 10:
         {
-
             ui->cbxDanhmuc->clear();
             ui->cbxDanhmuc->addItem("Giày thể thao nam");
             ui->cbxDanhmuc->addItem("Trang phục nam");

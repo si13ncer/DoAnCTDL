@@ -4,6 +4,8 @@
 #include "QMessageBox"
 #include "QDate"
 #include "QDebug"
+#include "dslkKho.h"
+
 nhaphang::nhaphang(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::nhaphang)
@@ -24,6 +26,9 @@ nhaphang::nhaphang(QWidget *parent) :
     ui->cbxDanhmuc->addItem("Máy in");
     ui->cbxDanhmuc->addItem("Đồng hồ thông minh");
     ui->cbxDanhmuc->addItem("Máy chơi game");
+    ui->spinBox->setMaximum(1000);
+
+
 }
 
 nhaphang::~nhaphang()
@@ -245,11 +250,13 @@ void nhaphang::on_cbxLoaihang_currentIndexChanged(const QString &arg1)
 
 void nhaphang::on_btnLuu_clicked()
 {
+    if(QMessageBox::question(this,"Xác nhận","Bạn có muốn lưu thông tin của hàng hiện tại")==QMessageBox::Yes)
+  {
     hang h;
     QString th=ui->lineEdit->text();
     if (th.length()<=0)
         {
-            ui->statusbar->showMessage("Tên hàng trống!");
+             QMessageBox::information(this,"Xác nhận","Tên hàng trống!");
             return;
         }
     for (int i=0;i<th.length();i++)
@@ -271,9 +278,10 @@ void nhaphang::on_btnLuu_clicked()
     {
         if (mahang[i].isPunct()||mahang[i].isSpace())
        {
-            ui->statusbar->showMessage("Mã hàng không hợp lệ!");
+            QMessageBox::information(this,"Xác nhận","Mã hàng không hợp lệ!");
             return;
        }
+    }
     for (int i=0;i<mahang.length();i++)
     {
 
@@ -287,22 +295,22 @@ void nhaphang::on_btnLuu_clicked()
         }
     }
     mahang=mahang.toUpper();
-     h.id = mahang.toStdString();
+    h.id = mahang.toStdString();
      QString giahang=ui->lineEdit_3->text();
      for (int i =0;i<giahang.size();i++)
      {
          if (!giahang[i].isNumber())
         {
-             ui->statusbar->showMessage("Giá hàng không hợp lệ!");
+              QMessageBox::information(this,"Xác nhận","Giá hàng không hợp lệ!");
              return;
         }
      }
      h.price=giahang.toInt();
      h.sl= ui->spinBox->value();
-     QDate Mydate=ui->dateEdit->date();
+     QDate Mydate=ui->dateEdit->date().currentDate();
      //QString date=Mydate.toString("dd/mm/yyyy")
      //h.day=date.toStdString();
-     h.day =Mydate.toString("dd/mm/yyyy").toStdString();
+     h.day =Mydate.toString("dd/MM/yyyy").toStdString();
      //QString phanloai=ui->cbxLoaihang->currentText();
      //h.pl= phanloai.toStdString();
      h.pl= ui->cbxLoaihang->currentText().toStdString();
@@ -312,7 +320,7 @@ void nhaphang::on_btnLuu_clicked()
      nodehang *p=tao1node(h);
      if (kiemtracotontai(lkho,h.name,h.id)==true)
      {
-         ui->statusbar->showMessage("hàng đã tồn tại!");
+         QMessageBox::information(this,"Xác nhận","Hàng đã tồn tại!");
          delete p;
          return;
      }
@@ -321,14 +329,18 @@ void nhaphang::on_btnLuu_clicked()
          themcuoi(lkho,p);
          ghikhohang(lkho);
          QMessageBox::information(this,"Xác nhận","Đã thêm sản phẩm vào kho hoàn tất!");
+         if(QMessageBox::question(this,"Xác nhận","Bạn có muốn xoá thông tin của hàng hiện tại")==QMessageBox::Yes)
+         {
+             ui->lineEdit->clear();
+             ui->lineEdit_2->clear();
+             ui->lineEdit_3->clear();
+             ui->spinBox->setValue(0);
+             return ;
+         }
+         return;
 
      }
-
-
-
-
-
-}
+  }
 }
 
 

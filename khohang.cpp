@@ -1,6 +1,7 @@
 #include "khohang.h"
 #include "ui_khohang.h"
 #include "QMessageBox"
+#include "dslkKho.h"
 khohang::khohang(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::khohang)
@@ -21,6 +22,7 @@ khohang::khohang(QWidget *parent) :
     ui->cbxdmh->addItem("Máy in");
     ui->cbxdmh->addItem("Đồng hồ thông minh");
     ui->cbxdmh->addItem("Máy chơi game");
+    ui->spinbsl->setMaximum(1000);
 }
 
 khohang::~khohang()
@@ -241,6 +243,7 @@ int index = ui->cbxplh->currentIndex();
 
 void khohang::on_btnload_clicked()
 {
+     ui->tblkhohang->clear();
     QString pl= ui->cbxplh->currentText();
     QString dm=ui->cbxdmh->currentText();
     string plh=pl.toStdString();
@@ -250,7 +253,7 @@ void khohang::on_btnload_clicked()
         nodehang *p=lkho.pHead;
         while (p)
         {
-            ui->tblkhohang->clear();
+
             QString pl = QString::fromStdString(p->data.pl);
             QString dm = QString::fromStdString(p->data.dm);
             QString name = QString::fromStdString(p->data.name);
@@ -3865,5 +3868,246 @@ void khohang::on_btnEditsl_clicked()
 
 void khohang::on_btnsapxep_clicked()
 {
+    SapXep(lkho);
+    ghikhohang(lkho);
+  QMessageBox::information(this,"Xác nhận","Đã hoàn tất");
+}
 
+void khohang::on_cbxplh_2_currentIndexChanged(const QString &arg1)
+{
+    Q_UNUSED(arg1);
+int index = ui->cbxplh_2->currentIndex();
+    switch(index)
+  {
+    case 0:
+        {
+            ui->cbxdmh_2->clear();
+            ui->cbxdmh_2->addItem("Điện thoại di động");
+            ui->cbxdmh_2->addItem("Máy tính bảng");
+            ui->cbxdmh_2->addItem("Laptop");
+            ui->cbxdmh_2->addItem("Máy tính để bàn");
+            ui->cbxdmh_2->addItem("Âm thanh");
+            ui->cbxdmh_2->addItem("Camera giám sát");
+            ui->cbxdmh_2->addItem("Máy ảnh kỹ thuật số");
+            ui->cbxdmh_2->addItem("Máy quay phim và máy quay hành động");
+            ui->cbxdmh_2->addItem("Màn hình vi tính");
+            ui->cbxdmh_2->addItem("Máy in");
+            ui->cbxdmh_2->addItem("Đồng hồ thông minh");
+            ui->cbxdmh_2->addItem("Máy chơi game");
+            break;
+        }
+    case 1:
+        {
+            ui->cbxdmh_2->clear();
+            ui->cbxdmh_2->addItem("Phụ kiện di động");
+            ui->cbxdmh_2->addItem("Thiết bị thông minh");
+            ui->cbxdmh_2->addItem("Thiết bị số");
+            ui->cbxdmh_2->addItem("Phụ kiện máy ảnh");
+            ui->cbxdmh_2->addItem("Phụ kiện máy bay camera");
+            ui->cbxdmh_2->addItem("Thiết bị lưu trữ");
+            ui->cbxdmh_2->addItem("Phụ kiện máy tính");
+            ui->cbxdmh_2->addItem("Linh kiện máy tính");
+            ui->cbxdmh_2->addItem("Phụ kiện ống kính");
+            ui->cbxdmh_2->addItem("Thiết bị mạng");
+            ui->cbxdmh_2->addItem("Phụ kiện máy chơi game");
+            break;
+        }
+    case 2:
+        {
+
+            ui->cbxdmh_2->clear();
+            ui->cbxdmh_2->addItem("Tivi & Videos");
+            ui->cbxdmh_2->addItem("Điện gia dụng nhỏ");
+            ui->cbxdmh_2->addItem("Điện gia dụng lớn");
+            ui->cbxdmh_2->addItem("Phụ kiện Tivi");
+            break;
+        }
+    case 3:
+        {
+
+            ui->cbxdmh_2->clear();
+            ui->cbxdmh_2->addItem("Chăm sóc da");
+            ui->cbxdmh_2->addItem("Trang điểm");
+            ui->cbxdmh_2->addItem("Dụng cụ làm đẹp");
+            ui->cbxdmh_2->addItem("Chăm sóc cơ thể");
+            ui->cbxdmh_2->addItem("Chăm sóc tóc");
+            ui->cbxdmh_2->addItem("Chăm sóc cá nhân");
+            ui->cbxdmh_2->addItem("Dành cho nam giới");
+            ui->cbxdmh_2->addItem("Nước hoa");
+            ui->cbxdmh_2->addItem("Thực phẩm chức năng");
+            ui->cbxdmh_2->addItem("Thực phẩm cho sắc đẹp");
+            ui->cbxdmh_2->addItem("Sức khoẻ tình dục");
+            ui->cbxdmh_2->addItem("Thiết bị y tế");
+            break;
+        }
+    case 4:
+        {
+            ui->cbxdmh_2->clear();
+            ui->cbxdmh_2->addItem("Tã bỉm & dụng cụ vệ sinh");
+            ui->cbxdmh_2->addItem("Sữa bột & thức ăn cho bé");
+            ui->cbxdmh_2->addItem("Thời trang cho bé");
+            ui->cbxdmh_2->addItem("Đồ dùng ăn dặm & bú sữa");
+            ui->cbxdmh_2->addItem("Xe, ghế & đai địu");
+            ui->cbxdmh_2->addItem("Đồ dùng phỏng ngủ");
+            ui->cbxdmh_2->addItem("Tắm gội & chăm sóc cơ thể");
+            ui->cbxdmh_2->addItem("Đồ chơi cho bé");
+            ui->cbxdmh_2->addItem("Đồ chơi điện tử và điều khiển từ xa");
+            ui->cbxdmh_2->addItem("Đồ chơi thể thao & ngoài trời");
+            ui->cbxdmh_2->addItem("Đồ chơi cho bé chập chững");
+            ui->cbxdmh_2->addItem("Đồ chơi giáo dục");
+            break;
+        }
+    case 5:
+        {
+
+            ui->cbxdmh_2->clear();
+            ui->cbxdmh_2->addItem("Sữa tiệt trùng & sữa bột");
+            ui->cbxdmh_2->addItem("Đồ uống, bia, rượu");
+            ui->cbxdmh_2->addItem("Thực phẩm từ sữa & đồ lạnh");
+            ui->cbxdmh_2->addItem("Đồ hộp, Thực phẩm đóng gói");
+            ui->cbxdmh_2->addItem("Kẹo & Socola & đồ ăn vặt");
+            ui->cbxdmh_2->addItem("Nguyên liệu nấu ăn & làm bánh");
+            ui->cbxdmh_2->addItem("Giấy & vệ sinh nhà cửa");
+            ui->cbxdmh_2->addItem("Lau chùi vệ sinh nhà bếp");
+            ui->cbxdmh_2->addItem("Đồ dùng giặt giũ");
+            ui->cbxdmh_2->addItem("Phụ kiện thú cưng");
+            ui->cbxdmh_2->addItem("Thức ăn và chăm sóc thú cưng");
+            break;
+        }
+    case 6:
+        {
+            ui->cbxdmh_2->clear();
+            ui->cbxdmh_2->addItem("Bếp & phòng ăn");
+            ui->cbxdmh_2->addItem("Sửa chữa nhà cửa");
+            ui->cbxdmh_2->addItem("Dụng cụ điện");
+            ui->cbxdmh_2->addItem("Dụng cụ cầm tay");
+            ui->cbxdmh_2->addItem("Phòng ngủ");
+            ui->cbxdmh_2->addItem("Phòng tắm");
+            ui->cbxdmh_2->addItem("Đèn & thiết bị đèn");
+            ui->cbxdmh_2->addItem("Trang trí nhà cửa");
+            ui->cbxdmh_2->addItem("Đồ nội thất");
+            ui->cbxdmh_2->addItem("Văn phòng phẩm và thủ công");
+            ui->cbxdmh_2->addItem("Sách & nhạc cụ");
+            ui->cbxdmh_2->addItem("Thiết bị giặt & làm sạch");
+            break;
+         }
+    case 7:
+         {
+
+            ui->cbxdmh_2->clear();
+            ui->cbxdmh_2->addItem("Đầm nữ");
+            ui->cbxdmh_2->addItem("Quần và chân váy");
+            ui->cbxdmh_2->addItem("Áo nữ");
+            ui->cbxdmh_2->addItem("Jumpsuits");
+            ui->cbxdmh_2->addItem("Đồ đôi và gia đình");
+            ui->cbxdmh_2->addItem("Đồ ngủ và nội y");
+            ui->cbxdmh_2->addItem("Phụ kiện nữ");
+            ui->cbxdmh_2->addItem("Giày nữ");
+            ui->cbxdmh_2->addItem("Trang phục bé gái");
+            ui->cbxdmh_2->addItem("Giày bé gái");
+            break;
+        }
+    case 8:
+        {
+
+            ui->cbxdmh_2->clear();
+            ui->cbxdmh_2->addItem("Trang phục nam");
+            ui->cbxdmh_2->addItem("Giày dép nam");
+            ui->cbxdmh_2->addItem("Đồ lót nam");
+            ui->cbxdmh_2->addItem("Phụ kiện thời trang nam");
+            ui->cbxdmh_2->addItem("Trang phục bé trai");
+            ui->cbxdmh_2->addItem("Giày bé trai");
+            break;
+        }
+    case 9:
+        {
+
+            ui->cbxdmh_2->clear();
+            ui->cbxdmh_2->addItem("Đồng hồ nữ");
+            ui->cbxdmh_2->addItem("Trang sức nữ");
+            ui->cbxdmh_2->addItem("Kính mát");
+            ui->cbxdmh_2->addItem("Kính thời trang");
+            ui->cbxdmh_2->addItem("Túi xách nữ");
+            ui->cbxdmh_2->addItem("Balo nữ");
+            ui->cbxdmh_2->addItem("Đồng hồ nam");
+            ui->cbxdmh_2->addItem("Trang sức nam");
+            ui->cbxdmh_2->addItem("Túi xách nam");
+            ui->cbxdmh_2->addItem("Túi đeo chéo nam");
+            ui->cbxdmh_2->addItem("Vali & túi du lịch");
+            ui->cbxdmh_2->addItem("Túi trẻ em");
+            break;
+
+        }
+    case 10:
+        {
+
+            ui->cbxdmh_2->clear();
+            ui->cbxdmh_2->addItem("Giày thể thao nam");
+            ui->cbxdmh_2->addItem("Trang phục nam");
+            ui->cbxdmh_2->addItem("Giày thể thao nữ");
+            ui->cbxdmh_2->addItem("Trang phục nữ");
+            ui->cbxdmh_2->addItem("Vali & túi du lịch");
+            ui->cbxdmh_2->addItem("Hoạt động dã ngoại");
+            ui->cbxdmh_2->addItem("Thể thao và thể hình");
+            ui->cbxdmh_2->addItem("Thể thao dùng vợt");
+            ui->cbxdmh_2->addItem("Thể thao đồng đội");
+            ui->cbxdmh_2->addItem("Đấm bốc và võ thuật");
+            ui->cbxdmh_2->addItem("Thể thao dưới nước");
+            ui->cbxdmh_2->addItem("Phụ kiện thể thao");
+            break;
+        }
+    case 11:
+        {
+
+            ui->cbxdmh_2->clear();
+            ui->cbxdmh_2->addItem("Xe máy");
+            ui->cbxdmh_2->addItem("Chăm sóc ô tô");
+            ui->cbxdmh_2->addItem("Trang trí nội thât ô tô");
+            ui->cbxdmh_2->addItem("Trang trí ngoại thất ô tô");
+            ui->cbxdmh_2->addItem("Phụ tùng & phụ kiện ô tô");
+            ui->cbxdmh_2->addItem("Đồ điện tử dành cho ô tô");
+            ui->cbxdmh_2->addItem("Dầu nhớt & phụ gia ô tô");
+            ui->cbxdmh_2->addItem("Phụ tùng xe máy");
+            ui->cbxdmh_2->addItem("Đồ bảo hộ khi đi xe máy");
+            ui->cbxdmh_2->addItem("Phụ kiện & đồ chơi xe máy");
+            ui->cbxdmh_2->addItem("Dầu nhớt & phụ gia xe máy");
+            ui->cbxdmh_2->addItem("Vỏ ruột bánh xe máy & mâm");
+            break;
+        }
+    }
+}
+
+void khohang::on_btnEditpldm_clicked()
+{
+
+    QString mahang=ui->lineEditid->text();
+    for (int i =0;i<mahang.size();i++)
+    {
+        if (mahang[i].isPunct()||mahang[i].isSpace())
+       {
+            QMessageBox::information(this,"Xác nhận","Mã hàng không hợp lệ");
+            return;
+       }
+    }
+
+    string id= ui->lineEditid->text().toStdString();
+    if(QMessageBox::question(this,"Xác nhận","Bạn có chắc chắn muốn sửa sản phẩm này?")==QMessageBox::Yes)
+    {
+        if (kiemtratontai (lkho,id) ==false)
+        {
+            QMessageBox::information(this,"Xác nhận","Mã hàng không tồn tại");
+            return;
+        }
+
+    string pl = ui->cbxplh_2->currentText().toStdString();
+    string dm = ui->cbxdmh_2->currentText().toStdString();
+
+    SuaPhanLoaiHang(lkho,pl,id);
+    SuaDanhMucHang(lkho,dm,id);
+
+    ghikhohang(lkho);
+
+    QMessageBox::information(this,"Xác nhận","Đã hoàn tất");
+
+    }
 }

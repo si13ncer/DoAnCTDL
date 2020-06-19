@@ -14,7 +14,6 @@ QWidget *SpinBoxTable::createEditor(QWidget *parent,
     QSpinBox *Spb = new QSpinBox(parent);
     Spb->setMinimum(1);
     Spb->setMaximum(999);
-
     return Spb;
 }
 

@@ -1,1 +1,15 @@
-Hàng Mẹ, Bé & Đồ Chơi| Đồ chơi điện tử & điều khiển từ xa| Máy bay điều khiển từ xa| MBDK| 23/04/2020| 150000| 100
+Thiết Bị Điện Tử|Điện thoại di động|Điện Thoại Di Động Forme L6, màn hình 2.4inch, Pin 1800mAh, phím mica, font chữ lớn|DT001|303000|100|19/06/2020
+Thiết Bị Điện Tử|Điện thoại di động|Điện thoại Forme U30, MÀN HÌNH 1.8inch, PIN LỚN 1500MAH, LOA NHẠC LỚN, FONT CHỮ LỚN, FM KHÔNG DÂY|DT002|230000|278|19/06/2020
+Thiết Bị Điện Tử|Điện thoại di động|Điện thoại di động Forme F3, màn hình 2.4inch, pin 1800mAh, font chữ lớn, loa to rõ|DT003|310000|135|19/06/2020
+Thiết Bị Điện Tử|Điện thoại di động|Điện thoại Forme M3, MÀN HÌNH 2.4inch, PIN 2700mAh, LOA THOẠI CỰC RÕ, FONT CHỮ LỚN, FM KHÔNG DÂY|DT004|318000|56|19/06/2020
+Thiết Bị Điện Tử|Điện thoại di động|Điện thoại OPPO A12e (3GB/64GB) - Pin trâu hơn 4230Mah Bộ nhớ lớn hơn 64GB Camera sap kép xóa phông Camera trước làm đẹp AI|DT005|2590000|256|19/06/2020
+Thiết Bị Điện Tử|Điện thoại di động|Điện thoại Apple iPhone 11 - Hàng Chính Hãng VN/A - Mới 100% (Chưa Kích Hoạt) - Trả Góp 0% - Màn Hình Liquid Retina HD 6.1inch, Face ID Chống nước Chip A13, 2 Camera|DT006|18490000|20|19/06/2020
+Thiết Bị Điện Tử|Máy tính bảng|Máy tính bảng Huawei T5 (2GB/16GB) - Màn hình 10.1'' Màn hình FullHD 1080p Kirin 659 8 nhân Pin khủng 5100mAh Micro SIM|MTB001|2999000|30|19/06/2020
+Thiết Bị Điện Tử|Máy tính bảng|Máy tính bảng Galaxy Tab A SM-T295 32GB (2GB RAM) 2019 Đen - Màn hình 8 inch, tỷ lệ 16:10 Full HD + Trọng lượng chỉ 347g mỏng nhẹ + Hỗ trợ thẻ nhớ đến 512GB + Pin 5100 mAh |MTB002|3100000|58|19/06/2020
+Thiết Bị Điện Tử|Laptop|Laptop dell g3 3579 gaming|LT001|18400000|45|19/06/2020
+Thiết Bị Điện Tử|Laptop|MSI GP72 7REX core i7-7700HQ, card rời Nvidia GTX 1050Ti- 4G, màn 17.3″ FullHD 120Hz|LT002|18899000|35|19/06/2020
+Thiết Bị Điện Tử|Laptop|[Màn 4K IPS Cảm Ứng] Dell XPS 15-9550 i7-6700HQ, card rời NVIDIA GTX 960M- 2G màn 15.6in - laptoplc|LT003|22999000|11|19/06/2020
+Thiết Bị Điện Tử|Laptop|Asus TUF Gaming FX505GD, còn bh hãng 12/2020 core i5-8300H, HDD 1T, VGA NVIDIA GTX 1050- 4G, màn 15.6″ FullHD IPS|LT004|16800000|17|19/06/2020
+Thiết Bị Điện Tử|Máy tính để bàn|Desktop Computer PC Gaming 4TechGM04 2019|MTDB001|10128600|30|19/06/2020
+Thiết Bị Điện Tử|Máy tính để bàn|Bộ máy tính chơi Game MÀN HÌNH 27 inch CONG MỚI FULL BOX, case led gaming cấu hình chip i5 sản phẩm trọn bộ|MTDB002|7228600|6|19/06/2020
+Thiết Bị Điện Tử|Máy tính để bàn|Máy tính chơi Game Vip nguyên bộ 4TechGM06 2019|MTDB003|28159000|9|19/06/2020

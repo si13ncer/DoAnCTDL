@@ -2,7 +2,7 @@
 #define NHAPHANG_H
 
 #include <QMainWindow>
-#include "dslkKho.h"
+
 
 namespace Ui {
 class nhaphang;

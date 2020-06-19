@@ -85,7 +85,7 @@ public:
         __qtablewidgetitem6->setBackground(QColor(0, 170, 0));
         tblkhohang->setHorizontalHeaderItem(6, __qtablewidgetitem6);
         tblkhohang->setObjectName(QString::fromUtf8("tblkhohang"));
-        tblkhohang->setGeometry(QRect(10, 30, 741, 331));
+        tblkhohang->setGeometry(QRect(10, 30, 731, 331));
         label_2 = new QLabel(centralwidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(10, 370, 141, 16));

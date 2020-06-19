@@ -11,8 +11,8 @@
 #include "thongtinkhach.h"
 #include "listdonhang.h"
 #include "AddVoucher.h"
-#include "ui_AddVoucher.h"
 #include "voucher.h"
+#include "dslkKho.h"
 
     ::list lur;
     listk lkh;
@@ -51,5 +51,6 @@ int main(int argc, char *argv[])
     ufilein.close();
     khfilein.close();
     dfilein.close();
+    khofilein.close();
     return a.exec();
 }

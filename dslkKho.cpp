@@ -78,20 +78,14 @@ void doc1hang(ifstream &Filein, hang &h)
 {
 
     getline(Filein, h.pl, '|');//Nhap string phan loai hang
-    Filein.seekg(1, 1);//Dich sang phai 1 bit ki tu
     getline(Filein, h.dm, '|');//Nhap string phan loai hang
-    Filein.seekg(1, 1);//Dich sang phai 1 bit ki tu
     getline(Filein, h.name, '|');//Nhap string ten hang
-    Filein.seekg(1, 1);//Dich sang phai 1 bit ki tu
     getline(Filein, h.id, '|');//Nhap sstring ma hang
-    Filein.seekg(1, 1);//Dich sang phai 1 bit ki tu
-    getline(Filein, h.day, '|');//Nhap sstring ma hang
-    Filein.seekg(1, 1);//Dich sang phai 1 bit ki tu
     Filein >> h.price;//Nhap gia hang
-    Filein.seekg(1, 2);//Dich sang phai 2 bit ki tu, bao gồm dấu "," và khoảng trắng
+    Filein.seekg(1,1);//Dich sang phai 2 bit ki tu, bao gồm dấu "," và khoảng trắng
     Filein >> h.sl;
-    string temp;
-    getline(Filein, temp);
+    getline(Filein, h.day);//Nhap sstring ngay
+
 }
 
 void dockhohang(ifstream& Filein, listkho& k)
@@ -100,6 +94,10 @@ void dockhohang(ifstream& Filein, listkho& k)
         {
             hang h;
             doc1hang(Filein, h);
+            if(h.pl=="")
+            {
+                break;
+            }
             nodehang *p = tao1node(h);
             themcuoi(k, p);
         }
@@ -108,13 +106,13 @@ void dockhohang(ifstream& Filein, listkho& k)
 void ghi1hang (ofstream &Fileout,hang h)
 {
 
-    Fileout << h.pl << "| ";
-    Fileout << h.dm << "| ";
-    Fileout << h.name << "| ";
-    Fileout << h.id << "| ";
-    Fileout << h.day <<"| ";
-    Fileout << h.price << "| ";
-    Fileout << h.sl;
+    Fileout << h.pl << "|";
+    Fileout << h.dm << "|";
+    Fileout << h.name << "|";
+    Fileout << h.id << "|";
+    Fileout << h.price << "|";
+    Fileout << h.sl<<"|";
+    Fileout << h.day <<"\n";
 }
 
 void ghikhohang (listkho k)
@@ -235,5 +233,36 @@ void SuaNgayNhapHang(listkho &kh, string ngaycs,string id)
         {
             x->data.day = ngaycs;
         }
+    }
+}
+
+void HoanVi(hang &x,hang &y)
+{
+    hang tam= x;
+    x=y;
+    y=tam;
+}
+
+void SapXep(listkho &lkho)
+{
+    for (nodehang* k = lkho.pHead; k != NULL; k = k->pNext)
+        {
+            for (nodehang* l = k->pNext; l != NULL; l = l->pNext)
+            {
+                if (strcmp(k->data.name.c_str(), l->data.name.c_str()) > 0)
+                {
+                    HoanVi(k->data, l->data);
+                }
+            }
+        }
+}
+void khomemfree(listkho &kh)
+{
+    nodehang *p = NULL;
+    while (kh.pHead != NULL)
+    {
+        p = kh.pHead;
+        kh.pHead= kh.pHead->pNext;
+        delete p;
     }
 }

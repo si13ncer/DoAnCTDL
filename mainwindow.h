@@ -8,6 +8,8 @@
 #include "danhsachdon.h"
 #include "nhaphang.h"
 #include "AddVoucher.h"
+#include "khohang.h"
+#include "qlvoucher.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -37,6 +39,10 @@ private slots:
 
     void on_actTaoVc_triggered();
 
+    void on_actDanhmuc_triggered();
+
+    void on_actQliVc_triggered();
+
 private:
     Ui::MainWindow *ui;
     taodonhang *tdh;
@@ -46,5 +52,7 @@ private:
     danhsachdon *dsdon;
     nhaphang *nhap;
     AddVoucher *avc;
+    khohang *kho;
+    qlvoucher *qlvc;
 };
 #endif // MAINWINDOW_H

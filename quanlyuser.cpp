@@ -87,3 +87,9 @@ void quanlyuser::on_cBxUser_activated(const QString &arg1)
     QString chose = ui->cBxUser->currentText();
     chosenone = chose.toStdString();
 }
+
+void quanlyuser::on_btnTt_pressed()
+{
+    tt =new thongtin(this);
+    tt->show();
+}

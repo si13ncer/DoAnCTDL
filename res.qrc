@@ -22,5 +22,6 @@
         <file>res/icon/find.png</file>
         <file>res/icon/refresh.png</file>
         <file>res/icon/delete.png</file>
+        <file>res/icon/personal.png</file>
     </qresource>
 </RCC>

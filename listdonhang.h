@@ -48,6 +48,7 @@ void dateread(ifstream& filein, Date& date);
 nodedon* nodedoninit(don d);
 void listdoninit(listdon& l);
 void addHeaddon(listdon& l, nodedon *d);
+void addTaildon(listdon& l, nodedon *p);
 void readdon(ifstream& filein, don &d);
 void readlistdon(ifstream& filein, listdon& l);
 void ghinodedon(ofstream& fileout, don d);
